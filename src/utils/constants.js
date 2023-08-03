@@ -1,5 +1,0 @@
-export const intro = [
-	'SOFTWARE ENGINEER @ ANTINO LABS',
-	'FULL STACK DEVELOPER & DESIGNER',
-	'JS, NODE, MONGODB, AWS DevOps, UI/UX',
-];
