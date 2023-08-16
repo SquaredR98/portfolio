@@ -23,7 +23,7 @@ module.exports = {
 			keyframes: {
 				slideIn: {
 					'0%': {
-						transform: 'translateY(-50%)',
+						transform: 'translateY(-100%)',
 						opacity: 0,
 					},
 					'100%': {
@@ -33,7 +33,7 @@ module.exports = {
 				},
 				slideInReverse: {
 					'0%': {
-						transform: 'translateY(50%)',
+						transform: 'translateY(100%)',
 						opacity: 0,
 					},
 					'100%': {
@@ -49,11 +49,21 @@ module.exports = {
 						opacity: 1,
 					},
 				},
+				leaveTopRight: {
+					'0%': {
+						transform: 'translateY(0%)',
+						opacity: 0,
+					},
+					'100%': {
+						transform: 'translateY(100%)',
+						opacity: 1,
+					},
+				}
 			},
 			animation: {
-				'slide-in': 'slideIn .5s ease-in-out',
-				'slide-in-reverse': 'slideInReverse .5s ease-in-out',
-				'image-fade-in': 'imageFadeIn 5s ease-in-out',
+				'slide-in': 'slideIn 1.5s ease-in-out',
+				'slide-in-reverse': 'slideInReverse 1.5s ease-in-out',
+				'image-fade-in': 'imageFadeIn 1.5s ease-in-out',
 			},
 		},
 	},
