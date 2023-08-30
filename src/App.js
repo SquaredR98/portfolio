@@ -1,13 +1,24 @@
-import Navbar from "./components/Navbar";
-import HomePage from "./pages/HomePage";
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import useTheme from './hooks/useTheme';
+import HomePage from './pages/HomePage';
 
 function App() {
-  return (
-    <div className="h-screen flex flex-col dark:bg-slate-950">
-      <Navbar />
-      <HomePage />
-    </div>
-  );
+	const [colorTheme, setTheme] = useTheme();
+	const [darkMode, setDarkMode] = useState(
+		colorTheme === 'light' ? true : false,
+	);
+
+	const toggleDarkMode = (checked) => {
+		setTheme(colorTheme);
+		setDarkMode(checked);
+	};
+	return (
+		<div className='h-screen flex flex-col'>
+			<Navbar darkMode={darkMode} setMode={toggleDarkMode} />
+			<HomePage />
+		</div>
+	);
 }
 
 export default App;

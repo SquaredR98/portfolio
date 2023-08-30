@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { CgMenuGridR } from 'react-icons/cg';
 import { BsCodeSlash, BsFileEarmarkText } from 'react-icons/bs';
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 const navItems = [
 	{
@@ -26,79 +27,125 @@ const navItems = [
 	},
 ];
 
-const BigScreenNavItems = () => (
-	<div className='hidden md:flex'>
-		{navItems.map((item, index) => (
-			<p
-				key={index}
-				className='font-roboto-condensed px-2 last:pr-0 dark:text-white'
-			>
-				{item.name}
-			</p>
-		))}
-	</div>
-);
-const SmallScreenNavItems = ({ showMenu, handleShowMenu }) => (
-	<div
-		className={`md:hidden absolute w-2/3 h-full top-0 ${
-			showMenu ? 'right-0' : '-right-[45rem]'
-		} z-50 bg-slate-500 transition-all duration-500`}
-	>
-		<div className='flex justify-between items-center px-3 md:hidden my-4'>
-			<h4 className='font-roboto-condensed text-2xl flex items-center font-bold'>
-				<CgMenuGridR className='mr-1' /> Menu
-			</h4>
-			<RxCross1
-				className='text-xl md:hidden hover:cursor-pointer'
-				onClick={handleShowMenu}
-			/>
+const BigScreenNavItems = ({ darkMode, onClick }) => {
+	const handleClick = () => {
+		onClick(!darkMode);
+	};
+	return (
+		<div className='hidden md:flex items-center'>
+			{navItems.map((item, index) => (
+				<p
+					key={index}
+					className='font-roboto-condensed px-2 dark:text-white'
+				>
+					{item.name}
+				</p>
+			))}
+			{darkMode ? (
+				<MdLightMode
+					className='text-2xl hover:cursor-pointer text-white transition-all ml-2'
+					onClick={handleClick}
+				/>
+			) : (
+				<MdDarkMode
+					className='text-2xl hover:cursor-pointer transition-all ml-2'
+					onClick={handleClick}
+				/>
+			)}
 		</div>
-		{navItems.map((item, index) => (
-			<p
-				className={`font-roboto-condensed mx-3 last:mr-0 py-2 text-xl flex items-center`}
-				key={index}
-			>
-				{item.icon}
-				{item.name}
-			</p>
-		))}
-	</div>
-);
+	);
+};
+const SmallScreenNavItems = ({
+	showMenu,
+	handleShowMenu,
+	darkMode,
+	onClick,
+}) => {
+	const handleClick = () => {
+		onClick(!darkMode);
+	};
+	return (
+		<div
+			className={`md:hidden absolute bg-white dark:bg-slate-950  w-2/3 ${
+				showMenu ? 'right-0' : '-right-[45rem]'
+			}  transition-all duration-500 h-screen`}
+		>
+			<div className='flex justify-between items-center px-3 md:hidden my-4'>
+				<h4 className='font-roboto-condensed text-2xl flex items-center font-bold dark:text-cyan-300'>
+					<CgMenuGridR className='mr-1' /> Navigate
+				</h4>
+				<div className='flex items-center'>
+					{darkMode ? (
+						<MdLightMode
+							className='text-2xl hover:cursor-pointer text-white transition-all ml-2'
+							onClick={handleClick}
+						/>
+					) : (
+						<MdDarkMode
+							className='text-2xl hover:cursor-pointer transition-all ml-2'
+							onClick={handleClick}
+						/>
+					)}
+					<RxCross1
+						className='text-xl ml-3 md:hidden hover:cursor-pointer dark:text-white'
+						onClick={handleShowMenu}
+					/>
+				</div>
+			</div>
+			{navItems.map((item, index) => (
+				<p
+					className={`font-roboto-condensed mx-3 last:mr-0 py-2 text-xl flex items-center bg-white dark:text-white dark:bg-slate-950`}
+					key={index}
+				>
+					{item.icon}
+					{item.name}
+				</p>
+			))}
+		</div>
+	);
+};
 
-const Navbar = () => {
+const Navbar = ({ darkMode, setMode }) => {
 	const [showMenu, setShowMenu] = useState(false);
+	console.log(showMenu);
+
 	useEffect(() => {
-		const nav = document.querySelector('nav');
 		const timeout = setTimeout(() => {
+			const nav = document.querySelector('nav');
 			nav.classList.remove('hidden');
-			nav.classList.add('flex');
-			nav.classList.add('animate-slide-in');
 		}, 1000);
+
+		return () => clearTimeout(timeout);
 	});
 
 	const handleShowMenu = () => {
 		setShowMenu(!showMenu);
 	};
 	return (
-		<nav className='fixed w-screen hidden'>
-			<div className='flex justify-between items-center w-11/12 md:w-10/12 lg:w-8/12 mx-auto my-4  transition-all animate-fade-in duration-150'>
+		<nav className='fixed z-50 hidden w-screen transition-all animate-slide-in duration-150 bg-white dark:bg-slate-950'>
+			<div className='flex justify-between items-center w-11/12 md:w-10/12 lg:w-8/12 mx-auto my-4 relative'>
 				<div className=''>
 					<h3 className='text-2xl uppercase font-raleway font-black leading-none dark:text-cyan-300'>
 						Ravi Ranjan
 					</h3>
-					<p className='font-roboto-condensed tracking-wider leading-none text-slate-500'>
-						Personal Portfolio
+					<p className='font-roboto-condensed tracking-wider leading-none uppercase text-slate-500'>
+						Designer & Developer
 					</p>
 				</div>
-				<div className=''>
+				<div className='bg-white dark:bg-slate-950'>
 					<RxHamburgerMenu
-						className={`text-2xl md:hidden hover:cursor-pointer`}
-						onClick={handleShowMenu}
+						className={`text-2xl md:hidden hover:cursor-pointer dark:text-cyan-300`}
+						onClick={() => setShowMenu(!showMenu)}
 					/>
-					<BigScreenNavItems />
+					<BigScreenNavItems
+						darkMode={darkMode}
+						onClick={setMode}
+					/>
 					<SmallScreenNavItems
 						showMenu={showMenu}
 						handleShowMenu={handleShowMenu}
+						darkMode={darkMode}
+						onClick={setMode}
 					/>
 				</div>
 			</div>
