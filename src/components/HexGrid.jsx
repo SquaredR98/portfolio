@@ -4,7 +4,7 @@ import nodeLogo from '../assets/logos/nodejs.svg';
 import linuxLogo from '../assets/logos/linux.svg';
 import serverLogo from '../assets/logos/server.svg';
 import codeLogo from '../assets/logos/code.svg';
-import githubLogo from '../assets/logos/github.svg';
+import pythonLogo from '../assets/logos/python.svg';
 import reactLogo from '../assets/logos/react.svg';
 import dockerLogo from '../assets/logos/docker.svg';
 
@@ -24,8 +24,8 @@ const HexGrid = () => {
       <img src={linuxLogo} alt='logo' className='hidden transition-all duration-300' />
       <img src={serverLogo} alt='logo' className='hidden transition-all duration-300' />
       <img src={dockerLogo} alt='logo' className='hidden transition-all duration-300' />
-      <img src={githubLogo} alt='logo' className='hidden transition-all duration-300' />
-      <img src={reactLogo} alt='logo' className='hidden transition-all duration-300' />
+      <img src={pythonLogo} alt='logo' className='hidden transition-all duration-300' />
+      <img src={reactLogo} alt='logo' className='hidden transition-all duration-300 p-2' />
       <img src={codeLogo} alt='logo' className='hidden transition-all duration-300' />
     </div>
   )
