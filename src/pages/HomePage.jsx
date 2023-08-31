@@ -29,7 +29,7 @@ const HomePage = () => {
 			</div>
 			<div className='dark:bg-slate-950 w-11/12 md:w-10/12 lg:w-8/12 mx-auto'>
 				<h2 className='font-roboto-condensed text-3xl font-bold dark:text-cyan-300'>Skills & Expertise</h2>
-				<div className='grid md:grid-cols-2 gap-4'>
+				<div className='grid md:grid-cols-2 gap-4 my-6'>
 				{
 					skills.map(({ title, skills }, index) => <SkillCard key={index} title={title} skills={skills} />)
 				}
