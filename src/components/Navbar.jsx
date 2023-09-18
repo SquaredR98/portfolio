@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { RxHamburgerMenu, RxCross1 } from 'react-icons/rx';
 import { CgMenuGridR } from 'react-icons/cg';
 import { BsCodeSlash, BsFileEarmarkText } from 'react-icons/bs';
 import { MdDarkMode, MdLightMode } from 'react-icons/md';
+import Logo from './Logo';
 
 const navItems = [
 	{
@@ -12,7 +14,7 @@ const navItems = [
 	},
 	{
 		name: 'Devfolio',
-		url: 'portfolio',
+		url: 'devfolio',
 		icon: <BsCodeSlash className='mr-2' />,
 	},
 	{
@@ -32,14 +34,15 @@ const BigScreenNavItems = ({ darkMode, onClick }) => {
 		onClick(!darkMode);
 	};
 	return (
-		<div className='hidden md:flex items-center'>
+		<div className='hidden md:flex items-center dark:bg-slate-950/0'>
 			{navItems.map((item, index) => (
-				<p
+				<Link
 					key={index}
-					className='font-roboto-condensed px-2 dark:text-white'
+					to={`/${item.url}`}
+					className='font-fira-sans-condensed font-light px-2 dark:text-white'
 				>
 					{item.name}
-				</p>
+				</Link>
 			))}
 			{darkMode ? (
 				<MdLightMode
@@ -66,48 +69,50 @@ const SmallScreenNavItems = ({
 	};
 	return (
 		<div
-			className={`md:hidden absolute bg-white dark:bg-slate-950  w-2/3 ${
-				showMenu ? 'right-0' : '-right-[45rem]'
+			className={`md:hidden top-0 absolute bg-white/80 dark:bg-slate-950/90 pr-2 backdrop-blur-md w-3/4 ${
+				showMenu ? '-right-3' : '-right-[45rem]'
 			}  transition-all duration-500 h-screen`}
 		>
-			<div className='flex justify-between items-center px-3 md:hidden my-4'>
-				<h4 className='font-roboto-condensed text-2xl flex items-center font-bold dark:text-cyan-300'>
+			<div className='flex justify-between items-center md:hidden mt-6'>
+				<h4 className='font-fira-sans-condensed font-light text-2xl pl-3 flex items-center dark:text-white'>
 					<CgMenuGridR className='mr-1' /> Navigate
 				</h4>
 				<div className='flex items-center'>
 					{darkMode ? (
 						<MdLightMode
-							className='text-2xl hover:cursor-pointer text-white transition-all ml-2'
+							className='text-2xl hover:cursor-pointer text-white transition-all'
 							onClick={handleClick}
 						/>
 					) : (
 						<MdDarkMode
-							className='text-2xl hover:cursor-pointer transition-all ml-2'
+							className='text-2xl hover:cursor-pointer transition-all'
 							onClick={handleClick}
 						/>
 					)}
 					<RxCross1
-						className='text-xl ml-3 md:hidden hover:cursor-pointer dark:text-white'
+						className='text-xl ml-4 md:hidden hover:cursor-pointer dark:text-white'
 						onClick={handleShowMenu}
 					/>
 				</div>
 			</div>
-			{navItems.map((item, index) => (
-				<p
-					className={`font-roboto-condensed mx-3 last:mr-0 py-2 text-xl flex items-center bg-white dark:text-white dark:bg-slate-950`}
-					key={index}
-				>
-					{item.icon}
-					{item.name}
-				</p>
-			))}
+			<div className='mt-2'>
+				{navItems.map((item, index) => (
+					<Link
+						to={`/${item.url}`}
+						className={`font-fira-sans-condensed font-light pl-4 last:mr-0 py-2 text-xl flex items-center dark:text-white `}
+						key={index}
+					>
+						{item.icon}
+						{item.name}
+					</Link>
+				))}
+			</div>
 		</div>
 	);
 };
 
 const Navbar = ({ darkMode, setMode }) => {
 	const [showMenu, setShowMenu] = useState(false);
-	console.log(showMenu);
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -122,17 +127,12 @@ const Navbar = ({ darkMode, setMode }) => {
 		setShowMenu(!showMenu);
 	};
 	return (
-		<nav className='fixed z-50 hidden w-screen transition-all animate-slide-in duration-150 bg-white dark:bg-slate-950'>
-			<div className='flex justify-between items-center w-11/12 md:w-10/12 lg:w-8/12 mx-auto my-4 relative'>
+		<nav className="fixed z-50 hidden w-screen transition-all animate-slide-in duration-150 bg-white/95 dark:bg-slate-950/80 before:w-full before:h-full before:z-[-1] before:backdrop-filter-lg before:content-['']">
+			<div className='flex justify-between items-center w-11/12 md:w-10/12 lg:w-8/12 mx-auto h-20 relative'>
+				<Link to='/'>
+					<Logo />
+				</Link>
 				<div className=''>
-					<h3 className='text-2xl uppercase font-raleway font-black leading-none dark:text-cyan-300'>
-						Ravi Ranjan
-					</h3>
-					<p className='font-roboto-condensed tracking-wider leading-none uppercase text-slate-500'>
-						Designer & Developer
-					</p>
-				</div>
-				<div className='bg-white dark:bg-slate-950'>
 					<RxHamburgerMenu
 						className={`text-2xl md:hidden hover:cursor-pointer dark:text-cyan-300`}
 						onClick={() => setShowMenu(!showMenu)}
