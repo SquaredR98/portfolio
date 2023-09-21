@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+	darkMode: 'class',
 	content: ['./src/**/*.{js,jsx,ts,tsx}'],
 	theme: {
 		extend: {
@@ -52,7 +52,10 @@ module.exports = {
 		},
 		fontFamily: {
 			raleway: ['Raleway', 'sans-serif'],
-			'roboto-condensed': ['Roboto Condensed', 'sans-serif'],
+			'fira-sans-condensed': [
+				'Fira Sans Extra Condensed',
+				'sans-serif',
+			],
 		},
 	},
 	plugins: [],

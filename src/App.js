@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import Navbar from './components/Navbar';
+import { Outlet } from 'react-router-dom';
+
 import useTheme from './hooks/useTheme';
-import HomePage from './pages/HomePage';
+import Navbar from './components/Navbar';
 
 function App() {
 	const [colorTheme, setTheme] = useTheme();
@@ -16,7 +17,7 @@ function App() {
 	return (
 		<div className='h-screen flex flex-col'>
 			<Navbar darkMode={darkMode} setMode={toggleDarkMode} />
-			<HomePage />
+			<Outlet />
 		</div>
 	);
 }
