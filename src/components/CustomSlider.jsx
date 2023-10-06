@@ -3,11 +3,14 @@ import Slider from 'react-slick';
 
 const CustomSlider = ({ gallery }) => {
 	const settings = {
-		dots: true,
+		dots: false,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		lazyLoad: true,
+		autoPlay: true,
+		autoplaySpeed: 1000,
 	};
 	return (
 		<div>
@@ -20,7 +23,7 @@ const CustomSlider = ({ gallery }) => {
 						<img
 							src={element}
 							alt=''
-							className='h-72 object-cover'
+							className='h-72 object-cover w-full'
 						/>
 					</div>
 				))}

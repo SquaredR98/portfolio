@@ -2,7 +2,7 @@ import React from 'react';
 import AboutMe from '../components/AboutMe';
 import Banner from '../components/Banner';
 import SkillsSection from '../components/SkillsSection';
-import HomeProjectCard from '../components/HomeProjectCard';
+import HomePageProjectSection from '../components/HomePageProjectSection';
 
 const HomePage = () => {
 	return (
@@ -10,7 +10,7 @@ const HomePage = () => {
 			<Banner />
 			<AboutMe />
 			<SkillsSection />
-			<HomeProjectCard />
+			<HomePageProjectSection />
 		</>
 	);
 };
