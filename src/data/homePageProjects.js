@@ -17,5 +17,7 @@ export const projects = [
 		],
 		about: 'An ecommerce website developed using React with the features following: Sign In, Sign Up, Google Auth, Product Listing, Shopping Cart and many more...',
 		gallery: [ecomCover, ecomHomePage, ecomShopPage, ecomCheckoutPage],
+		link: 'https://react-ecom.ravi-ranjan.in',
+		github: 'https://github.com/SquaredR98/crwn-clothing',
 	},
 ];

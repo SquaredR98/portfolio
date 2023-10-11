@@ -69,7 +69,7 @@ const SmallScreenNavItems = ({
 	};
 	return (
 		<div
-			className={`md:hidden top-0 absolute bg-white/80 dark:bg-slate-950/90 pr-2 backdrop-blur-md w-3/4 ${
+			className={`md:hidden -top-5 absolute bg-white/80 dark:bg-slate-950/90 pr-2 backdrop-blur-md w-3/4 ${
 				showMenu ? '-right-3' : '-right-[45rem]'
 			}  transition-all duration-500 h-screen`}
 		>
@@ -127,8 +127,8 @@ const Navbar = ({ darkMode, setMode }) => {
 		setShowMenu(!showMenu);
 	};
 	return (
-		<nav className="fixed z-50 hidden w-screen transition-all animate-slide-in duration-150 bg-white/95 dark:bg-slate-950/80 before:w-full before:h-full before:z-[-1] before:backdrop-filter-lg before:content-['']">
-			<div className='flex justify-between items-center w-11/12 md:w-10/12 lg:w-8/12 mx-auto h-20 relative'>
+		<nav className="fixed z-50 hidden w-screen transition-all animate-slide-in duration-150 bg-white dark:bg-slate-950 before:w-full before:h-full before:z-[-1] before:backdrop-filter-lg before:content-[''] py-2">
+			<div className='flex justify-between items-center w-11/12 md:w-10/12 lg:w-8/12 mx-auto relative'>
 				<Link to='/'>
 					<Logo />
 				</Link>

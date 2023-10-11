@@ -4,8 +4,8 @@ import TextOverText from './TextOverText';
 
 const AboutMe = () => {
 	return (
-		<div className='mb-16'>
-			<h2 className='text-slate-900 dark:text-cyan-300 text-4xl font-bold my-6 w-11/12 md:w-10/12 lg:w-8/12 mx-auto'>
+		<div id='about-me' className='my-16'>
+			<h2 className='text-slate-900 mb-12 dark:text-cyan-300 text-4xl font-bold my-6 w-11/12 md:w-10/12 lg:w-8/12 mx-auto'>
 				<TextOverText text='ABOUT ME' />
 			</h2>
 			<div className='w-11/12 md:w-10/12 lg:w-8/12 mx-auto grid md:grid-cols-2 gap-6'>
