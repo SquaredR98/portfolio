@@ -1,5 +1,6 @@
 "use client";
 
+import { Navbar } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
@@ -14,5 +15,5 @@ export const MotionImg = motion.img;
 export const MotionButton = motion.button;
 export const MotionH2 = motion.h2;
 export const MotionH1 = motion.h1;
-export const MotionNav = motion.nav;
+export const MotionNav = motion(Navbar);
 export const MotionLink = motion(Link);

@@ -1,26 +1,22 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { CgMenuGridR } from "react-icons/cg";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
-import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+import React from "react";
 import { BsCodeSlash, BsFileEarmarkText } from "react-icons/bs";
+
+import {
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+  Navbar as NavbarUi,
+} from "@nextui-org/react";
 
 import Logo from "@/components/Logo";
 import Link from "next/link";
-import ToggleTheme from "./ToggleTheme";
-import Sidebar from "./Sidebar";
-import HambergerMenu from "./HambergerMenu";
-import { MotionLink, MotionNav } from "./MotionElements";
-
-export interface ILargeNavbarProps {
-  darkMode: boolean;
-  onClick: (darkMode: boolean) => {};
-}
-export interface ISmallNavbarProps {
-  showMenu: boolean;
-  handleShowMenu: () => void;
-}
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { MotionNav } from "./MotionElements";
 
 const navItems = [
   {
@@ -50,104 +46,54 @@ const navItems = [
   },
 ];
 
-const BigScreenNavItems = () => {
-  const variant = {
-    hidden: {
-      opacity: 0
-    },
-    visible: {
-      opacity: 1
-    }
-  }
-
-  return (
-    <div className="hidden md:flex items-center dark:bg-slate-950/0">
-      {navItems.map((item, index) => (
-        <MotionLink
-          key={index}
-          href={item.url}
-          className="font-fira-sans-condensed font-normal group dark:font-light px-2 dark:text-white hover:dark:text-cyan-300 transition-all duration-300"
-        >
-          {item.name}
-          <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-[1px] bg-slate-950 dark:bg-cyan-300"></span>
-        </MotionLink>
-      ))}
-      <ToggleTheme />
-    </div>
-  );
-};
-const SmallScreenNavItems = ({
-  showMenu,
-  handleShowMenu,
-}: ISmallNavbarProps) => {
-  return (
-    <Sidebar handleShowMenu={handleShowMenu}>
-      <div
-        className={`md:hidden -top-5 absolute bg-white/80 dark:bg-slate-950/90 pr-2 backdrop-blur-md w-3/4 ${
-          showMenu ? "-right-3" : "-right-[45rem]"
-        }  transition-all duration-500 h-screen`}
-      >
-        <div className="flex justify-between items-center md:hidden mt-6">
-          <h4 className="font-fira-sans-condensed font-light text-2xl pl-3 flex items-center dark:text-white">
-            <CgMenuGridR className="mr-1" /> Navigate
-          </h4>
-          <ToggleTheme />
-        </div>
-        <div className="mt-2">
-          {navItems.map((item, index) => (
-            <Link
-              href={`/${item.url}`}
-              className={`font-fira-sans-condensed font-light pl-4 last:mr-0 py-2 text-xl flex items-center dark:text-white `}
-              key={index}
-            >
-              {item.icon}
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </Sidebar>
-  );
-};
-
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-
-  const variant = {
-    hidden: {
-      y: -40,
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
-  const handleShowMenu = () => {
-    setShowMenu(!showMenu);
-  };
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <MotionNav
-      variants={variant}
-      initial="hidden"
-      animate="visible"
-      transition={{ delay: 1.5, duration: 1, ease: "easeInOut" }}
-      className="fixed top-0 z-50 w-screen bg-white dark:bg-slate-950 before:w-full before:h-full before:z-[-1] before:backdrop-filter-lg before:content-[''] py-2"
+      variants={{ hidden: { opacity: 0, y: -20 }, visible: { opacity: 1, y: 0 } }}
+      initial='hidden'
+      animate='visible'
+      transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
+      onMenuOpenChange={setIsMenuOpen}
+      // shouldHideOnScroll
+      classNames={{ wrapper: "px-0 w-11/12 md:w-10/12 lg:8/12 mx-auto" }}
     >
-      <div className="flex justify-between items-center w-11/12 md:w-10/12 lg:w-8/12 mx-auto relative">
-        <Link href="/">
+      <NavbarContent>
+        <NavbarBrand>
           <Logo />
-        </Link>
-        <div className="">
-          <HambergerMenu showMenu={showMenu} setShowMenu={setShowMenu} />
-          <BigScreenNavItems />
-          <SmallScreenNavItems
-            showMenu={showMenu}
-            handleShowMenu={handleShowMenu}
-          />
-        </div>
-      </div>
+        </NavbarBrand>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden justify-end outline-none"
+        />
+      </NavbarContent>
+
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        {navItems.map((item, index) => (
+          <NavbarItem key={`${item.name}-${index}`}>
+            <Link
+              className="w-full group hover:dark:text-cyan-300 transition-all duration-300"
+              href={item.url}
+            >
+              {item.name}
+              <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-[1px] bg-slate-950 dark:bg-cyan-300"></span>
+            </Link>
+          </NavbarItem>
+        ))}
+        <NavbarItem>
+          <ThemeSwitcher />
+        </NavbarItem>
+      </NavbarContent>
+
+      <NavbarMenu>
+        {navItems.map((item, index) => (
+          <NavbarMenuItem key={`${item.name}-${index}`}>
+            <Link className="w-full" href={item.url}>
+              {item.name}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
     </MotionNav>
   );
 };

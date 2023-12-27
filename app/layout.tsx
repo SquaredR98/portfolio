@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Fira_Sans_Extra_Condensed } from "next/font/google";
 import Navbar from "../components/Navbar";
 import ThemeProvider from "@/components/ThemeProvider";
+import Providers from "./Providers";
 
 const firaSansCondensed = Fira_Sans_Extra_Condensed({
   subsets: ["latin"],
@@ -24,10 +25,10 @@ export default function RootLayout({
       <body
         className={`${firaSansCondensed.className} bg-white dark:bg-slate-900`}
       >
-        <ThemeProvider attribute="class">
+        <Providers>
           <Navbar />
           {children}
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

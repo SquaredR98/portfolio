@@ -11,7 +11,7 @@ const Logo = () => {
 					RANJAN
 				</div>
 			</div>
-			<p className='tracking-wider text-sm flex justify-center dark:text-cyan-300 dark:font-light'>
+			<p className='tracking-widest text-sm flex justify-center dark:text-cyan-300 dark:font-light leading-none mt-1'>
 				DESIGNER & DEVELOPER
 			</p>
 		</div>
