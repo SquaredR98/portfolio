@@ -1,4 +1,5 @@
 import React from "react";
+import { MotionCard } from "./MotionElements";
 
 interface ISkillTitleProps {
   name: string;
@@ -8,11 +9,12 @@ interface ISkillTitleProps {
 
 export default function SkillTitle({ name, desc, isActive }: ISkillTitleProps) {
   return (
-    <div
-      className={`my-2 border px-2 py-1 hover:cursor-pointer transition-all duration-400 ease-in-out ${
+    <MotionCard
+      radius="none"
+      className={`border px-2 py-1 hover:cursor-pointer transition-all group duration-400 ease-in-out dark:bg-slate-900 hover:[transform:rotateY(15deg)] ${
         isActive
-          ? "dark:border-cyan-300 shadow-md dark:shadow-[2.0px_2.0px_16.0px_rgba(103,232,249,0.38)]"
-          : "dark:border-slate-900"
+          ? "border-slate-600 dark:border-cyan-300/40 shadow-md"
+          : "dark:border-slate-900 hover:bg-gray-200/60 hover:dark:bg-slate-900/80"
       }`}
     >
       <h3
@@ -23,12 +25,12 @@ export default function SkillTitle({ name, desc, isActive }: ISkillTitleProps) {
         {name}
       </h3>
       <p
-        className={`text-sm text-slate-500 ${
-          isActive ? "dark:text-cyan-300" : "text-slate-500"
+        className={`text-sm dark:font-light text-slate-500 ${
+          isActive ? "dark:text-white/60" : "text-slate-500"
         }`}
       >
         {desc}
       </p>
-    </div>
+    </MotionCard>
   );
 }

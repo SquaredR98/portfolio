@@ -1,7 +1,6 @@
 import React from "react";
-import { MotionDiv } from "./MotionElements";
+import { MotionCard, MotionDiv } from "./MotionElements";
 import { ISkill } from "../data";
-import { AnimatePresence } from "framer-motion";
 
 interface ISkillsProps {
   skills: ISkill[];
@@ -9,9 +8,11 @@ interface ISkillsProps {
 
 export default function SkillDetails({ skills }: ISkillsProps) {
   return (
-    <MotionDiv className="flex flex-wrap gap-4 my-2 ml-4">
-      {skills.map((El, idx) => (
-        <AnimatePresence >
+    <MotionCard
+      radius="none"
+      className="dark:bg-slate-900 p-4 grid grid-cols-5"
+    >
+      {skills.map(({ Icon, title }, idx) => (
         <MotionDiv
           variants={{
             hidden: { opacity: 0, x: 10 },
@@ -25,19 +26,18 @@ export default function SkillDetails({ skills }: ISkillsProps) {
             duration: 0.5,
           }}
           key={idx}
-          className="flex flex-col items-center group gap-x-3"
+          className="group flex items-center flex-col"
         >
-          <El.Icon
-            className={`border border-slate-950 dark:border-slate-600 w-12 h-12 p-2 text-slate-600 text-3xl group-hover:text-slate-950 group-hover:dark:text-cyan-300 group-hover:dark:border-cyan-300 group-hover:shadow-xl group-hover:dark:shadow-cyan-300/20 transition-all duration-300`}
+          <Icon
+            className={`w-12 h-12 p-2 bg-none text-slate-400 text-3xl group-hover:text-slate-950 group-hover:dark:text-cyan-300 group-hover:dark:border-cyan-300 group-hover:shadow-xl transition-all duration-300 dark:hover:shadow-[2.0px_2.0px_20.0px_rgb(255,255,255,0.18)]`}
           />
           <p
-            className={`text-slate-600 mt-2 group-hover:text-slate-950 group-hover:dark:text-cyan-300`}
+            className={`text-slate-600 mt-1 mb-2 group-hover:text-slate-950 group-hover:dark:text-cyan-300`}
           >
-            {El.title}
+            {title}
           </p>
         </MotionDiv>
-        </AnimatePresence>
       ))}
-    </MotionDiv>
+    </MotionCard>
   );
 }

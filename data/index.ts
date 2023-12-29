@@ -1,5 +1,5 @@
 import { DiPostgresql } from "react-icons/di";
-import { FaReact, FaSass, FaNodeJs } from "react-icons/fa";
+import { FaReact, FaSass, FaNodeJs, FaGit, FaGithub, FaBitbucket, FaLinux } from "react-icons/fa";
 import { BsFiletypeHtml, BsFiletypeCss, BsFiletypeScss } from "react-icons/bs";
 import {
   SiJavascript,
@@ -17,6 +17,8 @@ import {
   SiGithubactions,
   SiCircleci,
   SiAmazonaws,
+  SiCplusplus,
+  SiThealgorithms,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -32,6 +34,18 @@ export interface ISkill {
 }
 
 export const skillsAndExpertise: ISkillsAndExpertise[] = [
+  {
+    name: "CORE",
+    desc: "DSA, VCS, OS",
+    skills: [
+      { Icon: SiCplusplus, title: "C/C++" },
+      { Icon: FaGit, title: "Git" },
+      { Icon: FaGithub, title: "Github" },
+      { Icon: FaBitbucket, title: "Bitbucket" },
+      { Icon: SiThealgorithms, title: "DSA" },
+      { Icon: FaLinux, title: "Linux" },
+    ],
+  },
   {
     name: "FRONTEND DEVELOPMENT",
     desc: "LANDING PAGE, API INTEGRATION",

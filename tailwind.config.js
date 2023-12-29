@@ -23,6 +23,21 @@ module.exports = {
         DEFAULT: "0 0px 6px rgb(165 243 252)",
         lg: "0 0px 16px rgb(165 243 252)",
       },
+      animation: {
+        text: "text 5s ease infinite",
+      },
+      keyframes: {
+        text: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+      },
     },
   },
   plugins: [
@@ -36,6 +51,6 @@ module.exports = {
         { values: theme("textShadow") }
       );
     }),
-		nextui()
+    nextui(),
   ],
 };

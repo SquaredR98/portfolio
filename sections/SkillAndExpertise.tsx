@@ -7,7 +7,7 @@ import SectionTitle from "@/components/SectionTItle";
 import SkillDetails from "@/components/SkillDetails";
 import { MotionDiv } from "@/components/MotionElements";
 
-export default function SkillAndExperience() {
+export default function SkillAndExpertise() {
   const [currentSkillSelected, setCurrentSkillSelected] = useState(0);
 
   const variants = {
@@ -23,10 +23,10 @@ export default function SkillAndExperience() {
 
   return (
     <div className="dark:bg-slate-950">
-      <div className="w-11/12 md:w-10/12 lg:w-8/12 mx-auto dark:bg-slate-950">
+      <div className="w-11/12 md:w-10/12 lg:w-9/12 mx-auto dark:bg-slate-950 my-8 mb-16">
         <SectionTitle text="My Expertise" />
         <div className="grid grid-cols-2 gap-y-4 gap-x-4">
-          <div className="col-span-1 flex flex-col gap-2">
+          <div className="col-span-1 flex flex-col gap-2 gap-y-4">
             {skillsAndExpertise.map((el, idx) => (
               <MotionDiv
                 variants={variants}
