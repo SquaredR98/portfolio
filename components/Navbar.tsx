@@ -55,8 +55,9 @@ const Navbar = () => {
       animate='visible'
       transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
       onMenuOpenChange={setIsMenuOpen}
-      // shouldHideOnScroll
+      shouldHideOnScroll
       classNames={{ wrapper: "px-0 w-11/12 md:w-10/12 lg:8/12 mx-auto" }}
+      className="dark:bg-slate-950/70"
     >
       <NavbarContent>
         <NavbarBrand>

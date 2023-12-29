@@ -71,7 +71,7 @@ const Banner = () => {
           initial="hidden"
           animate="visible"
           transition={{ delay: 1, ease: "linear", duration: .05 }}
-          className="uppercase border-[.5px] w-full md:w-2/3 lg:w-1/2 my-2 py-2 px-8 text-slate-900 bg-none md:mr-8 border-slate-950 dark:border-cyan-300 dark:bg-none dark:text-cyan-300 hover:shadow-md hover:dark:shadow-cyan-300/20 hover:tracking-widest transition-all duration-300"
+          className="uppercase border-[.5px] w-full md:w-2/3 lg:w-1/2 my-2 py-2 px-8 text-slate-900 bg-none md:mr-8 border-slate-950 dark:border-cyan-300/40 dark:bg-none dark:text-cyan-300 hover:shadow-lg hover:dark:shadow-black hover:tracking-widest transition-all duration-300"
         >
           Get in Touch
         </MotionButton>

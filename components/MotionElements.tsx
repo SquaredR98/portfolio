@@ -18,3 +18,4 @@ export const MotionH1 = motion.h1;
 export const MotionNav = motion(Navbar);
 export const MotionLink = motion(Link);
 export const MotionCard = motion(Card)
+export const MotionSpan = motion.span;
