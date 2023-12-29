@@ -33,7 +33,7 @@ export default function SkillAndExpertise() {
                 initial="hidden"
                 animate="visible"
                 transition={{
-                  delay: idx * 0.25,
+                  delay: idx * 0.12,
                   duration: 0.5,
                   ease: "easeInOut",
                 }}

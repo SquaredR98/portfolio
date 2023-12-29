@@ -11,10 +11,10 @@ export default function SkillTitle({ name, desc, isActive }: ISkillTitleProps) {
   return (
     <MotionCard
       radius="none"
-      className={`border px-2 py-1 hover:cursor-pointer transition-all group duration-400 ease-in-out dark:bg-slate-900 hover:[transform:rotateY(15deg)] ${
+      className={`border px-2 py-1 hover:cursor-pointer transition-all rounded-md group duration-400 ease-in-out dark:bg-slate-900 hover:[transform:scaleX(1.03)] ${
         isActive
-          ? "border-slate-600 dark:border-cyan-300/40 shadow-md"
-          : "dark:border-slate-900 hover:bg-gray-200/60 hover:dark:bg-slate-900/80"
+          ? "border-slate-600 dark:border-cyan-300/40 dark:bg-slate-800 shadow-md"
+          : "dark:border-slate-900 hover:bg-gray-200/60 hover:dark:bg-slate-900/95 dark:bg-slate-900/80"
       }`}
     >
       <h3
