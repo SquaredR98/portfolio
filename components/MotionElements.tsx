@@ -15,11 +15,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
-const Component = React.forwardRef<HTMLDivElement>((props, ref) => (
-  <div ref={ref} />
-));
-const MotionComponent = motion(Component);
-
 export const MotionDiv = motion.div;
 export const MotionImg = motion.img;
 export const MotionImage = motion(Image);
