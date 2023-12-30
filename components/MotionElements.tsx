@@ -9,6 +9,7 @@ import {
   Divider,
   Image,
   Navbar,
+  Tooltip,
 } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -34,3 +35,4 @@ export const MotionCardHeader = motion(CardHeader);
 export const MotionCardFooter = motion(CardFooter);
 export const MotionDivider = motion(Divider);
 export const MotionChip = motion(Chip);
+export const MotionTooltip = motion(Tooltip);

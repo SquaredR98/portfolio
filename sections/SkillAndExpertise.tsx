@@ -11,7 +11,7 @@ import { useInView } from "react-intersection-observer";
 export default function SkillAndExpertise() {
   const [currentSkillSelected, setCurrentSkillSelected] = useState(0);
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.5, // Adjust threshold as needed
   });
 

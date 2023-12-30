@@ -54,7 +54,7 @@ export default function ExperienceCard({
         <MotionDivider />
         <MotionCardBody className="">
           <div>
-            <ul className="list-disc list-outside">
+            <ul className="list-disc list-outside pl-6">
               {responsibilities.map((el, idx) => (
                 <li className="dark:font-extralight my-1 tracking-wide text-gray-600 dark:text-slate-400 group-hover:text-slate-900 group-hover:dark:text-white">{el}</li>
               ))}

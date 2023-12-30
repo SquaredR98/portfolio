@@ -33,7 +33,7 @@ const slideUpVariant = {
 
 const Banner = () => {
   const [ref, inView] = useInView({
-    triggerOnce: true,
+    triggerOnce: false,
     threshold: 0.5, // Adjust threshold as needed
   });
   return (

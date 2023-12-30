@@ -52,7 +52,7 @@ export interface ISkillsAndExpertise {
 export interface ISkill {
   Icon: IconType;
   title: string;
-  color?: string;
+  textColor?: string;
 }
 
 export const skillsAndExpertise: ISkillsAndExpertise[] = [
@@ -60,8 +60,8 @@ export const skillsAndExpertise: ISkillsAndExpertise[] = [
     name: "Core Skills",
     desc: "DSA, VCS, OS",
     skills: [
-      { Icon: SiCplusplus, title: "C/C++", },
-      { Icon: IoLogoJavascript, title: "JavaScript", },
+      { Icon: SiCplusplus, title: "C/C++", textColor: 'text-blue-500' },
+      { Icon: IoLogoJavascript, title: "JavaScript", textColor: 'text-yellow-500' },
       { Icon: SiTypescript, title: "TypeScript", },
       { Icon: FaGit, title: "Git" },
       { Icon: FaGithub, title: "Github" },
@@ -181,3 +181,47 @@ export const experiences: IExperience[] = [
     image: ""
   },
 ];
+
+export interface IProjects {
+  title: string;
+  website: string;
+  about: string[];
+  techsUsed: string[];
+  github?: string;
+  image?: string;
+  logo?: string;
+}
+
+export const projectDetails: IProjects[] = [
+  {
+    title: 'Foodaholix Landing Page',
+    website: 'www.foodaholix.com',
+    logo: 'https://foodaholix.com/static/header-logo-26b922ef5c7cfe80b7b01b82dd223f11.webp',
+    about: [
+      "A static landing page with the blog without CMS. Logical rendering for static blog layout creation has been used",
+      "I worked on translating the legacy HTML & CSS code to the updated React and Gatsby.",
+      "Initially the styling was done with Styled Components but later on translated to tailwindCSS by me for better UI.",
+      "The project has been developed using the following technologies"
+    ],
+    techsUsed: [
+      "ReactJS", "GatsbyJS", "Styled Components", "TailwindCSS", 
+    ],
+    image: "/foodaholix.png"
+  },
+  {
+    title: 'Personal Portfolio',
+    website: 'www.ravi-ranjan.in',
+    logo: 'https://w7.pngwing.com/pngs/87/586/png-transparent-next-js-hd-logo.png',
+    about: [
+      "My personal portfolio website developed using React and NextJS",
+      "To showcase my skills, experience and expertise with contact form for prospective clients to get connected.",
+      "Next UI has been used to create styling and framer motion for creating animations",
+      "The project has been developed using the following technologies"
+    ],
+    techsUsed: [
+      "ReactJS", "NextJS", "Tailwind CSS", "Next UI" 
+    ],
+    image: "/portfolio.png",
+    github: "https://github.com/SquaredR98/portfolio"
+  }
+]
