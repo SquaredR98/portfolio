@@ -53,7 +53,7 @@ const Navbar = () => {
       variants={{ hidden: { opacity: 0, y: -20 }, visible: { opacity: 1, y: 0 } }}
       initial='hidden'
       animate='visible'
-      transition={{ delay: 1, ease: 'easeInOut', duration: 1 }}
+      transition={{ delay: .2, ease: 'easeInOut', duration: .3 }}
       onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll
       classNames={{ wrapper: "px-0 w-11/12 md:w-10/12 lg:8/12 mx-auto" }}

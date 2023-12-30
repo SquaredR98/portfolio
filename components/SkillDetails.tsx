@@ -20,15 +20,15 @@ export default function SkillDetails({ skills, inView }: ISkillsProps) {
       }}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      transition={{ delay: .5, ease: 'easeInOut', duration: .8 }}
+      transition={{ delay: .1, ease: 'easeInOut', duration: .1 }}
       radius="none"
-      className="dark:bg-slate-900 p-4 grid grid-cols-5 border dark:border-slate-700 rounded-md"
+      className="dark:bg-slate-950 p-4 grid grid-cols-5 border dark:border-slate-700 rounded-md h-full"
     >
       {skills.map(({ Icon, title }, idx) => (
         <MotionDiv
           variants={{
-            hidden: { opacity: 0, x: 10, transform: 'rotateY(40deg)' },
-            visible: { opacity: 1, x: 0, transform: 'rotateY(0)' },
+            hidden: { opacity: 0, x: 10 },
+            visible: { opacity: 1, x: 0 },
           }}
           initial="hidden"
           animate="visible"

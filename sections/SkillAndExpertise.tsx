@@ -11,6 +11,7 @@ import { useInView } from "react-intersection-observer";
 export default function SkillAndExpertise() {
   const [currentSkillSelected, setCurrentSkillSelected] = useState(0);
   const [ref, inView] = useInView({
+    triggerOnce: true,
     threshold: 0.5, // Adjust threshold as needed
   });
 
@@ -27,10 +28,10 @@ export default function SkillAndExpertise() {
 
   return (
     <div className="dark:bg-slate-950">
-      <div className={`w-11/12 md:w-10/12 lg:w-9/12 mx-auto dark:bg-slate-950 my-8 mb-16 ${inView ? "animate" : ""}`}>
-        <SectionTitle text="My Expertise" inView={inView} />
-        <div className="grid grid-cols-2 gap-y-4 gap-x-4" ref={ref}>
-          <div className="col-span-1 flex flex-col gap-2 gap-y-4">
+      <div className={`w-11/12 md:w-10/12 lg:w-9/12 mx-auto dark:bg-slate-950 mb-24 ${inView ? "animate" : ""}`}>
+        <SectionTitle text="Expertise" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-4 mt-8" ref={ref}>
+          <div className="col-span-1 flex flex-row md:flex-col gap-2 gap-y-4">
             {skillsAndExpertise.map((el, idx) => (
               <MotionDiv
                 variants={variants}

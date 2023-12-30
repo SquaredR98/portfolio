@@ -30,14 +30,14 @@ const variants = {
   },
 };
 
-const HexGrid = () => {
+const HexGrid = ({ inView }: any) => {
   return (
     <div className="gallery">
       {logos.map((logo, index) => (
         <MotionImg
           variants={variants}
           initial="hidden"
-          animate="show"
+          animate={inView ? "show" : "hidden"}
           transition={{ delay: index * 0.05, ease: "easeInOut", duration: 0.5 }}
           src={logo}
           alt="logo"
