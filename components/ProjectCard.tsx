@@ -93,6 +93,7 @@ export default function ProjectCard({
                 "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
               }
               className="h-full col-span-1"
+              alt="Project Image"
             />
           </div>
         </MotionCardBody>
