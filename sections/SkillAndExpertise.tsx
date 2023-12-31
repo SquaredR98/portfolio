@@ -27,10 +27,17 @@ export default function SkillAndExpertise() {
   };
 
   return (
-    <div className="dark:bg-slate-950">
-      <div className={`w-11/12 md:w-10/12 lg:w-9/12 mx-auto dark:bg-slate-950 mb-24 ${inView ? "animate" : ""}`}>
+    <section id="skills" className="dark:bg-slate-950">
+      <div
+        className={`w-11/12 md:w-10/12 lg:w-9/12 mx-auto dark:bg-slate-950 mb-24 ${
+          inView ? "animate" : ""
+        }`}
+      >
         <SectionTitle text="Expertise" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-4 mt-8" ref={ref}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-4 mt-8"
+          ref={ref}
+        >
           <div className="col-span-1 flex flex-row md:flex-col gap-2 gap-y-4 overflow-x-scroll md:overflow-x-auto">
             {skillsAndExpertise.map((el, idx) => (
               <MotionDiv
@@ -60,6 +67,6 @@ export default function SkillAndExpertise() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

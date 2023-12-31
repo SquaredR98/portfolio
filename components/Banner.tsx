@@ -94,6 +94,7 @@ const Banner = () => {
         <MotionDiv className="gap-2 mt-4 cursor-pointer hidden md:flex">
           {socialLinks.map(({ Icon, link }, idx) => (
             <MotionA
+              key={idx}
               target="_blank"
               href={link}
               variants={{

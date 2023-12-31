@@ -5,7 +5,7 @@ import SectionTitle from "../components/SectionTItle";
 
 export default function Projects() {
   return (
-    <div className="dark:bg-slate-950">
+    <section id="projects" className="dark:bg-slate-950">
       <div className="w-11/12 md:w-10/12 lg:w-9/12 mx-auto my-16">
         <SectionTitle text="Projects" />
         {projectDetails.map(
@@ -26,6 +26,6 @@ export default function Projects() {
           )
         )}
       </div>
-    </div>
+    </section>
   );
 }
