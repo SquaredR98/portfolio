@@ -110,6 +110,7 @@ const Navbar = () => {
         <NavbarMenuItem className="flex gap-2 mt-4">
           {socialLinks.map(({ Icon, link }, idx) => (
             <MotionA
+              key={idx}
               target="_blank"
               href={link}
               variants={{
