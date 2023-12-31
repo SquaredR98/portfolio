@@ -9,6 +9,7 @@ import {
   FaLinux,
   FaDocker,
   FaAws,
+  FaLinkedinIn,
 } from "react-icons/fa";
 import { BsFiletypeHtml, BsFiletypeCss, BsFiletypeScss } from "react-icons/bs";
 import {
@@ -42,6 +43,7 @@ import { FcAndroidOs, FcGoogle } from 'react-icons/fc';
 import { RiBracesLine } from 'react-icons/ri';
 import { IoLogoJavascript } from 'react-icons/io';
 import { GrDatabase } from 'react-icons/gr';
+import { FaXTwitter } from 'react-icons/fa6'
 
 export interface ISkillsAndExpertise {
   name: string;
@@ -223,5 +225,25 @@ export const projectDetails: IProjects[] = [
     ],
     image: "/portfolio.png",
     github: "https://github.com/SquaredR98/portfolio"
+  }
+]
+
+export interface ISocialLinks {
+  Icon: IconType,
+  link: string
+}
+
+export const socialLinks: ISocialLinks[] = [
+  {
+    Icon: FaGithub,
+    link: 'https://github.com/SquaredR98'
+  }, 
+  {
+    Icon: FaLinkedinIn,
+    link: 'https://www.linkedin.com/in/raviranjan98'
+  },
+  {
+    Icon: FaXTwitter,
+    link: ''
   }
 ]

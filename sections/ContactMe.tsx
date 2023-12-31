@@ -5,7 +5,7 @@ import SectionTitle from "../components/SectionTItle";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
-import emailjs from '@emailjs/browser'
+import emailjs from "@emailjs/browser";
 
 export default function ContactMe() {
   const form: any = useRef();
@@ -19,14 +19,14 @@ export default function ContactMe() {
     //       console.log(error.text);
     //   });
     form.current = null;
-  }
+  };
 
   return (
-    <div className="dark:bg-slate-950">
+    <section id="contact" className="dark:bg-slate-950">
       <div className="w-11/12 lg:w-9/12 mx-auto">
         <SectionTitle text="Get In Touch" />
-        <div className="grid grid-cols-2 py-16">
-          <div>
+        <div className="grid  grid-cols-1 lg:grid-cols-2 md:py-16">
+          <div className="mb-8">
             <p className="dark:font-extralight my-2">Reach out to me if you</p>
             <ul className="dark:font-extralight list-disc pl-6">
               <li>Have an idea for a website?</li>
@@ -50,9 +50,12 @@ export default function ContactMe() {
               mail@ravi-ranjan.in
             </div>
           </div>
-          <div>
-            <p>Form is under development. Will be active in few days.</p>
-            <form onSubmit={ e => sendEmail(e)} ref={form}>
+          <div className="mb-8 lg:mb-0">
+            <p className="text-sm dark:text-slate-600 dark:text-extralight">
+              Form is under development. Will be active in few days. Use the
+              details provided to contact.
+            </p>
+            <form onSubmit={(e) => sendEmail(e)} ref={form}>
               <Input
                 name="name"
                 label="Full Name"
@@ -101,6 +104,6 @@ export default function ContactMe() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

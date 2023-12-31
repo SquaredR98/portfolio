@@ -16,32 +16,33 @@ import {
 import Logo from "@/components/Logo";
 import Link from "next/link";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import { MotionNav } from "./MotionElements";
+import { MotionA, MotionNav, MotionNavbarMenuItem } from "./MotionElements";
+import { socialLinks } from "../data";
 
 const navItems = [
   {
+    name: "Skills",
+    url: "#skills",
+    icon: <BsCodeSlash className="mr-2" />,
+  },
+  {
     name: "Experience",
-    url: "/experience",
+    url: "#experience",
     icon: <BsFileEarmarkText className="mr-2" />,
   },
   {
     name: "Projects",
-    url: "/projects",
+    url: "#projects",
     icon: <BsCodeSlash className="mr-2" />,
   },
-  // {
-  //   name: "UI/UX",
-  //   url: "ui-ux",
-  //   icon: <BsCodeSlash className="mr-2" />,
-  // },
   {
     name: "Resume",
-    url: "/resume",
+    url: "/resume.pdf",
     icon: <BsCodeSlash className="mr-2" />,
   },
   {
     name: "Contact",
-    url: "/contact",
+    url: "#contact",
     icon: <BsCodeSlash className="mr-2" />,
   },
 ];
@@ -50,19 +51,18 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <MotionNav
-      variants={{ hidden: { opacity: 0, y: -20 }, visible: { opacity: 1, y: 0 } }}
-      initial='hidden'
-      animate='visible'
-      transition={{ delay: .2, ease: 'easeInOut', duration: .3 }}
-      onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll
       classNames={{ wrapper: "px-0 w-11/12 md:w-10/12 lg:8/12 mx-auto" }}
-      className="dark:bg-slate-950/70"
+      className="dark:bg-slate-950/70 shadow-lg"
+      onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>
         <NavbarBrand>
           <Logo />
         </NavbarBrand>
+        <div className="md:hidden">
+          <ThemeSwitcher />
+        </div>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden justify-end outline-none"
@@ -86,14 +86,49 @@ const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarMenu>
+      <NavbarMenu className="border-t dark:border-slate-700">
         {navItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.name}-${index}`}>
-            <Link className="w-full" href={item.url}>
+          <MotionNavbarMenuItem
+            variants={{
+              hidden: { opacity: 0, y: -10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              delay: index * 0.25,
+              duration: 0.5,
+              ease: "easeInOut",
+            }}
+            key={`${item.name}-${index}`}
+          >
+            <Link className="w-full dark:font-extralight" href={item.url}>
               {item.name}
             </Link>
-          </NavbarMenuItem>
+          </MotionNavbarMenuItem>
         ))}
+        <NavbarMenuItem className="flex gap-2 mt-4">
+          {socialLinks.map(({ Icon, link }, idx) => (
+            <MotionA
+              target="_blank"
+              href={link}
+              variants={{
+                hidden: { opacity: 0, y: -10 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                delay: idx * 0.5 + 0.6,
+                duration: 0.5,
+                ease: "easeInOut",
+              }}
+              className="group border  border-slate-800 dark:border-slate-400 p-2 rounded-md dark:hover:border-cyan-300 transition-all duration-400 hover:shadow-lg hover:dark:shadow-black"
+            >
+              <Icon className="text-xl text-slate-800 hover:text-slate-950 dark:text-slate-400 group-hover:text-slate-950 group-hover:dark:text-cyan-300" />
+            </MotionA>
+          ))}
+        </NavbarMenuItem>
       </NavbarMenu>
     </MotionNav>
   );
