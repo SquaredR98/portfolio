@@ -37,12 +37,12 @@ export default function ContactMe() {
             <p className="dark:font-extralight my-2 mb-4">
               I would be happy to help you in growing your business.
             </p>
-            <div className="flex items-center text-xl my-2">
+            { /*<div className="flex items-center text-xl my-2">
               <span>
                 <IoMdCall className="text-2xl mr-2" />
               </span>
               +91 829 551 9455
-            </div>
+            </div> */}
             <div className="flex items-center text-xl my-2">
               <span>
                 <MdAlternateEmail className="text-2xl mr-2" />
