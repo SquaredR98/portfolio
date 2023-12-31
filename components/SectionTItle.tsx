@@ -48,7 +48,7 @@ const SectionTitle = ({ text }: ISectionTitleProps) => {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
         transition={{ delay: 0, duration: 0.5, ease: "easeInOut" }}
-        className="text-7xl md:text-9xl absolute -top-5 md:left-2 -left-2 text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-300 dark:from-slate-900 dark:to-slate-800 font-bold"
+        className="text-8xl md:text-9xl absolute -top-1 md:-top-5 md:left-2 -left-2 text-transparent bg-clip-text bg-gradient-to-r from-slate-200 to-slate-300 dark:from-slate-900 dark:to-slate-800 font-bold"
       >
         {text}
       </MotionSpan>

@@ -9,6 +9,8 @@ import {
   Divider,
   Image,
   Navbar,
+  NavbarItem,
+  NavbarMenuItem,
   Tooltip,
 } from "@nextui-org/react";
 import { motion } from "framer-motion";
@@ -17,6 +19,7 @@ import React from "react";
 
 export const MotionDiv = motion.div;
 export const MotionImg = motion.img;
+export const MotionA = motion.a;
 export const MotionImage = motion(Image);
 export const MotionButton = motion.button;
 export const MotionH2 = motion.h2;
@@ -31,3 +34,4 @@ export const MotionCardFooter = motion(CardFooter);
 export const MotionDivider = motion(Divider);
 export const MotionChip = motion(Chip);
 export const MotionTooltip = motion(Tooltip);
+export const MotionNavbarMenuItem = motion(NavbarMenuItem)
