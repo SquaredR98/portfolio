@@ -25,7 +25,7 @@ export default function ProjectCard({
   logo,
 }: IProjects & { index: number }) {
   const [ref, inView] = useInView({
-    threshold: 0.5, // Adjust threshold as needed
+    threshold: 0.1, // Adjust threshold as needed
   });
   return (
     <div className="group" ref={ref}>
