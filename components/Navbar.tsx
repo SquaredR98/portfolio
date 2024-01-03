@@ -55,6 +55,7 @@ const Navbar = () => {
       classNames={{ wrapper: "px-0 w-11/12 md:w-10/12 lg:8/12 mx-auto" }}
       className="dark:bg-slate-950/70 shadow-lg"
       onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
     >
       <NavbarContent>
         <NavbarBrand>
@@ -101,6 +102,7 @@ const Navbar = () => {
               ease: "easeInOut",
             }}
             key={`${item.name}-${index}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <Link className="w-full dark:font-extralight" href={item.url}>
               {item.name}
@@ -124,6 +126,7 @@ const Navbar = () => {
                 duration: 0.5,
                 ease: "easeInOut",
               }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="group border  border-slate-800 dark:border-slate-400 p-2 rounded-md dark:hover:border-cyan-300 transition-all duration-400 hover:shadow-lg hover:dark:shadow-black"
             >
               <Icon className="text-xl text-slate-800 hover:text-slate-950 dark:text-slate-400 group-hover:text-slate-950 group-hover:dark:text-cyan-300" />
