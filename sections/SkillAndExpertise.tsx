@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import { skillsAndExpertise } from "@/data";
-import SkillTitle from "@/components/SkillTitle";
-import SectionTitle from "@/components/SectionTItle";
-import SkillDetails from "@/components/SkillDetails";
-import { MotionDiv } from "@/components/MotionElements";
+import SkillTitle from "@/components/legacy/SkillTitle";
+import SectionTitle from "@/components/legacy/SectionTItle";
+import SkillDetails from "@/components/legacy/SkillDetails";
+import { MotionDiv } from "@/components/legacy/MotionElements";
 import { useInView } from "react-intersection-observer";
 
 export default function SkillAndExpertise() {

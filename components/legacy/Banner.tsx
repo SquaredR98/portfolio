@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import HexGrid from "@/components/HexGrid";
+import HexGrid from "@/components/legacy/HexGrid";
 import {
   MotionA,
   MotionButton,
@@ -9,9 +9,9 @@ import {
   MotionH1,
   MotionH2,
   MotionLink,
-} from "@/components/MotionElements";
+} from "@/components/legacy/MotionElements";
 import { useInView } from "react-intersection-observer";
-import { socialLinks } from "../data";
+import { socialLinks } from "../../data";
 
 const slideDownVariant = {
   hidden: {

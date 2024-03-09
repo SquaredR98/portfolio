@@ -1,7 +1,7 @@
 import React from "react";
 import { projectDetails, IProjects } from "../data";
-import ProjectCard from "../components/ProjectCard";
-import SectionTitle from "../components/SectionTItle";
+import ProjectCard from "@/components/legacy/ProjectCard";
+import SectionTitle from "@/components/legacy/SectionTItle";
 
 export default function Projects() {
   return (

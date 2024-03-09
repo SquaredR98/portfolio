@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Fira_Sans_Extra_Condensed } from "next/font/google";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/legacy/Navbar";
 import Providers from "./Providers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -47,7 +47,6 @@ export default function RootLayout({
         className={`${firaSansCondensed.className} bg-white dark:bg-slate-900`}
       >
         <Providers>
-          <Navbar />
           {children}
         </Providers>
         <SpeedInsights />

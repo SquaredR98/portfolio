@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import SectionTitle from "../components/SectionTItle";
-import ExperienceCard from "../components/ExperienceCard";
+import SectionTitle from "@/components/legacy/SectionTItle";
+import ExperienceCard from "@/components/legacy/ExperienceCard";
 import { experiences } from "../data";
 import { useInView } from "react-intersection-observer";
 

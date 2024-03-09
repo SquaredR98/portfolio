@@ -13,11 +13,11 @@ import {
   Navbar as NavbarUi,
 } from "@nextui-org/react";
 
-import Logo from "@/components/Logo";
+import Logo from "@/components/legacy/Logo";
 import Link from "next/link";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { ThemeSwitcher } from "@/components/legacy/ThemeSwitcher";
 import { MotionA, MotionNav, MotionNavbarMenuItem } from "./MotionElements";
-import { socialLinks } from "../data";
+import { socialLinks } from "../../data";
 
 const navItems = [
   {

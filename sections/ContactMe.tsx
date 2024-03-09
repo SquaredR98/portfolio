@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import SectionTitle from "../components/SectionTItle";
+import SectionTitle from "@/components/legacy/SectionTItle";
 import { Button, Input, Textarea } from "@nextui-org/react";
 import { IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
