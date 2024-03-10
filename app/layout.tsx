@@ -47,7 +47,6 @@ export default function RootLayout({
         className={`${firaSansCondensed.className} bg-white dark:bg-slate-900`}
       >
         <Providers>
-          <Navbar />
           {children}
         </Providers>
         <SpeedInsights />

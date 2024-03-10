@@ -4,6 +4,11 @@ import React from "react";
 import { BsCodeSlash, BsFileEarmarkText } from "react-icons/bs";
 
 import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
@@ -21,18 +26,13 @@ import { socialLinks } from "../data";
 
 const navItems = [
   {
-    name: "Skills",
-    url: "#skills",
-    icon: <BsCodeSlash className="mr-2" />,
-  },
-  {
-    name: "Experience",
-    url: "#experience",
+    name: "About Me",
+    url: "/about-me",
     icon: <BsFileEarmarkText className="mr-2" />,
   },
   {
-    name: "Projects",
-    url: "#projects",
+    name: "My Portfolio",
+    url: "/portfolio",
     icon: <BsCodeSlash className="mr-2" />,
   },
   {
@@ -52,10 +52,11 @@ const Navbar = () => {
   return (
     <MotionNav
       shouldHideOnScroll
-      classNames={{ wrapper: "px-0 w-11/12 md:w-10/12 lg:8/12 mx-auto" }}
+      classNames={{ wrapper: "px-0 w-11/12 md:w-10/12 mx-auto" }}
       className="dark:bg-slate-950/70 shadow-lg"
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
+      position="sticky"
     >
       <NavbarContent>
         <NavbarBrand>
@@ -73,13 +74,25 @@ const Navbar = () => {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {navItems.map((item, index) => (
           <NavbarItem key={`${item.name}-${index}`}>
-            <Link
-              className="w-full group hover:dark:text-cyan-300 transition-all duration-300"
-              href={item.url}
-            >
-              {item.name}
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-[1px] bg-slate-950 dark:bg-cyan-300"></span>
-            </Link>
+            {item.name !== "Resume" ? (
+              <Link
+                className="w-full group hover:dark:text-cyan-300 transition-all duration-300"
+                href={item.url}
+              >
+                {item.name}
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-[1px] bg-slate-950 dark:bg-cyan-300"></span>
+              </Link>
+            ) : (
+              <Dropdown>
+                <DropdownTrigger>
+                  <span className="group hover:dark:text-cyan-300 transition-all duration-300 hover:cursor-pointer">
+                    Resume
+                    <span className="block max-w-0 group-hover:max-w-full transition-all duration-300 h-[1px] bg-slate-950 dark:bg-cyan-300"></span>
+                  </span>
+                </DropdownTrigger>
+                <DropdownItem>Coming Soon</DropdownItem>
+              </Dropdown>
+            )}
           </NavbarItem>
         ))}
         <NavbarItem>
