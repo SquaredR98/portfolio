@@ -59,7 +59,7 @@ const Banner = () => {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           transition={{ delay: 0.01, ease: "easeInOut", duration: 0.1 }}
-          className="font-bold text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r bg-clip-text text-transparent 
+          className="font-bold text-5xl lg:text-6xl bg-gradient-to-r bg-clip-text text-transparent 
           from-cyan-300 via-cyan-500 to-cyan-950
           animate-text  mb-2 text-center lg:text-left w-full pb-2"
         >
