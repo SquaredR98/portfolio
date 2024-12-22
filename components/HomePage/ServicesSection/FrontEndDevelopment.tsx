@@ -1,0 +1,253 @@
+import { MotionDiv } from '@/components/General/ClientComponents/MotionElements';
+import { AnimatePresence } from 'framer-motion';
+import { Fira_Sans_Extra_Condensed } from 'next/font/google';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+
+const firaSansCondensed = Fira_Sans_Extra_Condensed({
+	weight: ['100', '300', '400', '500', '700'],
+	subsets: ['latin'],
+});
+
+export default function FrontEndDevelopment() {
+	const [showExtras, setShowExtras] = useState(false);
+	const { inView, ref } = useInView({
+		threshold: 0.5,
+		triggerOnce: true,
+	});
+	return (
+		<div ref={ref} className='min-h-[200px] border-b'>
+			{inView && (
+				<MotionDiv
+					initial={{ opacity: 0, y: 40 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8 }}
+					className='py-4'
+				>
+					<div className=''>
+						<h4
+							className={`text-red-400 font-[500] w-fit border-b border-red-600/20 text-3xl uppercase ${firaSansCondensed.className}`}
+						>
+							FRONT END DEVELOPMENT
+						</h4>
+						<div className='flex flex-row-reverse md:flex-row items-center'>
+							<p
+								className={`text-red-950 font-[300] tracking-wide mt-4 md:w-1/2 text-2xl ${firaSansCondensed.className}`}
+							>
+								Transforming ideas into visually
+								stunning and highly interactive
+								web interfaces is at the heart
+								of my front-end development
+								skill. With expertise in
+								cutting-edge technologies like{' '}
+								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+									React
+								</span>
+								,{' '}
+								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+									Next.js
+								</span>
+								, and modern CSS frameworks like{' '}
+								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+									Tailwind
+								</span>
+								,{' '}
+								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+									AntD
+								</span>
+								,{' '}
+								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+									Material UI
+								</span>{' '}
+								, any many more. I deliver
+								seamless, responsive designs
+								that captivate users across
+								devices.
+								{!showExtras && (
+									<button
+										onClick={() =>
+											setShowExtras(
+												true,
+											)
+										}
+										className='text-red-700 font-[500] block'
+									>
+										Read More
+									</button>
+								)}
+							</p>
+							<div className='md:w-1/2'>
+								<Image
+									alt=''
+									className='w-full'
+									src='/animations/devices-animate.svg'
+									height={300}
+									width={300}
+								/>
+							</div>
+						</div>
+						<AnimatePresence>
+							{showExtras && (
+								<MotionDiv
+									initial={{
+										opacity: 0,
+										height: 0,
+									}}
+									animate={{
+										opacity: 1,
+										height: '100%',
+									}}
+								>
+									<div>
+										<ul
+											className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
+										>
+											<li>
+												<strong>
+													Custom
+													UI/UX
+													Design
+													Implementation:
+												</strong>{' '}
+												Elevate
+												your
+												brand
+												with
+												pixel-perfect,
+												user-friendly
+												interfaces
+												tailored
+												to your
+												unique
+												identity
+												or your
+												pre
+												designed
+												Figma.
+											</li>
+											<li>
+												<strong>
+													Responsive
+													&
+													Mobile-First
+													Design:
+												</strong>{' '}
+												Assured
+												flawless
+												user
+												experience
+												on every
+												screen
+												size,
+												from
+												desktops
+												to
+												smartphones.
+											</li>
+											<li>
+												<strong>
+													Dynamic
+													Web
+													Applications:
+												</strong>{' '}
+												Empower
+												your
+												business
+												with
+												fast,
+												interactive,
+												and
+												scalable
+												solutions.
+											</li>
+											<li>
+												<strong>
+													Performance
+													Optimization:
+												</strong>{' '}
+												Lightning-fast
+												load
+												times
+												and
+												optimized
+												code for
+												superior
+												performance.
+											</li>
+											<li>
+												<strong>
+													Cross-Browser
+													Compatibility:
+												</strong>{' '}
+												Consistent
+												look and
+												functionality
+												across
+												all
+												modern
+												browsers.
+											</li>
+											<li>
+												<strong>
+													Accessibility-First
+													Approach:
+												</strong>{' '}
+												Inclusive
+												designs
+												ensuring
+												ADA/WCAG
+												compliance
+												for a
+												broader
+												audience
+												reach.
+											</li>
+										</ul>
+										<p
+											className={`text-red-950 font-[300] tracking-wide mt-4 text-2xl ${firaSansCondensed.className}`}
+										>
+											Whether you
+											need a sleek
+											landing page,
+											a robust web
+											application,
+											or a complete
+											redesign, I
+											bring your
+											vision to life
+											with
+											meticulous
+											attention to
+											detail and a
+											focus on
+											exceptional
+											user
+											experiences.
+											Let’s build
+											something
+											extraordinary
+											together.{' '}
+											{showExtras && (
+												<button
+													onClick={() =>
+														setShowExtras(
+															false,
+														)
+													}
+													className='text-red-700 ml-2 font-[500]'
+												>
+													Hide
+												</button>
+											)}
+										</p>
+									</div>
+								</MotionDiv>
+							)}
+						</AnimatePresence>
+					</div>
+				</MotionDiv>
+			)}
+		</div>
+	);
+}

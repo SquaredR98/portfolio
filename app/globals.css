@@ -2,27 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  body {
-      @apply dark:bg-gray-800 bg-white
-  }
+@layer base {
+	body {
+		@apply dark:bg-gray-800 bg-white;
+	}
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
 }
 
-body {}
+body {
+}
 
 .gallery {
 	--s: 130px; /* control the size */
@@ -41,7 +42,7 @@ body {}
 	transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
 	cursor: pointer;
 	transition: 0.2s linear;
-  padding: 1rem;
+	padding: 1rem;
 }
 
 .gallery > img:hover {
@@ -80,16 +81,16 @@ body {}
 	}
 }
 
-body::-webkit-scrollbar {
-  width: .5rem;
+*::-webkit-scrollbar {
+	width: 0.5rem;
 }
- 
-body::-webkit-scrollbar-track {
+
+*::-webkit-scrollbar-track {
 	background-color: black;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
-body::-webkit-scrollbar-thumb {
-  background-color: #172554;
+
+*::-webkit-scrollbar-thumb {
+	background-color: #172554;
 	border-radius: 9999px;
 }

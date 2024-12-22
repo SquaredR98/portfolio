@@ -1,0 +1,65 @@
+svg#freepik_stories-devices:not(.animated) .animable {
+	opacity: 0;
+}
+svg#freepik_stories-devices.animated #freepik--background-complete--inject-43 {
+	animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) fadeIn;
+	animation-delay: 0s;
+}
+svg#freepik_stories-devices.animated #freepik--Plant--inject-43 {
+	animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideRight;
+	animation-delay: 0s;
+}
+svg#freepik_stories-devices.animated #freepik--Mobile--inject-43 {
+	animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomIn;
+	animation-delay: 0s;
+}
+svg#freepik_stories-devices.animated #freepik--Tablet--inject-43 {
+	animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideRight;
+	animation-delay: 0s;
+}
+svg#freepik_stories-devices.animated #freepik--Computer--inject-43 {
+	animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) zoomIn;
+	animation-delay: 0s;
+}
+svg#freepik_stories-devices.animated #freepik--Character--inject-43 {
+	animation: 1s 1 forwards cubic-bezier(0.36, -0.01, 0.5, 1.38) slideDown;
+	animation-delay: 0s;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes slideRight {
+	0% {
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes zoomIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes slideDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
