@@ -20,7 +20,10 @@ export default function BackEndDevelopment() {
 		triggerOnce: true,
 	});
 	return (
-		<div ref={ref} className='min-h-[200px]'>
+		<div
+			ref={ref}
+			className='min-h-[200px] mb-12 border-b transition-all duration-500 ease-in-out'
+		>
 			{inView && (
 				<MotionDiv
 					initial={{ opacity: 0, y: 40 }}
@@ -30,9 +33,9 @@ export default function BackEndDevelopment() {
 				>
 					<div className=''>
 						<h4
-							className={`text-red-400 font-[500] w-fit border-b border-red-600/20 text-3xl uppercase ${firaSansCondensed.className}`}
+							className={`text-red-950/80 font-[500] w-fit border-b border-red-600/20 text-3xl ${firaSansCondensed.className}`}
 						>
-							BACK END DEVELOPMENT
+							Back-End Development
 						</h4>
 						<div className='flex flex-col md:flex-row items-center'>
 							<div className='md:w-1/2'>
@@ -56,6 +59,7 @@ export default function BackEndDevelopment() {
 								your business with the tools it
 								needs to thrive in a competitive
 								digital landscape.
+								{!showExtras ? '...' : '.'}{' '}
 								{!showExtras && (
 									<button
 										onClick={() =>
@@ -63,7 +67,7 @@ export default function BackEndDevelopment() {
 												true,
 											)
 										}
-										className='text-red-700 font-[500] block'
+										className='text-red-700/80 hover:text-red-700 font-[400]'
 									>
 										Read More
 									</button>
@@ -81,207 +85,204 @@ export default function BackEndDevelopment() {
 										opacity: 1,
 										height: '100%',
 									}}
+									exit={{
+										opacity: 0,
+										height: 0,
+									}}
+									transition={{
+										duration: 0.5,
+										ease: 'linear',
+									}}
 								>
-									<div>
-										<ul
-											className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
-										>
-											<li>
-												<strong>
-													Custom
-													API
-													Development:
-												</strong>{' '}
-												Seamlessly
-												connect
-												your
-												applications
-												with
-												reliable,
-												scalable,
-												and
-												secure
-												APIs
-												tailored
-												to your
-												needs.
-											</li>
-											<li>
-												<strong>
-													Database
-													Design
-													&
-													Optimization:
-												</strong>{' '}
-												Efficient
-												database
-												architecture
-												and
-												query
-												optimization
-												using{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													MongoDB
-												</span>
-												,{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													Postgres
-												</span>
-												,{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													DynamoDB
-												</span>
-												, and{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													Redis
-												</span>
-												to
-												handle
-												high
-												performance
-												and
-												concurrent
-												users.
-											</li>
-											<li>
-												<strong>
-													Cloud
-													Integration:
-												</strong>{' '}
-												Expertise
-												in{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													AWS
-												</span>
-												,
-												including{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													Lambda
-												</span>
-												,{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													S3
-												</span>
-												, and{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													CI/CD
-												</span>{' '}
-												pipelines
-												for
-												smooth
-												and
-												reliable
-												deployment.
-											</li>
-											<li>
-												<strong>
-													Server-Side
-													Logic:
-												</strong>{' '}
-												Comprehensive
-												solutions
-												in{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													Node.js
-												</span>
-												,{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													NestJS
-												</span>
-												, and{' '}
-												<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-													Express
-												</span>{' '}
-												for
-												robust,
-												efficient
-												back-end
-												processing.
-											</li>
-											<li>
-												<strong>
-													Security
-													&
-													Compliance:
-												</strong>{' '}
-												Industry-standard
-												security
-												measures
-												for
-												secure
-												data
-												handling,
-												governance,
-												and
-												compliance.
-											</li>
-											<li>
-												<strong>
-													Third-Party
-													Integrations:
-												</strong>{' '}
-												Flawless
-												integration
-												with
-												payment
-												gateways,
-												analytics
-												tools
-												(Google
-												Analytics,
-												Facebook
-												Pixels,
-												etc.),
-												and
-												other
-												APIs.
-											</li>
-											<li>
-												<strong>
-													DevOps
-													Practices:
-												</strong>{' '}
-												Efficient
-												development
-												workflows
-												with
-												Docker,
-												Jenkins,
-												and
-												Serverless
-												Framework
-												for
-												seamless
+									<ul
+										className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
+									>
+										<li>
+											<strong>
+												Custom
+												API
+												Development:
+											</strong>{' '}
+											Seamlessly
+											connect your
+											applications
+											with reliable,
+											scalable, and
+											secure APIs
+											tailored to
+											your needs.
+										</li>
+										<li>
+											<strong>
+												Database
+												Design &
+												Optimization:
+											</strong>{' '}
+											Efficient
+											database
+											architecture
+											and query
+											optimization
+											using{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												MongoDB
+											</span>
+											,{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												Postgres
+											</span>
+											,{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												DynamoDB
+											</span>
+											, and{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												Redis
+											</span>
+											to handle high
+											performance
+											and concurrent
+											users.
+										</li>
+										<li>
+											<strong>
+												Cloud
+												Integration:
+											</strong>{' '}
+											Expertise in{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												AWS
+											</span>
+											, including{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												Lambda
+											</span>
+											,{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												S3
+											</span>
+											, and{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
 												CI/CD
-												pipelines.
-											</li>
-										</ul>
-										<p
-											className={`text-red-950 font-[300] tracking-wide mt-4 text-2xl ${firaSansCondensed.className}`}
-										>
-											Whether you
-											need a sleek
-											landing page,
-											a robust web
-											application,
-											or a complete
-											redesign, I
-											bring your
-											vision to life
-											with
-											meticulous
-											attention to
-											detail and a
-											focus on
-											exceptional
-											user
-											experiences.
-											Let’s build
-											something
-											extraordinary
-											together.
-										</p>
-									</div>
+											</span>{' '}
+											pipelines for
+											smooth and
+											reliable
+											deployment.
+										</li>
+										<li>
+											<strong>
+												Server-Side
+												Logic:
+											</strong>{' '}
+											Comprehensive
+											solutions in{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												Node.js
+											</span>
+											,{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												NestJS
+											</span>
+											, and{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												Express
+											</span>{' '}
+											for robust,
+											efficient
+											back-end
+											processing.
+										</li>
+										<li>
+											<strong>
+												Security
+												&
+												Compliance:
+											</strong>{' '}
+											Industry-standard
+											security
+											measures for
+											secure data
+											handling,
+											governance,
+											and
+											compliance.
+										</li>
+										<li>
+											<strong>
+												Third-Party
+												Integrations:
+											</strong>{' '}
+											Flawless
+											integration
+											with payment
+											gateways,
+											analytics
+											tools (Google
+											Analytics,
+											Facebook
+											Pixels, etc.),
+											and other
+											APIs.
+										</li>
+										<li>
+											<strong>
+												DevOps
+												Practices:
+											</strong>{' '}
+											Efficient
+											development
+											workflows with
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												Docker
+											</span>
+											,{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												Jenkins
+											</span>
+											, and{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												Serverless
+											</span>{' '}
+											Framework for
+											seamless{' '}
+											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
+												CI/CD
+											</span>{' '}
+											pipelines.
+										</li>
+									</ul>
+									<p
+										className={`text-red-950 font-[300] tracking-wide mt-4 text-2xl ${firaSansCondensed.className}`}
+									>
+										Back-end solutions
+										designed with a
+										focus on
+										performance,
+										scalability, and
+										user satisfaction,
+										ensuring seamless
+										functionality across
+										diverse industries.
+										Collaborate to
+										create a reliable
+										and scalable
+										infrastructure
+										tailored to your
+										needs.
+										{showExtras && (
+											<button
+												onClick={() =>
+													setShowExtras(
+														false,
+													)
+												}
+												className='text-red-700 ml-2 font-[500]'
+											>
+												Hide
+											</button>
+										)}
+									</p>
 								</MotionDiv>
 							)}
 						</AnimatePresence>

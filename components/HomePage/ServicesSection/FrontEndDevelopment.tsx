@@ -17,7 +17,10 @@ export default function FrontEndDevelopment() {
 		triggerOnce: true,
 	});
 	return (
-		<div ref={ref} className='min-h-[200px] border-b'>
+		<div
+			ref={ref}
+			className='min-h-[200px] border-b mb-12 transition-all duration-500 ease-in-out'
+		>
 			{inView && (
 				<MotionDiv
 					initial={{ opacity: 0, y: 40 }}
@@ -27,9 +30,9 @@ export default function FrontEndDevelopment() {
 				>
 					<div className=''>
 						<h4
-							className={`text-red-400 font-[500] w-fit border-b border-red-600/20 text-3xl uppercase ${firaSansCondensed.className}`}
+							className={`text-red-950/80 font-[500] w-fit border-b border-red-600/20 text-3xl ${firaSansCondensed.className}`}
 						>
-							FRONT END DEVELOPMENT
+							Front-End Development
 						</h4>
 						<div className='flex flex-row-reverse md:flex-row items-center'>
 							<p
@@ -63,7 +66,8 @@ export default function FrontEndDevelopment() {
 								, any many more. I deliver
 								seamless, responsive designs
 								that captivate users across
-								devices.
+								devices
+								{!showExtras ? '...' : '.'}{' '}
 								{!showExtras && (
 									<button
 										onClick={() =>
@@ -71,7 +75,7 @@ export default function FrontEndDevelopment() {
 												true,
 											)
 										}
-										className='text-red-700 font-[500] block'
+										className='text-red-700/80 hover:text-red-700 ml-2 font-[400]'
 									>
 										Read More
 									</button>
@@ -92,14 +96,22 @@ export default function FrontEndDevelopment() {
 								<MotionDiv
 									initial={{
 										opacity: 0,
-										height: 0,
+										height: '0%',
 									}}
 									animate={{
 										opacity: 1,
 										height: '100%',
 									}}
+									exit={{
+										opacity: 0,
+										height: 0,
+									}}
+									transition={{
+										duration: 0.5,
+										ease: 'easeInOut',
+									}}
 								>
-									<div>
+									<div className='min-h-40'>
 										<ul
 											className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
 										>
@@ -235,7 +247,7 @@ export default function FrontEndDevelopment() {
 															false,
 														)
 													}
-													className='text-red-700 ml-2 font-[500]'
+													className='text-red-700/90 hover:text-red-700 ml-2 font-[400]'
 												>
 													Hide
 												</button>

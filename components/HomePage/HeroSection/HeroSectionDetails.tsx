@@ -8,7 +8,7 @@ import { Fira_Sans_Extra_Condensed } from 'next/font/google';
 import React from 'react';
 
 const firaSansCondensed = Fira_Sans_Extra_Condensed({
-	weight: ['100', '300', '500', '700'],
+	weight: ['100', '300', '400', '500', '700'],
 	subsets: ['latin'],
 });
 
@@ -19,9 +19,9 @@ export default function HeroSectionDetails() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1, ease: 'easeInOut' }}
-				className={`text-xl font-bold md:text-xl text-red-500/60 ${firaSansCondensed.className}`}
+				className={`text-xl font-normal md:text-3xl text-red-700/70 ${firaSansCondensed.className}`}
 			>
-				HI! I AM RAVI & I AM A
+				Hello, My name is
 			</MotionP>
 			<MotionP
 				initial={{ opacity: 0 }}
@@ -31,9 +31,9 @@ export default function HeroSectionDetails() {
 					duration: 1,
 					ease: 'easeInOut',
 				}}
-				className={`text-xl md:text-3xl font-[300] text-red-500 drop-shadow ${firaSansCondensed.className}`}
+				className={`text-3xl md:text-7xl font-[500] text-red-900 mt-4 ${firaSansCondensed.className}`}
 			>
-				DESIGNER & DEVELOPER CREATING
+				Ravi Ranjan & I'm
 			</MotionP>
 			<MotionP
 				initial={{ opacity: 0 }}
@@ -43,9 +43,9 @@ export default function HeroSectionDetails() {
 					duration: 2,
 					ease: 'easeInOut',
 				}}
-				className={`text-3xl md:text-7xl font-[700] text-red-800 drop-shadow my-1 ${firaSansCondensed.className}`}
+				className={`text-3xl md:text-7xl font-[500] text-red-900 my-1 ${firaSansCondensed.className}`}
 			>
-				DIGITAL EXPERIENCES
+				A Full Stack Developer
 			</MotionP>
 			<MotionP
 				initial={{ opacity: 0 }}
@@ -55,9 +55,13 @@ export default function HeroSectionDetails() {
 					duration: 1,
 					ease: 'easeInOut',
 				}}
-				className={`text-2xl md:text-3xl font-[300] text-red-500 drop-shadow ${firaSansCondensed.className}`}
+				className={`text-lg md:text-2xl mt-4 font-[300] text-red-600 ${firaSansCondensed.className}`}
 			>
-				ONE PIXEL AT A TIME
+				Crafting innovative digital solutions with expertise in
+				full-stack development, scalable architectures, and
+				seamless user experiences. Let's transform your ideas
+				into reality with precision, performance, and
+				creativity.
 			</MotionP>
 			<div className='mt-8 flex gap-x-8'>
 				<MotionLink

@@ -11,31 +11,16 @@ import { TfiEmail } from 'react-icons/tfi';
 
 const navItems = [
 	{
-		title: 'DEVFOLIO',
-		url: '/devfolio',
-		icons: [
-			({ ...props }) => <FaNodeJs {...props} />,
-			({ ...props }) => <RiNextjsLine {...props} />,
-			({ ...props }) => <SiAuth0 {...props} />,
-		],
+		title: 'SERVICES',
+		url: '#services',
 	},
 	{
-		title: 'DESIGNS',
-		url: '/designs',
-		icons: [
-			({ ...props }) => <DiPhotoshop {...props} />,
-			({ ...props }) => <DiIllustrator {...props} />,
-			({ ...props }) => <FaFigma {...props} />,
-		],
+		title: 'ABOUT ME',
+		url: '#about-me',
 	},
 	{
 		title: 'CONTACT',
-		url: '/contact',
-		icons: [
-			({ ...props }) => <IoCallOutline {...props} />,
-			({ ...props }) => <TfiEmail {...props} />,
-			({ ...props }) => <SiGoogleforms {...props} />,
-		],
+		url: '#contact',
 	},
 ];
 
@@ -49,7 +34,7 @@ export default function NavItems() {
 		<MotionDiv
 			className={`${firaSansCondensed.className} md:flex gap-x-4 hidden`}
 		>
-			{navItems.map(({ title, url, icons }, idx) => (
+			{navItems.map(({ title, url }, idx) => (
 				<MotionLink
 					initial={{ y: -20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
@@ -57,7 +42,7 @@ export default function NavItems() {
 					href={url}
 					key={idx}
 				>
-					<NavbarButton label={title} icons={icons} />
+					<NavbarButton label={title} />
 				</MotionLink>
 			))}
 		</MotionDiv>

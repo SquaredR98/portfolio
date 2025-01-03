@@ -1,12 +1,10 @@
 import React from 'react';
-import HeroSection from '@/components/HomePage/HeroSection';
-import ServicesSection from '@/components/HomePage/ServicesSection';
+import HomePageChild from '@/components/HomePage/index';
 
 export default function HomePage() {
 	return (
 		<main className=''>
-			<HeroSection />
-			<ServicesSection />
+			<HomePageChild />
 		</main>
 	);
 }
