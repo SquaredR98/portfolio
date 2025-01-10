@@ -71,8 +71,8 @@ export default function HeroSectionDetails() {
 			>
 				Crafting innovative digital solutions with expertise in
 				full-stack development, scalable architectures, and
-				seamless user experiences. Let's transform your ideas
-				into reality with precision, performance, and
+				seamless user experiences. Let&apos;s transform your
+				ideas into reality with precision, performance, and
 				creativity.
 			</MotionP>
 			<div className='mt-8 flex flex-col md:flex-row gap-y-4 gap-x-8 w-full md:w-auto'>

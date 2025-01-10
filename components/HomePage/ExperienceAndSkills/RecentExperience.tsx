@@ -120,7 +120,8 @@ export default function RecentExperience() {
 									critical project for the
 									organization, showcasing
 									leadership and commitment
-									to the company's success.
+									to the company&apos;s
+									success.
 								</li>
 							</ul>
 						</div>
@@ -220,9 +221,9 @@ export default function RecentExperience() {
 									</strong>{' '}
 									Designed and built a
 									custom dashboard to manage
-									the product's content and
-									mobile app features. The
-									dashboard empowered
+									the product&apos;s content
+									and mobile app features.
+									The dashboard empowered
 									customer support to
 									address customer issues
 									efficiently. Implemented

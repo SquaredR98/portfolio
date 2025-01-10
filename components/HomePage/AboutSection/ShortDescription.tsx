@@ -41,18 +41,18 @@ export default function ShortDescription() {
 					}}
 					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  md:text-2xl ${firaSansCondensed.className}`}
 				>
-					Hello! I'm Ravi Ranjan, a passionate Software
+					Hello! I&apos;m Ravi Ranjan, a passionate Software
 					Engineer and Full Stack Developer with over 4
 					years of experience turning ideas into impactful
 					digital solutions. My expertise spans a wide range
 					of technologies, including Node.js, NestJS, React,
 					Next.js, PHP, and Moodle, alongside deployment and
-					maintenance proficiency. I've had the privilege of
-					working on diverse projects, from financial
-					platforms and learning management systems to
-					social networks and automation tools, always
-					focusing on performance, scalability, and user
-					satisfaction.
+					maintenance proficiency. I&apos;ve had the
+					privilege of working on diverse projects, from
+					financial platforms and learning management
+					systems to social networks and automation tools,
+					always focusing on performance, scalability, and
+					user satisfaction.
 				</MotionP>
 				<MotionDiv
 					initial={{ opacity: 0 }}
@@ -86,8 +86,8 @@ export default function ShortDescription() {
 				>
 					Beyond technical skills, I bring a collaborative
 					and solution-oriented approach to every project.
-					I've led teams, streamlined development workflows
-					using tools like Docker and Jenkins, and
+					I&apos;ve led teams, streamlined development
+					workflows using tools like Docker and Jenkins, and
 					contributed to enhancing product efficiency
 					through innovative solutions like invoice
 					automation and custom dashboards. My work reflects
@@ -122,7 +122,7 @@ export default function ShortDescription() {
 					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3 md:text-2xl ${firaSansCondensed.className}`}
 				>
 					Driven by a thirst for learning and a deep
-					interest in emerging technologies, I'm also
+					interest in emerging technologies, I&apos;m also
 					exploring areas like SaaS development, intraday
 					trading strategies, and animation. When I’m not
 					coding, you’ll find me engaging with my creative

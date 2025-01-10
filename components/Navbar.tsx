@@ -99,7 +99,7 @@ const Navbar = () => {
 										<span className='block max-w-0 group-hover:max-w-full transition-all duration-300 h-[1px] bg-slate-950 dark:bg-cyan-300'></span>
 									</span>
 								</DropdownTrigger>
-								<DropdownItem>
+								<DropdownItem key={0}>
 									Coming Soon
 								</DropdownItem>
 							</Dropdown>
