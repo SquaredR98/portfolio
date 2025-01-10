@@ -19,7 +19,7 @@ export default function ExperienceAndSkills() {
 	return (
 		<section className='border-b border-red-600/20 '>
 			<div className='w-11/12 md:w-8/12 max-w-5xl px-4 border-x border-red-600/20 mx-auto py-12'>
-				<div className='h-20' ref={ref}>
+				<div className='md:h-20' ref={ref}>
 					<MotionH3
 						initial={{ opacity: 0, y: 40 }}
 						animate={{
@@ -27,7 +27,7 @@ export default function ExperienceAndSkills() {
 							y: inView ? 0 : 40,
 						}}
 						transition={{ duration: 0.8 }}
-						className={`text-red-800 font-bold text-6xl mb-8 ${firaSansCondensed.className}`}
+						className={`text-red-800 font-bold text-4xl md:text-6xl md:mb-8 ${firaSansCondensed.className}`}
 					>
 						Experience & Skills
 					</MotionH3>

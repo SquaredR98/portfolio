@@ -27,7 +27,10 @@ export default function ShortDescription() {
 	});
 	return (
 		<Fragment>
-			<div className='flex md:gap-x-12' ref={firstParaRef}>
+			<div
+				className='flex flex-col-reverse md:flex-row md:gap-x-12'
+				ref={firstParaRef}
+			>
 				<MotionP
 					initial={{ opacity: 0 }}
 					animate={{ opacity: firstParaInView ? 1 : 0 }}
@@ -36,7 +39,7 @@ export default function ShortDescription() {
 						delay: 0.5,
 						ease: 'easeInOut',
 					}}
-					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  text-2xl ${firaSansCondensed.className}`}
+					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  md:text-2xl ${firaSansCondensed.className}`}
 				>
 					Hello! I'm Ravi Ranjan, a passionate Software
 					Engineer and Full Stack Developer with over 4
@@ -55,7 +58,7 @@ export default function ShortDescription() {
 					initial={{ opacity: 0 }}
 					animate={{ opacity: firstParaInView ? 1 : 0 }}
 					transition={{ duration: 0.5, ease: 'easeInOut' }}
-					className='w-1/3 relative group over'
+					className='md:w-1/3 relative group over'
 				>
 					<div className='border border-red-600/20 w-full h-full absolute left-1 top-1 z-[1] group-hover:left-2 group-hover:top-2 transition-all duration-300 ease-in-out' />
 					<MotionImage
@@ -68,7 +71,7 @@ export default function ShortDescription() {
 				</MotionDiv>
 			</div>
 			<div
-				className='flex md:gap-x-12 md:flex-row-reverse mt-8'
+				className='flex flex-col-reverse md:gap-x-12 md:flex-row-reverse mt-8'
 				ref={secondParaRef}
 			>
 				<MotionP
@@ -79,7 +82,7 @@ export default function ShortDescription() {
 						delay: 0.5,
 						ease: 'easeInOut',
 					}}
-					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  text-2xl ${firaSansCondensed.className}`}
+					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3 md:text-2xl ${firaSansCondensed.className}`}
 				>
 					Beyond technical skills, I bring a collaborative
 					and solution-oriented approach to every project.
@@ -92,7 +95,7 @@ export default function ShortDescription() {
 					client and business expectations, whether building
 					from scratch or optimizing existing systems.
 				</MotionP>
-				<div className='w-1/3'>
+				<div className='md:w-1/3'>
 					{secondParaInView && (
 						<MotionImage
 							src='/animations/programming-animate.svg'
@@ -105,7 +108,7 @@ export default function ShortDescription() {
 				</div>
 			</div>
 			<div
-				className='flex md:gap-x-12 md:flex-row mt-8'
+				className='flex flex-col-reverse md:gap-x-12 md:flex-row mt-8'
 				ref={thirdParaRef}
 			>
 				<MotionP
@@ -116,7 +119,7 @@ export default function ShortDescription() {
 						delay: 0.5,
 						ease: 'easeInOut',
 					}}
-					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  text-2xl ${firaSansCondensed.className}`}
+					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3 md:text-2xl ${firaSansCondensed.className}`}
 				>
 					Driven by a thirst for learning and a deep
 					interest in emerging technologies, I'm also
@@ -128,7 +131,7 @@ export default function ShortDescription() {
 					endeavors. Let’s collaborate to bring your vision
 					to life! 🚀
 				</MotionP>
-				<div className='w-1/3'>
+				<div className='md:w-1/3'>
 					{thirdParaInView && (
 						<MotionImage
 							src='/animations/select-player-animate.svg'

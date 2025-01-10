@@ -30,11 +30,11 @@ export default function WebsiteMaintenanceAndConsultation() {
 				>
 					<div className=''>
 						<h4
-							className={`text-red-950 font-[500] w-fit border-b border-red-600/20 text-3xl ${firaSansCondensed.className}`}
+							className={`text-red-950 font-[500] w-fit border-b border-red-600/20 text-2xl md:text-3xl ${firaSansCondensed.className}`}
 						>
 							Website Maintenance and Consultation
 						</h4>
-						<div className='flex flex-col-reverse md:flex-row-reverse items-center'>
+						<div className='flex flex-col md:flex-row-reverse items-center'>
 							<div className='md:w-1/3'>
 								<Image
 									alt=''
@@ -45,7 +45,7 @@ export default function WebsiteMaintenanceAndConsultation() {
 								/>
 							</div>
 							<p
-								className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3 text-2xl ${firaSansCondensed.className}`}
+								className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3 md:text-2xl ${firaSansCondensed.className}`}
 							>
 								Ensure your website stays
 								secure, up-to-date, and
@@ -98,7 +98,7 @@ export default function WebsiteMaintenanceAndConsultation() {
 									}}
 								>
 									<ul
-										className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
+										className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 md:text-2xl text-red-950 font-[300]`}
 									>
 										<li>
 											<strong>
@@ -212,7 +212,7 @@ export default function WebsiteMaintenanceAndConsultation() {
 										</li>
 									</ul>
 									<p
-										className={`text-red-950 font-[300] tracking-wide mt-4 text-2xl ${firaSansCondensed.className}`}
+										className={`text-red-950 font-[300] tracking-wide mt-4 md:text-2xl ${firaSansCondensed.className}`}
 									>
 										From routine
 										maintenance to

@@ -19,7 +19,7 @@ export default function Icon() {
 			<div
 				className={`w-fit border px-1 pt-1 border-red-900 dark:border-cyan-500/30 group-hover:border-red-900 dark:group-hover:border-cyan-500/50 transition-all ease-in-out duration-500 ${firaSansCondensed.className}`}
 			>
-				<p className='md:text-2xl font-[600] text-center group-hover:tracking-wider text-red-700 group-hover:text-red-800 dark:group-hover:text-cyan-300 transition-all ease-in-out duration-300 leading-none'>
+				<p className='text-xl md:text-2xl font-[600] text-center group-hover:tracking-wider text-red-700 group-hover:text-red-800 dark:group-hover:text-cyan-300 transition-all ease-in-out duration-300 leading-none'>
 					RAVI RANJAN
 				</p>
 				<hr className='border-red-900 group-hover:border-red-900/80 dark:group-hover:border-cyan-500/50 transition-all ease-in-out duration-500 leading-none' />

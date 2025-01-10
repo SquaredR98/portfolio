@@ -41,7 +41,7 @@ export default function RecentExperience() {
 				>
 					<div className=''>
 						<h4
-							className={`text-red-900 font-[500] w-fit border-b border-red-600/20 text-3xl ${firaSansCondensed.className}`}
+							className={`text-red-900 font-[500] w-fit border-b border-red-600/20 text-2xl md:text-3xl ${firaSansCondensed.className}`}
 						>
 							Recent Experience & Achievement
 						</h4>
@@ -49,20 +49,20 @@ export default function RecentExperience() {
 							className={`mt-6 ${firaSansCondensed.className}`}
 						>
 							<h3
-								className={`text-red-950/90 text-3xl font-[500] mb-4`}
+								className={`text-red-950/90 text-2xl md:text-3xl font-[500] mb-4`}
 							>
 								Senior Software Developer,
 								Antino Labs
 							</h3>
-							<p className='text-xl leading-none'>
+							<p className='md:text-xl leading-none'>
 								Senior Software Developer -
 								September 2024 - Present
 							</p>
-							<p className='text-xl leading-none'>
+							<p className='md:text-xl leading-none'>
 								Software Developer - May 2023 -
 								September 2024
 							</p>
-							<p className='text-xl leading-none'>
+							<p className='md:text-xl leading-none'>
 								Backend Software Developer -
 								April 2022 - April 2023
 							</p>
@@ -71,12 +71,12 @@ export default function RecentExperience() {
 							className={`mt-6 ${firaSansCondensed.className}`}
 						>
 							<h3
-								className={`text-red-950/60 text-3xl font-[500] mb-4`}
+								className={`text-red-950/60 text-2xl md:text-3xl font-[500] mb-4`}
 							>
 								Achievements
 							</h3>
 							<ul
-								className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
+								className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 md:text-2xl text-red-950 font-[300]`}
 							>
 								<li>
 									<strong>
@@ -128,12 +128,12 @@ export default function RecentExperience() {
 							className={`mt-6 ${firaSansCondensed.className}`}
 						>
 							<h3
-								className={`text-red-950/60 text-3xl font-[500] mb-4`}
+								className={`text-red-950/60 text-2xl md:text-3xl font-[500] mb-4`}
 							>
 								NeoFinity - A Modern Payment Tag
 							</h3>
 							<ul
-								className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
+								className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 md:text-2xl text-red-950 font-[300]`}
 							>
 								<li>
 									<strong>

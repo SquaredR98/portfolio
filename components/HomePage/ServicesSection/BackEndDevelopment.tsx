@@ -50,7 +50,7 @@ export default function BackEndDevelopment() {
 				>
 					<div className=''>
 						<h4
-							className={`text-red-950/80 font-[500] w-fit border-b border-red-600/20 text-3xl ${firaSansCondensed.className}`}
+							className={`text-red-950/80 font-[500] w-fit border-b border-red-600/20 text-2xl md:text-3xl ${firaSansCondensed.className}`}
 						>
 							Back-End Development
 						</h4>
@@ -65,7 +65,7 @@ export default function BackEndDevelopment() {
 								/>
 							</div>
 							<p
-								className={`text-red-950 font-[300] tracking-wide mt-4 md:w-1/2 text-2xl ${firaSansCondensed.className}`}
+								className={`text-red-950 font-[300] tracking-wide mt-4 md:w-1/2 md:text-2xl ${firaSansCondensed.className}`}
 							>
 								Behind every successful web
 								application lies a robust and
@@ -112,7 +112,7 @@ export default function BackEndDevelopment() {
 									}}
 								>
 									<ul
-										className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
+										className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 md:text-2xl text-red-950 font-[300]`}
 									>
 										<li>
 											<strong>
@@ -315,7 +315,7 @@ export default function BackEndDevelopment() {
 										</li>
 									</ul>
 									<p
-										className={`text-red-950 font-[300] tracking-wide mt-4 text-2xl ${firaSansCondensed.className}`}
+										className={`text-red-950 font-[300] tracking-wide mt-4 md:text-2xl ${firaSansCondensed.className}`}
 									>
 										Back-end solutions
 										designed with a
