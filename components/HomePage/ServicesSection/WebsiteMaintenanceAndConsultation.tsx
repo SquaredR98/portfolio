@@ -30,7 +30,7 @@ export default function WebsiteMaintenanceAndConsultation() {
 				>
 					<div className=''>
 						<h4
-							className={`text-red-400 font-[500] w-fit border-b border-red-600/20 text-3xl uppercase ${firaSansCondensed.className}`}
+							className={`text-red-950 font-[500] w-fit border-b border-red-600/20 text-3xl ${firaSansCondensed.className}`}
 						>
 							Website Maintenance and Consultation
 						</h4>

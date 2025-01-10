@@ -60,7 +60,7 @@ export default function Navbar() {
 		>
 			<MotionDiv
 				id='navbar'
-				className={`w-11/12 max-w-5xl mx-auto backdrop-blur-lg flex justify-between items-center p-4 border-x border-red-600/20 transition-transform duration-500 ease-in-out transform ${
+				className={`w-11/12 lg:w-8/12 max-w-5xl mx-auto backdrop-blur-lg flex justify-between items-center p-4 border-x border-red-600/20 transition-transform duration-500 ease-in-out transform ${
 					showNavbar ? 'translate-y-0' : '-translate-y-full'
 				} ${hasScrolled ? 'shadow-lg shadow-red-700/20' : ''}`}
 			>

@@ -2,10 +2,27 @@ import {
 	MotionDiv,
 	MotionImage,
 } from '@/components/General/ClientComponents/MotionElements';
+import Tags from '@/components/General/SmallComponents/Tags';
 import { AnimatePresence } from 'framer-motion';
 import { Fira_Sans_Extra_Condensed } from 'next/font/google';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { FaAws } from 'react-icons/fa';
+import {
+	SiAmazondynamodb,
+	SiAmazons3,
+	SiAwslambda,
+	SiDocker,
+	SiExpress,
+	SiGithubactions,
+	SiJenkins,
+	SiMongodb,
+	SiNestjs,
+	SiNodedotjs,
+	SiPostgresql,
+	SiRedis,
+	SiServerless,
+} from 'react-icons/si';
 import { useInView } from 'react-intersection-observer';
 
 const firaSansCondensed = Fira_Sans_Extra_Condensed({
@@ -124,21 +141,33 @@ export default function BackEndDevelopment() {
 											and query
 											optimization
 											using{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												MongoDB
-											</span>
+											<Tags
+												Icon={
+													<SiMongodb className='inline ml-1 mb-1 text-xl' />
+												}
+												text='MongoDB'
+											/>
 											,{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												Postgres
-											</span>
+											<Tags
+												Icon={
+													<SiPostgresql className='inline ml-1 text-xl' />
+												}
+												text='PostgreSQL'
+											/>
 											,{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												DynamoDB
-											</span>
+											<Tags
+												Icon={
+													<SiAmazondynamodb className='inline ml-1 mb-1 text-xl' />
+												}
+												text='DynamoDB'
+											/>
 											, and{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												Redis
-											</span>
+											<Tags
+												Icon={
+													<SiRedis className='inline ml-1 mb-1 text-xl' />
+												}
+												text='Redis'
+											/>{' '}
 											to handle high
 											performance
 											and concurrent
@@ -150,21 +179,33 @@ export default function BackEndDevelopment() {
 												Integration:
 											</strong>{' '}
 											Expertise in{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												AWS
-											</span>
+											<Tags
+												Icon={
+													<FaAws className='inline ml-1' />
+												}
+												text='AWS'
+											/>
 											, including{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												Lambda
-											</span>
+											<Tags
+												Icon={
+													<SiAwslambda className='inline ml-1 mb-1 text-lg' />
+												}
+												text='Lambda'
+											/>
 											,{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												S3
-											</span>
+											<Tags
+												Icon={
+													<SiAmazons3 className='inline ml-1 mb-1 text-lg' />
+												}
+												text='S3'
+											/>
 											, and{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												CI/CD
-											</span>{' '}
+											<Tags
+												Icon={
+													<SiGithubactions className='inline ml-2 mb-1 text-lg' />
+												}
+												text='CI/CD'
+											/>{' '}
 											pipelines for
 											smooth and
 											reliable
@@ -177,17 +218,26 @@ export default function BackEndDevelopment() {
 											</strong>{' '}
 											Comprehensive
 											solutions in{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												Node.js
-											</span>
+											<Tags
+												Icon={
+													<SiNodedotjs className='inline ml-1 mb-1 text-lg' />
+												}
+												text='Node.js'
+											/>
 											,{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												NestJS
-											</span>
+											<Tags
+												Icon={
+													<SiNestjs className='inline ml-1 mb-1 text-lg' />
+												}
+												text='Nest.js'
+											/>
 											, and{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												Express
-											</span>{' '}
+											<Tags
+												Icon={
+													<SiExpress className='inline ml-1 mb-1' />
+												}
+												text='Express'
+											/>{' '}
 											for robust,
 											efficient
 											back-end
@@ -232,23 +282,35 @@ export default function BackEndDevelopment() {
 											</strong>{' '}
 											Efficient
 											development
-											workflows with
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												Docker
-											</span>
+											workflows with{' '}
+											<Tags
+												Icon={
+													<SiDocker className='inline ml-1 mb-1 text-lg' />
+												}
+												text='Docker'
+											/>
 											,{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												Jenkins
-											</span>
+											<Tags
+												Icon={
+													<SiJenkins className='inline ml-1 mb-1 text-lg' />
+												}
+												text='Jenkins'
+											/>
 											, and{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												Serverless
-											</span>{' '}
+											<Tags
+												Icon={
+													<SiServerless className='inline ml-1 mb-1 text-lg' />
+												}
+												text='Serverless'
+											/>{' '}
 											Framework for
 											seamless{' '}
-											<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-												CI/CD
-											</span>{' '}
+											<Tags
+												Icon={
+													<SiGithubactions className='inline ml-1 mb-1 text-lg' />
+												}
+												text='CI/CD'
+											/>{' '}
 											pipelines.
 										</li>
 									</ul>

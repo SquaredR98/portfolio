@@ -18,10 +18,10 @@ const navItems = [
 		title: 'ABOUT ME',
 		url: '#about-me',
 	},
-	{
-		title: 'CONTACT',
-		url: '#contact',
-	},
+	// {
+	// 	title: 'CONTACT',
+	// 	url: '#contact',
+	// },
 ];
 
 const firaSansCondensed = Fira_Sans_Extra_Condensed({

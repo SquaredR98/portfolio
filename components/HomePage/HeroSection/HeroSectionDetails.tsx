@@ -33,7 +33,7 @@ export default function HeroSectionDetails() {
 				}}
 				className={`text-3xl md:text-7xl font-[500] text-red-900 mt-4 ${firaSansCondensed.className}`}
 			>
-				Ravi Ranjan & I'm
+				Ravi Ranjan,
 			</MotionP>
 			<MotionP
 				initial={{ opacity: 0 }}
@@ -46,6 +46,18 @@ export default function HeroSectionDetails() {
 				className={`text-3xl md:text-7xl font-[500] text-red-900 my-1 ${firaSansCondensed.className}`}
 			>
 				A Full Stack Developer
+			</MotionP>
+			<MotionP
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{
+					delay: 0.9,
+					duration: 2,
+					ease: 'easeInOut',
+				}}
+				className={`text-3xl md:text-7xl font-[500] text-red-900 my-1 ${firaSansCondensed.className}`}
+			>
+				Creating Digital Experiences
 			</MotionP>
 			<MotionP
 				initial={{ opacity: 0 }}

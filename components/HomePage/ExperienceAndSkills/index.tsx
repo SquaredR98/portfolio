@@ -4,6 +4,7 @@ import { MotionH3 } from '@/components/General/ClientComponents/MotionElements';
 import { Fira_Sans_Extra_Condensed } from 'next/font/google';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import RecentExperience from './RecentExperience';
 
 const firaSansCondensed = Fira_Sans_Extra_Condensed({
 	weight: ['700'],
@@ -26,11 +27,12 @@ export default function ExperienceAndSkills() {
 							y: inView ? 0 : 40,
 						}}
 						transition={{ duration: 0.8 }}
-						className={`text-red-800 font-bold text-6xl uppercase mb-8 ${firaSansCondensed.className}`}
+						className={`text-red-800 font-bold text-6xl mb-8 ${firaSansCondensed.className}`}
 					>
 						Experience & Skills
 					</MotionH3>
 				</div>
+				<RecentExperience />
 			</div>
 		</section>
 	);

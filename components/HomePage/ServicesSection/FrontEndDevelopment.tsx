@@ -1,8 +1,16 @@
 import { MotionDiv } from '@/components/General/ClientComponents/MotionElements';
+import Tags from '@/components/General/SmallComponents/Tags';
 import { AnimatePresence } from 'framer-motion';
 import { Fira_Sans_Extra_Condensed } from 'next/font/google';
 import Image from 'next/image';
 import React, { useState } from 'react';
+import {
+	SiAntdesign,
+	SiMaterialdesign,
+	SiNextdotjs,
+	SiReact,
+	SiTailwindcss,
+} from 'react-icons/si';
 import { useInView } from 'react-intersection-observer';
 
 const firaSansCondensed = Fira_Sans_Extra_Condensed({
@@ -44,25 +52,40 @@ export default function FrontEndDevelopment() {
 								of my front-end development
 								skill. With expertise in
 								cutting-edge technologies like{' '}
-								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-									React
-								</span>
+								<Tags
+									text='React'
+									Icon={
+										<SiReact className='inline ml-1 mb-1' />
+									}
+								/>
 								,{' '}
-								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-									Next.js
-								</span>
+								<Tags
+									text='Next.js'
+									Icon={
+										<SiNextdotjs className='inline ml-1 mb-1' />
+									}
+								/>
 								, and modern CSS frameworks like{' '}
-								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-									Tailwind
-								</span>
+								<Tags
+									Icon={
+										<SiTailwindcss className='inline ml-1 mb-1' />
+									}
+									text='Tailwind CSS'
+								/>
 								,{' '}
-								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-									AntD
-								</span>
+								<Tags
+									Icon={
+										<SiAntdesign className='inline ml-1 mb-1' />
+									}
+									text='Ant Design'
+								/>
 								,{' '}
-								<span className='border px-3 font-[400] rounded-full border-red-700/60 bg-red-200/40'>
-									Material UI
-								</span>{' '}
+								<Tags
+									Icon={
+										<SiMaterialdesign className='inline ml-1 mb-1' />
+									}
+									text='Material UI'
+								/>
 								, any many more. I deliver
 								seamless, responsive designs
 								that captivate users across
