@@ -14,10 +14,10 @@ const firaSansCondensed = Fira_Sans_Extra_Condensed({
 export default function Footer() {
 	return (
 		<footer className={`${firaSansCondensed.className} bg-gray-50`}>
-			<div className='w-11/12 lg:w-8/12 max-w-5xl mx-auto backdrop-blur-lg flex flex-col items-center p-4 border-x border-red-600/20 py-16'>
+			<div className='w-11/12 lg:w-8/12 max-w-5xl mx-auto backdrop-blur-lg flex flex-col items-center p-4 border-x border-red-600/20 py-8 md:py-16'>
 				<div className='flex justify-between items-center w-full'>
 					<div className=''>
-						<p className='text-2xl text-red-900 font-bold'>
+						<p className='text-sm md:text-2xl text-red-900 font-bold'>
 							Creating Digital Experiences
 						</p>
 					</div>{' '}
@@ -26,25 +26,25 @@ export default function Footer() {
 							target='_blank'
 							href='mailto:mail@ravi-ranjan.in'
 						>
-							<MdAlternateEmail className='border text-3xl p-1 border-red-600/20 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 transition-all duration-500 ease-in-out' />
+							<MdAlternateEmail className='border text-xl md:text-3xl p-1 border-red-600/20 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 transition-all duration-500 ease-in-out' />
 						</Link>
 						<Link
 							target='_blank'
 							href='https://www.linkedin.com/in/raviranjan98/'
 						>
-							<FaLinkedinIn className='border text-3xl p-1 border-red-600/20 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 transition-all duration-500 ease-in-out' />
+							<FaLinkedinIn className='border text-xl md:text-3xl p-1 border-red-600/20 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 transition-all duration-500 ease-in-out' />
 						</Link>
 						<Link
 							target='_blank'
 							href='https://www.github.com/SquaredR98'
 						>
-							<FaGithub className='border text-3xl p-1 border-red-600/20 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 transition-all duration-500 ease-in-out' />
+							<FaGithub className='border text-xl md:text-3xl p-1 border-red-600/20 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 transition-all duration-500 ease-in-out' />
 						</Link>
 						<Link
 							target='_blank'
 							href='https://www.upwork.com/freelancers/~01f0f2709cd10b3bf9?mp_source=share'
 						>
-							<FaUpwork className='border text-3xl p-1 border-red-600/20 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 transition-all duration-500 ease-in-out' />
+							<FaUpwork className='border text-xl md:text-3xl p-1 border-red-600/20 text-red-700 hover:bg-red-700 hover:text-white hover:border-red-700 transition-all duration-500 ease-in-out' />
 						</Link>
 					</div>
 				</div>

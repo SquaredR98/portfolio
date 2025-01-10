@@ -27,7 +27,10 @@ export default function ShortDescription() {
 	});
 	return (
 		<Fragment>
-			<div className='flex md:gap-x-12' ref={firstParaRef}>
+			<div
+				className='flex flex-col-reverse md:flex-row md:gap-x-12'
+				ref={firstParaRef}
+			>
 				<MotionP
 					initial={{ opacity: 0 }}
 					animate={{ opacity: firstParaInView ? 1 : 0 }}
@@ -36,26 +39,26 @@ export default function ShortDescription() {
 						delay: 0.5,
 						ease: 'easeInOut',
 					}}
-					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  text-2xl ${firaSansCondensed.className}`}
+					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  md:text-2xl ${firaSansCondensed.className}`}
 				>
-					Hello! I'm Ravi Ranjan, a passionate Software
+					Hello! I&apos;m Ravi Ranjan, a passionate Software
 					Engineer and Full Stack Developer with over 4
 					years of experience turning ideas into impactful
 					digital solutions. My expertise spans a wide range
 					of technologies, including Node.js, NestJS, React,
 					Next.js, PHP, and Moodle, alongside deployment and
-					maintenance proficiency. I've had the privilege of
-					working on diverse projects, from financial
-					platforms and learning management systems to
-					social networks and automation tools, always
-					focusing on performance, scalability, and user
-					satisfaction.
+					maintenance proficiency. I&apos;ve had the
+					privilege of working on diverse projects, from
+					financial platforms and learning management
+					systems to social networks and automation tools,
+					always focusing on performance, scalability, and
+					user satisfaction.
 				</MotionP>
 				<MotionDiv
 					initial={{ opacity: 0 }}
 					animate={{ opacity: firstParaInView ? 1 : 0 }}
 					transition={{ duration: 0.5, ease: 'easeInOut' }}
-					className='w-1/3 relative group over'
+					className='md:w-1/3 relative group over'
 				>
 					<div className='border border-red-600/20 w-full h-full absolute left-1 top-1 z-[1] group-hover:left-2 group-hover:top-2 transition-all duration-300 ease-in-out' />
 					<MotionImage
@@ -68,7 +71,7 @@ export default function ShortDescription() {
 				</MotionDiv>
 			</div>
 			<div
-				className='flex md:gap-x-12 md:flex-row-reverse mt-8'
+				className='flex flex-col-reverse md:gap-x-12 md:flex-row-reverse mt-8'
 				ref={secondParaRef}
 			>
 				<MotionP
@@ -79,12 +82,12 @@ export default function ShortDescription() {
 						delay: 0.5,
 						ease: 'easeInOut',
 					}}
-					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  text-2xl ${firaSansCondensed.className}`}
+					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3 md:text-2xl ${firaSansCondensed.className}`}
 				>
 					Beyond technical skills, I bring a collaborative
 					and solution-oriented approach to every project.
-					I've led teams, streamlined development workflows
-					using tools like Docker and Jenkins, and
+					I&apos;ve led teams, streamlined development
+					workflows using tools like Docker and Jenkins, and
 					contributed to enhancing product efficiency
 					through innovative solutions like invoice
 					automation and custom dashboards. My work reflects
@@ -92,7 +95,7 @@ export default function ShortDescription() {
 					client and business expectations, whether building
 					from scratch or optimizing existing systems.
 				</MotionP>
-				<div className='w-1/3'>
+				<div className='md:w-1/3'>
 					{secondParaInView && (
 						<MotionImage
 							src='/animations/programming-animate.svg'
@@ -105,7 +108,7 @@ export default function ShortDescription() {
 				</div>
 			</div>
 			<div
-				className='flex md:gap-x-12 md:flex-row mt-8'
+				className='flex flex-col-reverse md:gap-x-12 md:flex-row mt-8'
 				ref={thirdParaRef}
 			>
 				<MotionP
@@ -116,10 +119,10 @@ export default function ShortDescription() {
 						delay: 0.5,
 						ease: 'easeInOut',
 					}}
-					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3  text-2xl ${firaSansCondensed.className}`}
+					className={`text-red-950 font-[300] tracking-wide mt-4 md:w-2/3 md:text-2xl ${firaSansCondensed.className}`}
 				>
 					Driven by a thirst for learning and a deep
-					interest in emerging technologies, I'm also
+					interest in emerging technologies, I&apos;m also
 					exploring areas like SaaS development, intraday
 					trading strategies, and animation. When I’m not
 					coding, you’ll find me engaging with my creative
@@ -128,7 +131,7 @@ export default function ShortDescription() {
 					endeavors. Let’s collaborate to bring your vision
 					to life! 🚀
 				</MotionP>
-				<div className='w-1/3'>
+				<div className='md:w-1/3'>
 					{thirdParaInView && (
 						<MotionImage
 							src='/animations/select-player-animate.svg'

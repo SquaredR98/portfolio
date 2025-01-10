@@ -26,7 +26,7 @@ export default function ServicesSection() {
 						initial={{ opacity: 0, y: 40 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
-						className={`text-red-800 font-[500] text-6xl mb-8 ${firaSansCondensed.className}`}
+						className={`text-red-800 font-[500] text-5xl md:text-6xl mb-8 ${firaSansCondensed.className}`}
 					>
 						I can help you with
 					</MotionH3>

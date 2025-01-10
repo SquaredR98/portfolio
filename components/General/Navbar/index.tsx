@@ -56,7 +56,7 @@ export default function Navbar() {
 
 	return (
 		<MotionDiv
-			className={`fixed z-[9999] top-0 border-b border-red-600/20 left-0 w-full flex transition-all duration-500 ease-in-out h-28`}
+			className={`fixed z-[9999] top-0 border-b border-red-600/20 left-0 w-full flex transition-all duration-500 ease-in-out h-16 md:h-28`}
 		>
 			<MotionDiv
 				id='navbar'

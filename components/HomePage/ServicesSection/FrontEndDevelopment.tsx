@@ -38,13 +38,13 @@ export default function FrontEndDevelopment() {
 				>
 					<div className=''>
 						<h4
-							className={`text-red-950/80 font-[500] w-fit border-b border-red-600/20 text-3xl ${firaSansCondensed.className}`}
+							className={`text-red-950/80 font-[500] w-fit border-b border-red-600/20 text-2xl md:text-3xl ${firaSansCondensed.className}`}
 						>
 							Front-End Development
 						</h4>
-						<div className='flex flex-row-reverse md:flex-row items-center'>
+						<div className='flex flex-col-reverse md:flex-row items-center'>
 							<p
-								className={`text-red-950 font-[300] tracking-wide mt-4 md:w-1/2 text-2xl ${firaSansCondensed.className}`}
+								className={`text-red-950 font-[300] tracking-wide mt-4 md:w-1/2 md:text-2xl ${firaSansCondensed.className}`}
 							>
 								Transforming ideas into visually
 								stunning and highly interactive
@@ -104,7 +104,7 @@ export default function FrontEndDevelopment() {
 									</button>
 								)}
 							</p>
-							<div className='md:w-1/2'>
+							<div className='w-full md:w-1/2'>
 								<Image
 									alt=''
 									className='w-full'
@@ -136,7 +136,7 @@ export default function FrontEndDevelopment() {
 								>
 									<div className='min-h-40'>
 										<ul
-											className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 text-2xl text-red-950 font-[300]`}
+											className={`list-disc ${firaSansCondensed.className} ml-6 mt-4 md:text-2xl text-red-950 font-[300]`}
 										>
 											<li>
 												<strong>
@@ -240,7 +240,7 @@ export default function FrontEndDevelopment() {
 											</li>
 										</ul>
 										<p
-											className={`text-red-950 font-[300] tracking-wide mt-4 text-2xl ${firaSansCondensed.className}`}
+											className={`text-red-950 font-[300] tracking-wide mt-4 md:text-2xl ${firaSansCondensed.className}`}
 										>
 											Whether you
 											need a sleek

@@ -27,7 +27,6 @@ import {
   SiAwslambda,
   SiGithubactions,
   SiCircleci,
-  SiAmazonaws,
   SiCplusplus,
   SiThealgorithms,
   SiNginx,
@@ -119,7 +118,6 @@ export const skillsAndExpertise: ISkillsAndExpertise[] = [
       { Icon: SiAmazonec2, title: "AWS EC2" },
       { Icon: SiCircleci, title: "CI/CD" },
       { Icon: SiNginx, title: "Nginx" },
-      { Icon: SiAmazonaws, title: "AWS S3" },
     ],
   },
 ];
@@ -206,7 +204,7 @@ export const projectDetails: IProjects[] = [
       "The project has been developed using the following technologies"
     ],
     techsUsed: [
-      "ReactJS", "GatsbyJS", "Styled Components", "TailwindCSS", 
+      "ReactJS", "GatsbyJS", "Styled Components", "TailwindCSS",
     ],
     image: "/foodaholix.png"
   },
@@ -221,7 +219,7 @@ export const projectDetails: IProjects[] = [
       "The project has been developed using the following technologies"
     ],
     techsUsed: [
-      "ReactJS", "NextJS", "Tailwind CSS", "Next UI" 
+      "ReactJS", "NextJS", "Tailwind CSS", "Next UI"
     ],
     image: "/portfolio.png",
     github: "https://github.com/SquaredR98/portfolio"
@@ -237,7 +235,7 @@ export const socialLinks: ISocialLinks[] = [
   {
     Icon: FaGithub,
     link: 'https://github.com/SquaredR98'
-  }, 
+  },
   {
     Icon: FaLinkedinIn,
     link: 'https://www.linkedin.com/in/raviranjan98'
