@@ -1,0 +1,6 @@
+.bodyBackground {
+  background-image: url(/background.svg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
