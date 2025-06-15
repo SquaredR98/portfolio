@@ -34,7 +34,7 @@ export const EntryStateProvider: React.FC<EntryStateProviderProps> = ({ children
 		setWebsiteVisible,
 	};
 
-	return (
+  return (
 		<EntryStateContext.Provider value={value}>
 			{children}
 		</EntryStateContext.Provider>

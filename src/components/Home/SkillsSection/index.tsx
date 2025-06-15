@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 // Skill data with logos
 const skillCategories = [
@@ -106,10 +107,12 @@ export default function SkillsSection() {
 												className="flex flex-col items-center group"
 											>
 												<div className="w-16 h-16 bg-slate-800 rounded-xl p-3 border border-slate-700 group-hover:border-fuchsia-500 transition-all duration-300 group-hover:scale-110 mb-2">
-													<img
+													<Image
 														src={skill.logo}
 														alt={skill.name}
 														className="w-full h-full object-contain"
+														width={64}
+														height={64}
 														onError={(e) => {
 															// Fallback to text if image fails to load
 															const target = e.currentTarget as HTMLImageElement;
@@ -118,7 +121,7 @@ export default function SkillsSection() {
 															if (fallback) fallback.style.display = 'flex';
 														}}
 													/>
-													<div className="w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 hidden">
+													<div className="w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 lg:hidden">
 														{skill.name}
 													</div>
 												</div>

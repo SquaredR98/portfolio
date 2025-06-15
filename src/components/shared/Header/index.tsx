@@ -93,7 +93,7 @@ export default function Header() {
 								type="LINK"
 								variant="PRIMARY"
 								href='/resume'
-								className="px-4 py-1 text-sm w-28 text-xl font-normal rounded text-white"
+								className="px-4 py-1 text-sm w-28 lg:text-xl font-normal rounded text-white"
 							>
 								Resume
 							</Button>

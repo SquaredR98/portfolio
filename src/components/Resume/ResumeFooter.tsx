@@ -3,6 +3,7 @@
 import React from 'react';
 import { HiEnvelope, HiLink, HiArrowUp } from 'react-icons/hi2';
 import { MotionH2, MotionH3, MotionP, MotionButton } from '../shared/MotionTags';
+import Link from 'next/link';
 
 const socialLinks = [
 	{
@@ -47,7 +48,7 @@ export default function ResumeFooter() {
 						<MotionH3 className="text-white font-semibold mb-4">Connect With Me</MotionH3>
 						<div className="flex justify-center md:justify-end gap-4">
 							{socialLinks.map((social) => (
-								<a
+								<Link
 									key={social.name}
 									href={social.url}
 									target="_blank"
@@ -55,7 +56,7 @@ export default function ResumeFooter() {
 									className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400 hover:text-fuchsia-400 hover:bg-slate-700 transition-all duration-300"
 								>
 									<social.icon className="w-5 h-5" />
-								</a>
+								</Link>
 							))}
 						</div>
 					</div>

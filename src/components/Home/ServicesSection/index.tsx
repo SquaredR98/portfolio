@@ -6,13 +6,6 @@ import {
 	HiCodeBracket, 
 	HiCog, 
 	HiChartBar, 
-	HiLightBulb,
-	HiServer,
-	HiDeviceTablet,
-	HiGlobeAlt,
-	HiShieldCheck,
-	HiRocketLaunch,
-	HiCpuChip,
 	HiCreditCard,
 	HiCloud,
 	HiUserGroup
@@ -141,11 +134,11 @@ export default function ServicesSection() {
 							Need a Custom Solution?
 						</h3>
 						<p className="text-slate-400 mb-6 max-w-2xl mx-auto">
-							Don't see exactly what you need? I specialize in creating custom solutions 
+							Don&apos;t see exactly what you need? I specialize in creating custom solutions 
 							tailored to your specific business requirements and goals.
 						</p>
 						<button className="px-8 py-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300">
-							Let's Discuss Your Project
+							Let&apos;s Discuss Your Project
 						</button>
 					</div>
 				</motion.div>
