@@ -116,6 +116,7 @@ export default function RootLayout({
 				className={`${firaSans.className} relative antialiased min-h-screen bg-slate-950`}
 			>
 				{children}
+				<div className='fixed bottom-4 right-4 text-xs max-w-64 bg-slate-950 p-2 rounded opacity-20 font-[100]'>Note: The site is still in progress. So, there might be some information missing or incomplete. This note will be removed once the website is complete or the information is updated.</div>
 			</body>
 		</html>
 	);
