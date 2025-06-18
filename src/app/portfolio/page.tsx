@@ -1,390 +1,390 @@
-'use client';
-
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-	HiArrowLeft, 
-	HiArrowTopRightOnSquare, 
-	HiCodeBracket, 
-	HiGlobeAlt, 
-	HiCog, 
-	HiChartBar, 
-	HiDeviceTablet,
-	HiMagnifyingGlass,
-	HiFunnel
-} from 'react-icons/hi2';
+import { Metadata } from 'next';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import {
+	SiNextdotjs,
+	SiReact,
+	SiNestjs,
+	SiNodedotjs,
+	SiMongodb,
+	SiPostgresql,
+	SiTailwindcss,
+	SiTypescript,
+	SiExpress,
+	SiPrisma,
+	SiRedux,
+	SiGatsby,
+	SiPhp,
+	SiMysql,
+} from 'react-icons/si';
+import Header from '@/components/shared/Header';
+import Image from 'next/image';
 import Link from 'next/link';
 
-const allProjects = [
+export const metadata: Metadata = {
+	title: 'Portfolio - Ravi Ranjan',
+	description:
+		'Explore my professional projects and side projects showcasing my expertise in web development, full-stack applications, and technical consulting.',
+};
+
+const projects = [
 	{
-		id: 1,
-		title: 'E-Commerce Platform',
-		description: 'A full-stack e-commerce solution with advanced features including payment integration, inventory management, and analytics dashboard.',
-		image: '/api/placeholder/400/250',
-		category: 'Web Development',
-		technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-		link: '#',
-		github: '#',
-		icon: HiGlobeAlt,
-		year: '2024',
-		status: 'Live'
+		title: 'NeoZAP Marketing Website',
+		description:
+			"Led the development of NeoZAP's marketing website using Next.js, Tailwind CSS, and Framer Motion. Implemented server actions, payment gateway integrations, and CMS integration.",
+		longDescription: `Key achievements:
+• Implemented server actions for API handling and added a waitlist feature for user onboarding
+• Integrated multiple payment gateways (Razorpay, Paytm, Cashfree) into e-commerce flow
+• Architected and developed a full-featured content management dashboard
+• Integrated Google Analytics, GTAG, and Facebook Pixel for marketing insights
+• Integrated WordPress CMS via API for dynamic blog management with SSR and ISR`,
+		image: '/projects/neozap.webp',
+		video: '/projects/neozap.mkv',
+		technologies: [
+			{ name: 'Next.js', icon: SiNextdotjs },
+			{ name: 'React', icon: SiReact },
+			{ name: 'Tailwind CSS', icon: SiTailwindcss },
+			{ name: 'TypeScript', icon: SiTypescript },
+			{ name: 'Redux', icon: SiRedux },
+		],
+		github: 'https://github.com/SquaredR98/neozap',
+		live: 'https://neozap.in',
+		category: 'web',
+		role: 'Lead Developer',
+		company: 'Antino Labs',
+		period: 'May 2023 - Present',
 	},
 	{
-		id: 2,
-		title: 'Business Analytics Dashboard',
-		description: 'Real-time business intelligence platform providing comprehensive analytics, reporting, and data visualization capabilities.',
-		image: '/api/placeholder/400/250',
-		category: 'Data Analytics',
-		technologies: ['Python', 'Django', 'PostgreSQL', 'Chart.js'],
-		link: '#',
-		github: '#',
-		icon: HiChartBar,
-		year: '2023',
-		status: 'Live'
+		title: 'NeoZAP Offers Dashboard',
+		description:
+			'Developed a comprehensive offers management dashboard with REST APIs and dynamic UIs using ReactJS, PrimeReact, and react-hook-form.',
+		longDescription: `Key achievements:
+• Led the end-to-end implementation of the Offers Dashboard
+• Developed optimized REST APIs and dynamic UIs
+• Implemented the Spin the Wheel feature using react-custom-roulette
+• Customized library behavior and eliminated visual glitches
+• Enhanced user experience through intuitive interface design`,
+		image: '/projects/offers-dashboard.webp',
+		technologies: [
+			{ name: 'React', icon: SiReact },
+			{ name: 'Node.js', icon: SiNodedotjs },
+			{ name: 'PostgreSQL', icon: SiPostgresql },
+			{ name: 'TypeScript', icon: SiTypescript },
+		],
+		// github: 'https://github.com/SquaredR98/neozap-offers',
+		// live: 'https://offers.neozap.in',
+		category: 'web',
+		role: 'Senior Developer',
+		company: 'Antino Labs',
+		period: 'September 2024 - Present',
 	},
 	{
-		id: 3,
-		title: 'Mobile Banking App',
-		description: 'Secure mobile banking application with biometric authentication, real-time transactions, and financial planning tools.',
-		image: '/api/placeholder/400/250',
-		category: 'Mobile Development',
-		technologies: ['React Native', 'Node.js', 'Firebase', 'Stripe'],
-		link: '#',
-		github: '#',
-		icon: HiDeviceTablet,
-		year: '2023',
-		status: 'Live'
+		title: 'Foodaholix',
+		description:
+			'A restaurant rating app landing page built using React, Gatsby, and Tailwind CSS.',
+		longDescription: `Key features:
+• Built responsive landing page
+• Implemented static blog generation
+• Created intuitive user interface
+• Optimized for performance
+• Integrated with restaurant APIs`,
+		image: '/projects/foodaholix.png',
+		technologies: [
+			{ name: 'React', icon: SiReact },
+			{ name: 'Gatsby', icon: SiGatsby },
+			{ name: 'Tailwind CSS', icon: SiTailwindcss },
+			{ name: 'JavaScript', icon: SiTypescript },
+		],
+		github: 'https://github.com/SquaredR98/foodaholix',
+		live: 'https://foodaholix.com',
+		category: 'web',
+		role: 'Full Stack Developer',
+		company: 'Side Project',
+		period: '2023',
 	},
 	{
-		id: 4,
-		title: 'AI-Powered Chatbot',
-		description: 'Intelligent customer service chatbot with natural language processing and machine learning capabilities.',
-		image: '/api/placeholder/400/250',
-		category: 'AI/ML',
-		technologies: ['Python', 'TensorFlow', 'FastAPI', 'Redis'],
-		link: '#',
-		github: '#',
-		icon: HiCog,
-		year: '2023',
-		status: 'Development'
+		title: 'Salarywala',
+		description:
+			'Landing page for a HR platform built using Next.js, React, and Tailwind CSS.',
+		longDescription: `Key features:
+• Designed and implemented landing page
+• Created responsive UI components
+• Optimized for performance
+• Integrated with HR APIs
+• Implemented modern design patterns`,
+		image: '/projects/salarywala.png',
+		technologies: [
+			{ name: 'Next.js', icon: SiNextdotjs },
+			{ name: 'React', icon: SiReact },
+			{ name: 'Tailwind CSS', icon: SiTailwindcss },
+			{ name: 'TypeScript', icon: SiTypescript },
+		],
+		github: 'https://github.com/SquaredR98/salarywala',
+		live: 'https://salarywala.com',
+		category: 'web',
+		role: 'Frontend Developer',
+		company: 'Side Project',
+		period: '2023',
 	},
 	{
-		id: 5,
-		title: 'Project Management System',
-		description: 'Comprehensive project management platform with task tracking, team collaboration, and resource management.',
-		image: '/api/placeholder/400/250',
-		category: 'Business Solutions',
-		technologies: ['React', 'Node.js', 'PostgreSQL', 'Socket.io'],
-		link: '#',
-		github: '#',
-		icon: HiCog,
-		year: '2022',
-		status: 'Live'
+		title: 'Moodle LMS',
+		description:
+			'Managed and maintained the LMS by deploying it on Hostinger VPS.',
+		longDescription: `Key achievements:
+• Deployed and maintained LMS on Hostinger VPS
+• Implemented module locking during exams
+• Added new features using PHP and MySQL
+• Improved platform performance
+• Helped acquire new clients`,
+		image: '/projects/moodle.png',
+		technologies: [
+			{ name: 'PHP', icon: SiPhp },
+			{ name: 'MySQL', icon: SiMysql },
+			{ name: 'Linux', icon: SiNodedotjs },
+			{ name: 'Apache', icon: SiNodedotjs },
+		],
+		category: 'web',
+		role: 'Full Stack Developer',
+		company: 'Side Project',
+		period: '2022',
 	},
 	{
-		id: 6,
-		title: 'Digital Marketing Platform',
-		description: 'All-in-one digital marketing platform with campaign management, analytics, and automation tools.',
-		image: '/api/placeholder/400/250',
-		category: 'Marketing Tech',
-		technologies: ['Vue.js', 'Laravel', 'MySQL', 'AWS'],
-		link: '#',
-		github: '#',
-		icon: HiGlobeAlt,
-		year: '2022',
-		status: 'Live'
+		title: 'Casha - Digital Payment Platform',
+		description:
+			'Developed Role-Based Access Control (RBAC) and authentication modules for a Nigerian digital payment platform with a unique community-based (AJO) model.',
+		longDescription: `Key achievements:
+• Developed comprehensive RBAC system for secure access control
+• Implemented authentication modules for the AJO model
+• Built feature testing simulator reducing QA time by 80%
+• Resolved critical production-blocking bugs
+• Ensured platform security and compliance`,
+		image: '/projects/casha.webp',
+		technologies: [
+			{ name: 'NestJS', icon: SiNestjs },
+			{ name: 'PostgreSQL', icon: SiPostgresql },
+			{ name: 'TypeScript', icon: SiTypescript },
+			{ name: 'Prisma', icon: SiPrisma },
+		],
+		category: 'web',
+		role: 'Associate Developer',
+		company: 'Antino Labs',
+		period: 'April 2022 - May 2023',
 	},
 	{
-		id: 7,
-		title: 'Inventory Management System',
-		description: 'Enterprise-level inventory management solution with barcode scanning, real-time tracking, and reporting.',
-		image: '/api/placeholder/400/250',
-		category: 'Business Solutions',
-		technologies: ['React', 'Python', 'Django', 'PostgreSQL'],
-		link: '#',
-		github: '#',
-		icon: HiCog,
-		year: '2022',
-		status: 'Live'
+		title: 'Travel Hangouts',
+		description:
+			'Led backend architecture for a travel planner platform, implementing scalable APIs and DevOps practices for CI/CD and monitoring.',
+		longDescription: `Key achievements:
+• Led backend architecture and team collaboration
+• Implemented scalable API development
+• Set up DevOps practices for CI/CD
+• Implemented monitoring and logging
+• Ensured platform reliability and performance`,
+		image: '/projects/travel-hangouts.webp',
+		technologies: [
+			{ name: 'Node.js', icon: SiNodedotjs },
+			{ name: 'Express', icon: SiExpress },
+			{ name: 'MongoDB', icon: SiMongodb },
+			{ name: 'TypeScript', icon: SiTypescript },
+		],
+		live: 'https://travelhangouts.com',
+		category: 'web',
+		role: 'Backend Lead',
+		company: 'Antino Labs',
+		period: 'April 2022 - May 2023',
 	},
 	{
-		id: 8,
-		title: 'Real Estate CRM',
-		description: 'Customer relationship management system specifically designed for real estate professionals.',
-		image: '/api/placeholder/400/250',
-		category: 'Business Solutions',
-		technologies: ['React', 'Node.js', 'MongoDB', 'AWS'],
-		link: '#',
-		github: '#',
-		icon: HiGlobeAlt,
-		year: '2021',
-		status: 'Live'
+		title: 'Jify - Earned Wage Access',
+		description:
+			'Integrated user onboarding and KYC workflows using Serverless Framework, AWS Lambda, and DynamoDB, ensuring scalability and compliance.',
+		longDescription: `Key achievements:
+• Integrated user onboarding workflows
+• Implemented KYC verification system
+• Set up serverless architecture
+• Ensured compliance with regulations
+• Optimized for scalability`,
+		image: '/projects/jify.webp',
+		technologies: [
+			{ name: 'Serverless', icon: SiNodedotjs },
+			{ name: 'AWS Lambda', icon: SiNodedotjs },
+			{ name: 'DynamoDB', icon: SiMongodb },
+			{ name: 'TypeScript', icon: SiTypescript },
+		],
+		live: 'https://jify.in',
+		category: 'web',
+		role: 'Backend Developer',
+		company: 'Antino Labs',
+		period: 'April 2022 - May 2023',
 	},
 	{
-		id: 9,
-		title: 'Healthcare Management System',
-		description: 'Comprehensive healthcare management platform for clinics and hospitals with patient records and scheduling.',
-		image: '/api/placeholder/400/250',
-		category: 'Healthcare',
-		technologies: ['React', 'Node.js', 'PostgreSQL', 'HIPAA'],
-		link: '#',
-		github: '#',
-		icon: HiCog,
-		year: '2021',
-		status: 'Live'
-	}
+		title: 'Top Faculty',
+		description:
+			'Developed core backend features for a LinkedIn-like social media app for educational institutions, including payment processing and notification systems.',
+		longDescription: `Key achievements:
+• Developed payment processing system
+• Implemented notification systems
+• Built scalable APIs using NestJS
+• Integrated with PostgreSQL and Prisma
+• Ensured platform reliability`,
+		image: '/projects/top-faculty.webp',
+		technologies: [
+			{ name: 'NestJS', icon: SiNestjs },
+			{ name: 'PostgreSQL', icon: SiPostgresql },
+			{ name: 'Prisma', icon: SiPrisma },
+			{ name: 'TypeScript', icon: SiTypescript },
+		],
+		category: 'web',
+		role: 'Backend Developer',
+		company: 'Antino Labs',
+		period: 'April 2022 - May 2023',
+	},
 ];
 
-const categories = ['All', 'Web Development', 'Mobile Development', 'Data Analytics', 'AI/ML', 'Business Solutions', 'Marketing Tech', 'Healthcare'];
-
 export default function PortfolioPage() {
-	const [selectedCategory, setSelectedCategory] = useState('All');
-	const [searchTerm, setSearchTerm] = useState('');
-	const [sortBy, setSortBy] = useState('year');
-
-	const filteredProjects = allProjects
-		.filter(project => {
-			const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
-			const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-								 project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-								 project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
-			return matchesCategory && matchesSearch;
-		})
-		.sort((a, b) => {
-			if (sortBy === 'year') return b.year.localeCompare(a.year);
-			if (sortBy === 'title') return a.title.localeCompare(b.title);
-			return 0;
-		});
-
 	return (
-		<div className="min-h-screen bg-slate-950">
-			{/* Header */}
-			<header className="bg-slate-900 border-b border-slate-800 sticky top-0 z-40">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-					<div className="flex items-center justify-between">
-						<Link
-							href="/"
-							className="flex items-center gap-3 text-white hover:text-fuchsia-400 transition-colors"
-						>
-							<HiArrowLeft className="w-5 h-5" />
-							<span className="text-xl font-bold bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
-								Ravi Ranjan
-							</span>
-						</Link>
-						<h1 className="text-2xl font-bold text-white">Portfolio</h1>
+		<>
+			<Header />
+			<main className='min-h-screen bg-slate-950'>
+				<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20'>
+					<div className='text-center mb-16'>
+						<h1 className='text-5xl font-bold text-white mb-4'>
+							My Portfolio
+						</h1>
+						<p className='text-slate-400 max-w-2xl mx-auto'>
+							Explore my professional journey
+							through these projects. Each one
+							represents a unique challenge and
+							solution in web development and
+							technical consulting.
+						</p>
+					</div>
+
+					<div className='space-y-20'>
+						{projects.map((project, index) => (
+							<div
+								key={project.title}
+								className={`flex flex-col ${
+									index % 2 === 0
+										? 'lg:flex-row'
+										: 'lg:flex-row-reverse'
+								} gap-8 items-start`}
+							>
+								<div className='lg:w-1/2'>
+									<div className='relative h-64 lg:h-96 rounded-lg overflow-hidden'>
+										{project.video ? (
+											<video
+												src={
+													project.video
+												}
+												autoPlay
+												loop
+												muted
+												playsInline
+												className='w-full h-full object-contain'
+											/>
+										) : (
+											<Image
+												src={
+													project.image
+												}
+												width={800}
+												height={600}
+												alt={
+													project.title
+												}
+												className='w-full h-full object-contain'
+											/>
+										)}
+									</div>
+								</div>
+								<div className='lg:w-1/2'>
+									<div className='bg-slate-900 p-8 rounded-lg'>
+										<div className='flex items-center gap-4 mb-4'>
+											<h2 className='text-2xl font-bold text-white'>
+												{
+													project.title
+												}
+											</h2>
+											<span className='px-3 py-1 bg-blue-600 text-white rounded-full text-sm'>
+												{
+													project.role
+												}
+											</span>
+										</div>
+										<div className='text-slate-400 mb-4'>
+											<p className='mb-2'>
+												{
+													project.company
+												}{' '}
+												•{' '}
+												{
+													project.period
+												}
+											</p>
+											<p className='mb-4'>
+												{
+													project.description
+												}
+											</p>
+											<div className='prose prose-invert'>
+												<pre className='whitespace-pre-wrap text-sm'>
+													{
+														project.longDescription
+													}
+												</pre>
+											</div>
+										</div>
+										<div className='flex flex-wrap gap-2 mb-6'>
+											{project.technologies.map(
+												(
+													tech,
+												) => (
+													<span
+														key={
+															tech.name
+														}
+														className='px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm flex items-center gap-1'
+													>
+														<tech.icon className='w-4 h-4' />
+														{
+															tech.name
+														}
+													</span>
+												),
+											)}
+										</div>
+										<div className='flex gap-4'>
+											{project.github && (
+												<Link
+													href={
+														project.github
+													}
+													target='_blank'
+													rel='noopener noreferrer'
+													className='text-slate-400 hover:text-white transition-colors'
+												>
+													<FaGithub className='w-6 h-6' />
+												</Link>
+											)}
+											{project.live && (
+												<Link
+													href={
+														project.live
+													}
+													target='_blank'
+													rel='noopener noreferrer'
+													className='text-slate-400 hover:text-white transition-colors'
+												>
+													<FaExternalLinkAlt className='w-6 h-6' />
+												</Link>
+											)}
+										</div>
+									</div>
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
-			</header>
-
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-				{/* Page Header */}
-				<motion.div
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					className="text-center mb-12"
-				>
-					<h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-						My{' '}
-						<span className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
-							Portfolio
-						</span>
-					</h2>
-					<div className="w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 mx-auto mb-6"></div>
-					<p className="text-slate-400 text-lg max-w-2xl mx-auto">
-						A comprehensive collection of projects showcasing my expertise in various technologies 
-						and business solutions across different industries.
-					</p>
-				</motion.div>
-
-				{/* Filters and Search */}
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.2 }}
-					className="mb-12 space-y-6"
-				>
-					{/* Search Bar */}
-					<div className="relative max-w-md mx-auto">
-						<HiMagnifyingGlass className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-						<input
-							type="text"
-							placeholder="Search projects..."
-							value={searchTerm}
-							onChange={(e) => setSearchTerm(e.target.value)}
-							className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent"
-						/>
-					</div>
-
-					{/* Category Filters */}
-					<div className="flex flex-wrap justify-center gap-3">
-						{categories.map((category) => (
-							<button
-								key={category}
-								onClick={() => setSelectedCategory(category)}
-								className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-									selectedCategory === category
-										? 'bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white'
-										: 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-								}`}
-							>
-								{category}
-							</button>
-						))}
-					</div>
-
-					{/* Sort Options */}
-					<div className="flex items-center justify-center gap-4">
-						<span className="text-slate-400 flex items-center gap-2">
-							<HiFunnel className="w-4 h-4" />
-							Sort by:
-						</span>
-						<select
-							value={sortBy}
-							onChange={(e) => setSortBy(e.target.value)}
-							className="bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-fuchsia-500"
-						>
-							<option value="year">Year (Newest)</option>
-							<option value="title">Title (A-Z)</option>
-						</select>
-					</div>
-				</motion.div>
-
-				{/* Projects Grid */}
-				<AnimatePresence mode="wait">
-					<motion.div
-						key={`${selectedCategory}-${searchTerm}-${sortBy}`}
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						transition={{ duration: 0.3 }}
-						className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-					>
-						{filteredProjects.map((project, index) => (
-							<motion.div
-								key={project.id}
-								initial={{ opacity: 0, y: 50 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.6, delay: index * 0.1 }}
-								className="group relative bg-slate-900 rounded-xl overflow-hidden border border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-2xl hover:shadow-fuchsia-500/10"
-							>
-								{/* Project Image */}
-								<div className="relative h-48 bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden">
-									<div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-									<div className="absolute inset-0 flex items-center justify-center">
-										<project.icon className="w-16 h-16 text-slate-600 group-hover:text-fuchsia-500 transition-colors duration-300" />
-									</div>
-									<div className="absolute top-4 left-4 flex gap-2">
-										<span className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium">
-											{project.category}
-										</span>
-										<span className={`px-3 py-1 rounded-full text-xs font-medium ${
-											project.status === 'Live' 
-												? 'bg-green-800 text-green-300' 
-												: 'bg-yellow-800 text-yellow-300'
-										}`}>
-											{project.status}
-										</span>
-									</div>
-									<div className="absolute top-4 right-4">
-										<span className="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-xs font-medium">
-											{project.year}
-										</span>
-									</div>
-								</div>
-
-								{/* Project Content */}
-								<div className="p-6">
-									<h3 className="text-xl font-bold text-white mb-3 group-hover:text-fuchsia-400 transition-colors duration-300">
-										{project.title}
-									</h3>
-									<p className="text-slate-400 text-sm leading-relaxed mb-4">
-										{project.description}
-									</p>
-
-									{/* Technologies */}
-									<div className="flex flex-wrap gap-2 mb-6">
-										{project.technologies.map((tech) => (
-											<span
-												key={tech}
-												className="px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs"
-											>
-												{tech}
-											</span>
-										))}
-									</div>
-
-									{/* Action Buttons */}
-									<div className="flex gap-3">
-										<a
-											href={project.link}
-											className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-lg text-sm font-medium hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300"
-										>
-											<HiArrowTopRightOnSquare className="w-4 h-4" />
-											Live Demo
-										</a>
-										<a
-											href={project.github}
-											className="flex items-center gap-2 px-4 py-2 border border-slate-600 text-slate-300 rounded-lg text-sm font-medium hover:border-slate-500 hover:text-white transition-colors duration-300"
-										>
-											<HiCodeBracket className="w-4 h-4" />
-											Code
-										</a>
-									</div>
-								</div>
-
-								{/* Hover Effect Overlay */}
-								<div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-							</motion.div>
-						))}
-					</motion.div>
-				</AnimatePresence>
-
-				{/* No Results */}
-				{filteredProjects.length === 0 && (
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						className="text-center py-12"
-					>
-						<p className="text-slate-400 text-lg">No projects found matching your criteria.</p>
-						<button
-							onClick={() => {
-								setSelectedCategory('All');
-								setSearchTerm('');
-							}}
-							className="mt-4 px-6 py-2 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300"
-						>
-							Clear Filters
-						</button>
-					</motion.div>
-				)}
-
-				{/* Stats */}
-				<motion.div
-					initial={{ opacity: 0, y: 30 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.8 }}
-					className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
-				>
-					<div className="text-center p-6 bg-slate-900 rounded-xl border border-slate-800">
-						<div className="text-3xl font-bold text-fuchsia-500 mb-2">{allProjects.length}</div>
-						<div className="text-slate-400">Total Projects</div>
-					</div>
-					<div className="text-center p-6 bg-slate-900 rounded-xl border border-slate-800">
-						<div className="text-3xl font-bold text-cyan-500 mb-2">{categories.length - 1}</div>
-						<div className="text-slate-400">Categories</div>
-					</div>
-					<div className="text-center p-6 bg-slate-900 rounded-xl border border-slate-800">
-						<div className="text-3xl font-bold text-fuchsia-500 mb-2">{allProjects.filter(p => p.status === 'Live').length}</div>
-						<div className="text-slate-400">Live Projects</div>
-					</div>
-					<div className="text-center p-6 bg-slate-900 rounded-xl border border-slate-800">
-						<div className="text-3xl font-bold text-cyan-500 mb-2">5+</div>
-						<div className="text-slate-400">Years Experience</div>
-					</div>
-				</motion.div>
-			</div>
-		</div>
+			</main>
+		</>
 	);
-} 
+}

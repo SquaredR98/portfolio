@@ -58,62 +58,85 @@ const services = [
 
 export default function ServicesSection() {
 	return (
-		<section id="services" className="py-20 bg-slate-950">
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<section id='services' className='py-20 bg-slate-950'>
+			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className="text-center mb-16"
+					className='text-center mb-16'
 				>
-					<h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+					<h2 className='text-4xl md:text-5xl font-bold text-white mb-4'>
 						My{' '}
-						<span className="bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
+						<span className='bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent'>
 							Services
 						</span>
 					</h2>
-					<div className="w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 mx-auto"></div>
-					<p className="text-slate-400 text-lg mt-6 max-w-2xl mx-auto">
-						Comprehensive solutions that combine technical expertise with strategic business thinking 
-						to deliver exceptional results for your organization.
+					<div className='w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 mx-auto'></div>
+					<p className='text-slate-400 text-lg mt-6 max-w-2xl mx-auto'>
+						Comprehensive solutions that combine
+						technical expertise with strategic business
+						thinking to deliver exceptional results for
+						your organization.
 					</p>
 				</motion.div>
 
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
 					{services.map((service, index) => (
 						<motion.div
 							key={service.title}
 							initial={{ opacity: 0, y: 50 }}
 							whileInView={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.6, delay: index * 0.1 }}
+							transition={{
+								duration: 0.6,
+								delay: index * 0.1,
+							}}
 							viewport={{ once: true }}
-							className="group p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-fuchsia-500 transition-all duration-300 hover:bg-slate-800/70 hover:shadow-xl hover:shadow-fuchsia-500/10"
+							className='group p-6 bg-slate-800/50 rounded-xl border border-slate-700 hover:border-fuchsia-500 transition-all duration-300 hover:bg-slate-800/70 hover:shadow-xl hover:shadow-fuchsia-500/10'
 						>
 							{/* Icon */}
-							<div className={`p-4 rounded-xl bg-gradient-to-r ${service.color} mb-6 w-fit group-hover:scale-110 transition-transform duration-300`}>
-								<service.icon className="w-8 h-8 text-white" />
+							<div
+								className={`p-4 rounded-xl bg-gradient-to-r ${service.color} mb-6 w-fit group-hover:scale-110 transition-transform duration-300`}
+							>
+								<service.icon className='w-8 h-8 text-white' />
 							</div>
 
 							{/* Content */}
-							<div className="space-y-4">
-								<h3 className="text-xl font-bold text-white group-hover:text-fuchsia-400 transition-colors">
+							<div className='space-y-4'>
+								<h3 className='text-xl font-bold text-white group-hover:text-fuchsia-400 transition-colors'>
 									{service.title}
 								</h3>
-								<p className="text-slate-300 leading-relaxed">
+								<p className='text-slate-300 leading-relaxed'>
 									{service.description}
 								</p>
 
 								{/* Features */}
 								<div>
-									<h4 className="text-white font-semibold mb-3">Key Features:</h4>
-									<ul className="space-y-2">
-										{service.features.map((feature, idx) => (
-											<li key={idx} className="text-slate-300 flex items-start gap-3">
-												<div className="w-2 h-2 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-												<span className="text-sm">{feature}</span>
-											</li>
-										))}
+									<h4 className='text-white font-semibold mb-3'>
+										Key Features:
+									</h4>
+									<ul className='space-y-2'>
+										{service.features.map(
+											(
+												feature,
+												idx,
+											) => (
+												<li
+													key={
+														idx
+													}
+													className='text-slate-300 flex items-start gap-3'
+												>
+													<div className='w-2 h-2 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-full mt-2 flex-shrink-0'></div>
+													<span className='text-sm'>
+														{
+															feature
+														}
+													</span>
+												</li>
+											),
+										)}
 									</ul>
 								</div>
 							</div>
@@ -127,17 +150,19 @@ export default function ServicesSection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.8 }}
 					viewport={{ once: true }}
-					className="text-center mt-16"
+					className='text-center mt-16'
 				>
-					<div className="bg-slate-900 rounded-xl p-8 border border-slate-700">
-						<h3 className="text-2xl font-bold text-white mb-4">
+					<div className='bg-slate-900 rounded-xl p-8 border border-slate-700'>
+						<h3 className='text-2xl font-bold text-white mb-4'>
 							Need a Custom Solution?
 						</h3>
-						<p className="text-slate-400 mb-6 max-w-2xl mx-auto">
-							Don&apos;t see exactly what you need? I specialize in creating custom solutions 
-							tailored to your specific business requirements and goals.
+						<p className='text-slate-400 mb-6 max-w-2xl mx-auto'>
+							Don&apos;t see exactly what you need?
+							I specialize in creating custom
+							solutions tailored to your specific
+							business requirements and goals.
 						</p>
-						<button className="px-8 py-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300">
+						<button className='px-8 py-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300'>
 							Let&apos;s Discuss Your Project
 						</button>
 					</div>

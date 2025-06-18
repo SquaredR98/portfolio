@@ -344,7 +344,7 @@ export default function SkillsSection() {
 																}
 															</div>
 														</div>
-														<span className='text-slate-400 text-sm font-medium group-hover:text-cyan-400 transition-colors'>
+														<span className='text-slate-400 text-sm font-medium group-hover:text-cyan-400 transition-colors hidden lg:block'>
 															{
 																skill.name
 															}

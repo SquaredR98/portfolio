@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { HiBars3, HiXMark } from 'react-icons/hi2';
 import Button from '../Button';
+import { MotionLink } from '../MotionTags';
 
 const navItems = [
 	{ name: 'Services', href: '#services' },
@@ -54,7 +55,8 @@ export default function Header() {
 			<div className="max-w-7xl mx-auto w-11/12 lg:w-9/12">
 				<div className="flex items-center justify-between h-16">
 					{/* Logo */}
-					<motion.div
+					<MotionLink
+						href="/"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.2 }}
@@ -63,7 +65,7 @@ export default function Header() {
 						<h1 className="text-4xl font-medium tracking-wide bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
 							Ravi Ranjan
 						</h1>
-					</motion.div>
+					</MotionLink>
 
 					{/* Desktop Navigation */}
 					<nav className="hidden md:flex items-center space-x-8">

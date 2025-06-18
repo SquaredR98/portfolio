@@ -57,7 +57,7 @@ export default function ExperienceSection() {
 	const { setContactFormVisible } = useEntryState();
 	return (
 		<section id='experience' className='py-20 bg-slate-900'>
-			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +151,7 @@ export default function ExperienceSection() {
 									'Node.js',
 									'Redux Toolkit',
 									'Sequelize',
-									'PostgreSQL'
+									'PostgreSQL',
 								].map((tech) => (
 									<span
 										key={tech}
