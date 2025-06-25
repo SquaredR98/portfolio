@@ -35,7 +35,7 @@ export default function ContactSection() {
 
 	return (
 		<section id='contact' className='py-20 bg-slate-950'>
-			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto'>
+			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto overflow-hidden'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}

@@ -257,7 +257,7 @@ export default function SkillsSection() {
 																			'flex';
 																}}
 															/>
-															<div className='w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 lg:hidden'>
+															<div className='w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 hidden'>
 																{
 																	skill.name
 																}
@@ -338,13 +338,13 @@ export default function SkillsSection() {
 																			'flex';
 																}}
 															/>
-															<div className='w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 lg:hidden'>
+															<div className='w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 hidden'>
 																{
 																	skill.name
 																}
 															</div>
 														</div>
-														<span className='text-slate-400 text-sm font-medium group-hover:text-cyan-400 transition-colors hidden lg:block'>
+														<span className='text-slate-400 text-sm font-medium group-hover:text-cyan-400 transition-colors'>
 															{
 																skill.name
 															}

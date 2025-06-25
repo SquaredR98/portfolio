@@ -6,14 +6,12 @@ import {
 } from '../../EntryPage/EntryStateContext';
 import EntryPage from '../../EntryPage';
 import ContactForm from '../../EntryPage/ContactForm';
-import Header from '../../shared/Header';
 import AboutSection from '../AboutSection';
 import SkillsSection from '../SkillsSection';
 import ServicesSection from '../ServicesSection';
 import ProjectsSection from '../ProjectsSection';
 import ExperienceSection from '../ExperienceSection';
 import ContactSection from '../ContactSection';
-import Footer from '../../shared/Footer';
 import { AnimatePresence } from 'motion/react';
 
 function MainContent() {
@@ -30,14 +28,12 @@ function MainContent() {
 			<AnimatePresence>
 				{websiteVisible && (
 					<>
-						<Header />
 						<AboutSection />
 						<SkillsSection />
 						<ServicesSection />
 						<ProjectsSection />
 						<ExperienceSection />
 						<ContactSection />
-						<Footer />
 					</>
 				)}
 			</AnimatePresence>

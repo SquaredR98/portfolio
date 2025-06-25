@@ -2,19 +2,110 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { HiBars3, HiXMark } from 'react-icons/hi2';
+import { HiBars3, HiXMark, HiArrowDownTray } from 'react-icons/hi2';
 import Button from '../Button';
 import { MotionLink } from '../MotionTags';
+import { usePathname } from 'next/navigation';
 
-const navItems = [
-	{ name: 'Services', href: '#services' },
-	{ name: 'Projects', href: '#projects' },
-	{ name: 'Contact', href: '#contact' },
-];
+// Define header configurations for different pages
+const headerConfigs = {
+	'/': {
+		logo: {
+			title: 'Ravi Ranjan',
+			subtitle: null,
+			layout: 'horizontal'
+		},
+		navItems: [
+			{ name: 'Services', href: '#services' },
+			{ name: 'Projects', href: '#projects' },
+			{ name: 'Contact', href: '#contact' },
+		],
+		resumeButton: {
+			text: 'Resume',
+			href: '/resume',
+			icon: null,
+			action: 'link'
+		}
+	},
+	'/portfolio': {
+		logo: {
+			title: 'My Portfolio',
+			subtitle: null,
+			layout: 'horizontal'
+		},
+		navItems: [
+			{ name: 'Home', href: '/' },
+			{ name: 'Resume', href: '/resume' },
+		],
+		resumeButton: {
+			text: 'Resume',
+			href: '/resume',
+			icon: null,
+			action: 'link'
+		}
+	},
+	'/resume': {
+		logo: {
+			title: 'My Experiences',
+			subtitle: null,
+			layout: 'horizontal'
+		},
+		navItems: [
+			{ name: 'Home', href: '/' },
+			{ name: 'Portfolio', href: '/portfolio' },
+		],
+		resumeButton: {
+			text: 'Resume',
+			href: null,
+			icon: HiArrowDownTray,
+			action: 'download'
+		}
+	}
+};
 
 export default function Header() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [isVisible, setIsVisible] = useState(false);
+	const [isInitialized, setIsInitialized] = useState(false);
+	const pathname = usePathname();
+	
+	// Get current page configuration
+	const currentConfig = headerConfigs[pathname as keyof typeof headerConfigs] || headerConfigs['/'];
+
+	// Check if website should be visible (for home page)
+	useEffect(() => {
+		const checkWebsiteVisibility = () => {
+			if (typeof window !== 'undefined') {
+				const websiteVisible = localStorage.getItem('websiteVisible') === 'true';
+				setIsVisible(websiteVisible);
+				setIsInitialized(true);
+			}
+		};
+
+		checkWebsiteVisibility();
+
+		// Listen for storage changes
+		const handleStorageChange = (e: StorageEvent) => {
+			if (e.key === 'websiteVisible') {
+				setIsVisible(e.newValue === 'true');
+			}
+		};
+
+		// Also listen for custom events from the same window
+		const handleCustomStorageChange = () => {
+			const websiteVisible = localStorage.getItem('websiteVisible') === 'true';
+			setIsVisible(websiteVisible);
+		};
+
+		window.addEventListener('storage', handleStorageChange);
+		window.addEventListener('localStorageChange', handleCustomStorageChange);
+		
+		return () => {
+			window.removeEventListener('storage', handleStorageChange);
+			window.removeEventListener('localStorageChange', handleCustomStorageChange);
+		};
+	}, []);
 
 	// Handle scroll effect for navbar transparency
 	useEffect(() => {
@@ -40,6 +131,20 @@ export default function Header() {
 		setIsMobileMenuOpen(false);
 	};
 
+	const handleResumeAction = () => {
+		if (currentConfig.resumeButton.action === 'download') {
+			// TODO: Implement PDF download functionality
+			console.log('Download PDF clicked');
+		} else if (currentConfig.resumeButton.href) {
+			window.location.href = currentConfig.resumeButton.href;
+		}
+		setIsMobileMenuOpen(false);
+	};
+
+	// Don't render header on home page if website is not visible and we've initialized
+	if (pathname === '/' && isInitialized && !isVisible) {
+		return null;
+	}
 
 	return (
 		<motion.header
@@ -62,14 +167,21 @@ export default function Header() {
 						transition={{ delay: 0.2 }}
 						className="flex items-center"
 					>
-						<h1 className="text-4xl font-medium tracking-wide bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
-							Ravi Ranjan
-						</h1>
+						<div className={`flex ${currentConfig.logo.layout === 'vertical' ? 'flex-col' : 'flex-row'} items-center`}>
+							<h1 className="text-4xl font-medium tracking-wide bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
+								{currentConfig.logo.title}
+							</h1>
+							{currentConfig.logo.subtitle && (
+								<span className={`text-sm text-slate-400 ${currentConfig.logo.layout === 'vertical' ? 'mt-1' : 'ml-2'}`}>
+									{currentConfig.logo.subtitle}
+								</span>
+							)}
+						</div>
 					</MotionLink>
 
 					{/* Desktop Navigation */}
 					<nav className="hidden md:flex items-center space-x-8">
-						{navItems.map((item, index) => (
+						{currentConfig.navItems.map((item, index) => (
 							<motion.button
 								key={item.name}
 								initial={{ opacity: 0, y: -20 }}
@@ -92,12 +204,14 @@ export default function Header() {
 							className="flex gap-2"
 						>
 							<Button
-								type="LINK"
+								type={currentConfig.resumeButton.action === 'download' ? 'BUTTON' : 'LINK'}
 								variant="PRIMARY"
-								href='/resume'
-								className="px-4 py-1 text-sm w-28 lg:text-xl font-normal rounded text-white"
+								href={currentConfig.resumeButton.href || undefined}
+								onClick={currentConfig.resumeButton.action === 'download' ? handleResumeAction : undefined}
+								className="px-4 py-1 text-sm w-28 lg:text-xl font-normal rounded text-white flex items-center justify-center gap-1"
 							>
-								Resume
+								{currentConfig.resumeButton.icon && <currentConfig.resumeButton.icon className="w-4 h-4" />}
+								{currentConfig.resumeButton.text}
 							</Button>
 						</motion.div>
 					</nav>
@@ -133,7 +247,7 @@ export default function Header() {
 						className="md:hidden w-full bg-slate-900/95 backdrop-blur-md border-t border-slate-800"
 					>
 						<div className="px-4 py-6 space-y-4">
-							{navItems.map((item) => (
+							{currentConfig.navItems.map((item) => (
 								<button
 									key={item.name}
 									onClick={() => scrollToSection(item.href)}
@@ -144,21 +258,25 @@ export default function Header() {
 							))}
 							<div className="pt-4 space-y-2">
 								<Button
-									type="LINK"
+									type={currentConfig.resumeButton.action === 'download' ? 'BUTTON' : 'LINK'}
 									variant="PRIMARY"
-									href='/resume'
-									className="w-full py-3 text-sm font-semibold"
+									href={currentConfig.resumeButton.href || undefined}
+									onClick={currentConfig.resumeButton.action === 'download' ? handleResumeAction : undefined}
+									className="w-full py-3 text-sm font-semibold flex items-center justify-center gap-2"
 								>
-									Resume
+									{currentConfig.resumeButton.icon && <currentConfig.resumeButton.icon className="w-4 h-4" />}
+									{currentConfig.resumeButton.text}
 								</Button>
-								<Button
-									type="LINK"
-									variant="SECONDARY"
-									href='/portfolio'
-									className="w-full py-3 text-sm font-semibold"
-								>
-									Portfolio
-								</Button>
+								{pathname !== '/portfolio' && (
+									<Button
+										type="LINK"
+										variant="SECONDARY"
+										href='/portfolio'
+										className="w-full py-3 text-sm font-semibold"
+									>
+										Portfolio
+									</Button>
+								)}
 							</div>
 						</div>
 					</motion.div>

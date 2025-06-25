@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
 			userAgent: '*',
 			allow: '/',
 		},
-		sitemap: 'https://raviranjan.com/sitemap.xml',
+		sitemap: 'https://ravi-ranjan.in/sitemap.xml',
 	}
 } 

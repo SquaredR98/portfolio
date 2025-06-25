@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Fira_Sans_Extra_Condensed } from 'next/font/google';
 import './globals.css';
 import StructuredData from '@/components/shared/StructuredData';
+import Header from '@/components/shared/Header';
+import Footer from '@/components/shared/Footer';
 // import GlobalLoader from '@/components/shared/GlobalLoader';
 
 export const metadata: Metadata = {
@@ -56,6 +58,7 @@ export const metadata: Metadata = {
 		type: 'website',
 		locale: 'en_US',
 		siteName: 'Ravi Ranjan Portfolio',
+		url: 'https://ravi-ranjan.in',
 		images: [
 			{
 				url: '/og-image.jpg',
@@ -71,13 +74,19 @@ export const metadata: Metadata = {
 		description:
 			'Professional consulting services by Ravi Ranjan. Expert in business solutions, development, and strategic consulting.',
 		images: ['/og-image.jpg'],
+		creator: '@raviranjan98',
 	},
 	alternates: {
-		canonical: 'https://raviranjan.com',
+		canonical: 'https://ravi-ranjan.in',
 	},
 	verification: {
 		google: 'your-google-verification-code',
+		other: {
+			'msvalidate.01': 'your-bing-verification-code',
+		},
 	},
+	category: 'technology',
+	classification: 'Portfolio Website',
 };
 
 const firaSans = Fira_Sans_Extra_Condensed({
@@ -113,10 +122,12 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${firaSans.className} relative antialiased min-h-screen bg-slate-950`}
+				className={`${firaSans.className} relative antialiased min-h-screen bg-slate-950 overflow-x-hidden`}
 			>
+				<Header />
 				{children}
-				<div className='fixed bottom-4 right-4 text-xs max-w-64 bg-slate-950 p-2 rounded opacity-20 font-[100]'>Note: The site is still in progress. So, there might be some information missing or incomplete. This note will be removed once the website is complete or the information is updated.</div>
+				<Footer />
+				
 			</body>
 		</html>
 	);
