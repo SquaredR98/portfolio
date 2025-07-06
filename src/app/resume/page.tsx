@@ -9,7 +9,7 @@ import {
 
 export default function ResumePage() {
 	return (
-		<div className="min-h-screen bg-slate-950 pt-16 relative overflow-hidden">
+		<div className="min-h-screen bg-slate-950 pt-4 relative overflow-hidden">
 			{/* Gradient Background */}
 			<div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950/20 to-slate-950"></div>
 			<div className="absolute inset-0 bg-gradient-to-tl from-slate-950 via-emerald-950/10 to-slate-950"></div>
@@ -18,12 +18,12 @@ export default function ResumePage() {
 			<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-purple-500/5 to-cyan-500/5 rounded-full blur-3xl"></div>
 			
 			{/* Content */}
-			<div className="relative z-10 max-w-7xl mx-auto w-11/12 lg:w-9/12 py-12">
+			<div className="relative z-10 max-w-7xl mx-auto w-11/12 lg:w-9/12 pt-8 md:pt-12">
 				<ResumeSummary />
 
-				<div className="grid lg:grid-cols-3 gap-12">
+				<div className="grid lg:grid-cols-3">
 					{/* Main Content */}
-					<div className="lg:col-span-2 space-y-12">
+					<div className="lg:col-span-2">
 						<ExperienceSection />
 						<ProjectsSection />
 						<EducationSection />

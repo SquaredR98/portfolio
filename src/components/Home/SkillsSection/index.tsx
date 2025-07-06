@@ -2,191 +2,119 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
+import {
+	SiJavascript,
+	SiTypescript,
+	SiHtml5,
+	SiCss3,
+	SiMysql,
+	SiCplusplus,
+	SiPython,
+	SiReact,
+	SiNextdotjs,
+	SiGatsby,
+	SiTailwindcss,
+	SiRedux,
+	SiNodedotjs,
+	SiExpress,
+	SiNestjs,
+	SiMongodb,
+	SiPostgresql,
 
-// Skill data with logos
+	SiGit,
+	SiGithub,
+	SiDocker,
+	SiJenkins,
+	SiServerless,
+	SiWordpress,
+	SiStripe,
+	SiGoogleanalytics,
+	SiFacebook,
+} from 'react-icons/si';
+import { FaDatabase, FaKey, FaCreditCard, FaAws } from 'react-icons/fa';
+import { MdApi } from 'react-icons/md';
+
+// Skill data with React Icons and brand colors
 const skillCategories = [
 	{
 		title: 'Languages',
 		skills: [
-			{
-				name: 'JavaScript',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-			},
-			{
-				name: 'TypeScript',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-			},
-			{
-				name: 'HTML5',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-			},
-			{
-				name: 'CSS3',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-			},
-			{
-				name: 'SQL',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-			},
-			{
-				name: 'C++',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
-			},
-			{
-				name: 'Python',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-			},
+			{ name: 'JavaScript', icon: SiJavascript, color: '#F7DF1E' },
+			{ name: 'TypeScript', icon: SiTypescript, color: '#3178C6' },
+			{ name: 'HTML5', icon: SiHtml5, color: '#E34F26' },
+			{ name: 'CSS3', icon: SiCss3, color: '#1572B6' },
+			{ name: 'SQL', icon: SiMysql, color: '#4479A1' },
+			{ name: 'C++', icon: SiCplusplus, color: '#00599C' },
+			{ name: 'Python', icon: SiPython, color: '#3776AB' },
 		],
 	},
 	{
 		title: 'Frontend',
 		skills: [
-			{
-				name: 'React',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-			},
-			{
-				name: 'Next.js',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-			},
-			{
-				name: 'Gatsby',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gatsby/gatsby-original.svg',
-			},
-			{
-				name: 'Tailwind CSS',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
-			},
-			{
-				name: 'Redux',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
-			},
-			{
-				name: 'PrimeReact',
-				logo: 'https://primefaces.org/cdn/primereact/images/logo.png',
-			},
+			{ name: 'React', icon: SiReact, color: '#61DAFB' },
+			{ name: 'Next.js', icon: SiNextdotjs, color: '#E879F9' },
+			{ name: 'Gatsby', icon: SiGatsby, color: '#663399' },
+			{ name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4' },
+			{ name: 'Redux', icon: SiRedux, color: '#764ABC' },
+			{ name: 'PrimeReact', icon: SiReact, color: '#61DAFB' },
 		],
 	},
 	{
 		title: 'Backend',
 		skills: [
-			{
-				name: 'Node.js',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-			},
-			{
-				name: 'Express.js',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-			},
-			{
-				name: 'NestJS',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg',
-			},
-			{
-				name: 'REST API',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg',
-			},
-			{
-				name: 'Mongoose',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-			},
-			{ name: 'TypeORM', logo: 'https://typeorm.io/img/logo.png' },
-			{
-				name: 'NextAuth',
-				logo: 'https://next-auth.js.org/img/logo/logo-sm.png',
-			},
+			{ name: 'Node.js', icon: SiNodedotjs, color: '#339933' },
+			{ name: 'Express.js', icon: SiExpress, color: '#06B6D4' },
+			{ name: 'NestJS', icon: SiNestjs, color: '#E0234E' },
+			{ name: 'REST API', icon: MdApi, color: '#FF6B35' },
+			{ name: 'Mongoose', icon: SiMongodb, color: '#47A248' },
+			{ name: 'TypeORM', icon: FaDatabase, color: '#FE0803' },
+			{ name: 'NextAuth', icon: FaKey, color: '#E879F9' },
 		],
 	},
 	{
 		title: 'Database',
 		skills: [
-			{
-				name: 'PostgreSQL',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-			},
-			{
-				name: 'MongoDB',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-			},
-			{
-				name: 'DynamoDB',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
-			},
+			{ name: 'PostgreSQL', icon: SiPostgresql, color: '#336791' },
+			{ name: 'MongoDB', icon: SiMongodb, color: '#47A248' },
+			{ name: 'DynamoDB', icon: FaAws, color: '#FF9900' },
 		],
 	},
 	{
 		title: 'Tools & DevOps',
 		skills: [
-			{
-				name: 'Git',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-			},
-			{
-				name: 'GitHub',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-			},
-			{
-				name: 'Docker',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-			},
-			{
-				name: 'Jenkins',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg',
-			},
-			{
-				name: 'AWS',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
-			},
-			{
-				name: 'Serverless',
-				logo: 'https://www.serverless.com/favicon.ico',
-			},
+			{ name: 'Git', icon: SiGit, color: '#F05032' },
+			{ name: 'GitHub', icon: SiGithub, color: '#E879F9' },
+			{ name: 'Docker', icon: SiDocker, color: '#2496ED' },
+			{ name: 'Jenkins', icon: SiJenkins, color: '#D24939' },
+			{ name: 'AWS', icon: FaAws, color: '#FF9900' },
+			{ name: 'Serverless', icon: SiServerless, color: '#FD5750' },
 		],
 	},
 	{
 		title: 'Integrations',
 		skills: [
-			{
-				name: 'WordPress',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg',
-			},
-			{
-				name: 'Razorpay',
-				logo: 'https://razorpay.com/favicon.png',
-			},
-			{ name: 'Paytm', logo: 'https://paytm.com/favicon.ico' },
-			{
-				name: 'Cashfree',
-				logo: 'https://www.cashfree.com/favicon.ico',
-			},
-			{
-				name: 'Stripe',
-				logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stripe/stripe-original.svg',
-			},
-			{
-				name: 'Google Analytics',
-				logo: 'https://www.google.com/analytics/favicon.ico',
-			},
-			{
-				name: 'Facebook Pixel',
-				logo: 'https://facebook.com/favicon.ico',
-			},
+			{ name: 'WordPress', icon: SiWordpress, color: '#21759B' },
+			{ name: 'Razorpay', icon: FaCreditCard, color: '#3395FF' },
+			{ name: 'Paytm', icon: FaCreditCard, color: '#00BAF2' },
+			{ name: 'Cashfree', icon: FaCreditCard, color: '#004CFF' },
+			{ name: 'Stripe', icon: SiStripe, color: '#635BFF' },
+			{ name: 'Google Analytics', icon: SiGoogleanalytics, color: '#E37400' },
+			{ name: 'Facebook Pixel', icon: SiFacebook, color: '#1877F2' },
 		],
 	},
 ];
 
 export default function SkillsSection() {
 	return (
-		<section id='skills' className='py-20 bg-slate-900'>
-			<div className='container mx-auto px-4'>
+		<section id='skills' className='bg-slate-900 border-b border-slate-800'>
+			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto border-x border-slate-800'>
 				{/* Section Header */}
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className='text-center mb-16'
+					className='text-center py-8'
 				>
 					<h2 className='text-4xl font-bold text-white mb-4'>
 						Skills & Technologies
@@ -198,164 +126,203 @@ export default function SkillsSection() {
 				</motion.div>
 
 				{/* Skills Scroller */}
-				<div className='relative overflow-hidden'>
+				<div className='relative overflow-hidden pb-12'>
 					{/* First row - Left to Right */}
-					<div className='flex animate-scroll-left'>
-						{skillCategories.map(
-							(category, categoryIndex) => (
-								<div
-									key={categoryIndex}
-									className='flex-shrink-0 mx-8'
-								>
-									<div className='text-center mb-6'>
-										<h3 className='text-xl font-bold text-white mb-4'>
-											{
-												category.title
-											}
-										</h3>
-										<div className='flex gap-6'>
-											{category.skills.map(
-												(
-													skill,
-													skillIndex,
-												) => (
-													<div
-														key={
-															skillIndex
-														}
-														className='flex flex-col items-center group'
-													>
-														<div className='w-16 h-16 bg-slate-800 rounded-xl p-3 border border-slate-700 group-hover:border-fuchsia-500 transition-all duration-300 group-hover:scale-110 mb-2'>
-															<Image
-																src={
-																	skill.logo
+					<div className='relative border-y border-slate-800'>
+						<div className='flex animate-scroll-left'>
+							{skillCategories.map(
+								(category, categoryIndex) => (
+									<div
+										key={categoryIndex}
+										className='flex-shrink-0 mx-8 border-x border-slate-800'
+									>
+										<div className='text-center'>
+											<h3 className='text-xl font-bold text-white my-2'>
+												{
+													category.title
+												}
+											</h3>
+											<div className='flex'>
+												{category.skills.map(
+													(
+														skill,
+														skillIndex,
+													) => {
+														const IconComponent =
+															skill.icon;
+														return (
+															<div
+																key={
+																	skillIndex
 																}
-																alt={
-																	skill.name
-																}
-																className='w-full h-full object-contain'
-																width={
-																	64
-																}
-																height={
-																	64
-																}
-																onError={(
-																	e,
-																) => {
-																	// Fallback to text if image fails to load
-																	const target =
-																		e.currentTarget as HTMLImageElement;
-																	const fallback =
-																		target.nextElementSibling as HTMLDivElement;
-																	target.style.display =
-																		'none';
-																	if (
-																		fallback
-																	)
-																		fallback.style.display =
-																			'flex';
-																}}
-															/>
-															<div className='w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 hidden'>
-																{
-																	skill.name
-																}
+																className='flex flex-col items-center group'
+															>
+																<div
+																	className='w-16 h-16 bg-slate-800 p-3 border border-slate-700 transition-all duration-300 flex items-center justify-center'
+																	style={
+																		{
+																			'--hover-color':
+																				skill.color,
+																		} as React.CSSProperties
+																	}
+																	onMouseEnter={(
+																		e,
+																	) => {
+																		const target =
+																			e.currentTarget;
+																		target.style.borderColor =
+																			skill.color;
+																	}}
+																	onMouseLeave={(
+																		e,
+																	) => {
+																		const target =
+																			e.currentTarget;
+																		target.style.borderColor =
+																			'#374151'; // slate-700
+																	}}
+																>
+																	<IconComponent
+																		className='w-10 h-10 text-slate-300 group-hover:scale-110 transition-all duration-300'
+																		style={{
+																			color: 'inherit',
+																		}}
+																		onMouseEnter={(
+																			e,
+																		) => {
+																			(
+																				e.currentTarget as unknown as HTMLElement
+																			).style.color =
+																				skill.color;
+																		}}
+																		onMouseLeave={(
+																			e,
+																		) => {
+																			(
+																				e.currentTarget as unknown as HTMLElement
+																			).style.color =
+																				'#D1D5DB'; // slate-300
+																		}}
+																	/>
+																</div>
+																{/* <span className='text-slate-400 text-sm font-medium group-hover:text-fuchsia-400 transition-colors'>
+																	{
+																		skill.name
+																	}
+																</span> */}
 															</div>
-														</div>
-														<span className='text-slate-400 text-sm font-medium group-hover:text-fuchsia-400 transition-colors'>
-															{
-																skill.name
-															}
-														</span>
-													</div>
-												),
-											)}
+														);
+													},
+												)}
+											</div>
 										</div>
 									</div>
-								</div>
-							),
-						)}
+								),
+							)}
+						</div>
 					</div>
 
 					{/* Second row - Right to Left */}
-					<div className='flex animate-scroll-right mt-12'>
-						{skillCategories
-							.slice()
-							.reverse()
-							.map((category, categoryIndex) => (
-								<div
-									key={categoryIndex}
-									className='flex-shrink-0 mx-8'
-								>
-									<div className='text-center mb-6'>
-										<h3 className='text-xl font-bold text-white mb-4'>
-											{
-												category.title
+					<div className='relative border-y border-slate-800 mt-12'>
+						<div className='flex animate-scroll-right'>
+							{skillCategories
+								.slice()
+								.reverse()
+								.map(
+									(
+										category,
+										categoryIndex,
+									) => (
+										<div
+											key={
+												categoryIndex
 											}
-										</h3>
-										<div className='flex gap-6'>
-											{category.skills.map(
-												(
-													skill,
-													skillIndex,
-												) => (
-													<div
-														key={
-															skillIndex
-														}
-														className='flex flex-col items-center group'
-													>
-														<div className='w-16 h-16 bg-slate-800 rounded-xl p-3 border border-slate-700 group-hover:border-cyan-500 transition-all duration-300 group-hover:scale-110 mb-2'>
-															<Image
-																src={
-																	skill.logo
-																}
-																alt={
-																	skill.name
-																}
-																width={
-																	64
-																}
-																height={
-																	64
-																}
-																className='w-full h-full object-contain'
-																onError={(
-																	e,
-																) => {
-																	// Fallback to text if image fails to load
-																	const target =
-																		e.currentTarget as HTMLImageElement;
-																	const fallback =
-																		target.nextElementSibling as HTMLDivElement;
-																	target.style.display =
-																		'none';
-																	if (
-																		fallback
-																	)
-																		fallback.style.display =
-																			'flex';
-																}}
-															/>
-															<div className='w-full h-full flex items-center justify-center text-xs font-bold text-slate-400 hidden'>
-																{
-																	skill.name
-																}
-															</div>
-														</div>
-														<span className='text-slate-400 text-sm font-medium group-hover:text-cyan-400 transition-colors'>
-															{
-																skill.name
-															}
-														</span>
-													</div>
-												),
-											)}
+											className='flex-shrink-0 mx-8 border-x border-slate-800'
+										>
+											<div className='text-center'>
+												<h3 className='text-xl font-bold text-white my-2'>
+													{
+														category.title
+													}
+												</h3>
+												<div className='flex'>
+													{category.skills.map(
+														(
+															skill,
+															skillIndex,
+														) => {
+															const IconComponent =
+																skill.icon;
+															return (
+																<div
+																	key={
+																		skillIndex
+																	}
+																	className='flex flex-col items-center group'
+																>
+																	<div
+																		className='w-16 h-16 bg-slate-800 p-3 border border-slate-700 transition-all duration-300 flex items-center justify-center'
+																		style={
+																			{
+																				'--hover-color':
+																					skill.color,
+																			} as React.CSSProperties
+																		}
+																		onMouseEnter={(
+																			e,
+																		) => {
+																			const target =
+																				e.currentTarget;
+																			target.style.borderColor =
+																				skill.color;
+																		}}
+																		onMouseLeave={(
+																			e,
+																		) => {
+																			const target =
+																				e.currentTarget;
+																			target.style.borderColor =
+																				'#374151'; // slate-700
+																		}}
+																	>
+																		<IconComponent
+																			className='w-10 h-10 text-slate-300 group-hover:scale-110 transition-all duration-300'
+																			style={{
+																				color: 'inherit',
+																			}}
+																			onMouseEnter={(
+																				e,
+																			) => {
+																				(
+																					e.currentTarget as unknown as HTMLElement
+																				).style.color =
+																					skill.color;
+																			}}
+																			onMouseLeave={(
+																				e,
+																			) => {
+																				(
+																					e.currentTarget as unknown as HTMLElement
+																				).style.color =
+																					'#D1D5DB'; // slate-300
+																			}}
+																		/>
+																	</div>
+																	{/* <span className='text-slate-400 text-sm font-medium group-hover:text-cyan-400 transition-colors'>
+																	{
+																		skill.name
+																	}
+																</span> */}
+																</div>
+															);
+														},
+													)}
+												</div>
+											</div>
 										</div>
-									</div>
-								</div>
-							))}
+									),
+								)}
+						</div>
 					</div>
 				</div>
 			</div>

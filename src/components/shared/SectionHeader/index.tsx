@@ -20,16 +20,16 @@ export default function SectionHeader({
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6 }}
 			viewport={{ once: true }}
-			className={`text-center mb-16 ${className}`}
+			className={`text-center px-2 md:px-6 ${className}`}
 		>
-			<MotionH2 className='text-4xl md:text-5xl font-bold text-white mb-4'>
+			<MotionH2 className='text-4xl md:text-5xl pt-8 font-bold text-white'>
 				{title}{' '}
 				<span className='bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent'>
 					{highlightedWord}
 				</span>
 			</MotionH2>
 			<div
-				className={`w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 ${
+				className={`hidden w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 ${
 					!className?.includes('text-left') ? 'mx-auto' : ''
 				}`}
 			></div>

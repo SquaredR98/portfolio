@@ -13,16 +13,16 @@ const skills = {
 
 export default function SkillsSidebar() {
 	return (
-		<div className="space-y-8">
+		<div className="space-y-8 border-r border-slate-800 px-6 pt-8 border-t border-l md:border-l-0 pb-16">
 			{/* Skills */}
 			<MotionSection
 				initial={{ opacity: 0, x: 30 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.6, delay: 0.6 }}
-				className="bg-slate-900 rounded-xl p-6 border border-slate-800"
+				className="border-b border-slate-800 pb-6"
 			>
-				<MotionH3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-					<HiCodeBracket className="w-5 h-5 text-fuchsia-500" />
+				<MotionH3 className="text-3xl font-bold text-white mb-4 flex items-center gap-2">
+					<HiCodeBracket className="text-fuchsia-500 text-3xl" />
 					Technical Skills
 				</MotionH3>
 				<div className="space-y-4">
@@ -94,10 +94,10 @@ export default function SkillsSidebar() {
 				initial={{ opacity: 0, x: 30 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.6, delay: 0.8 }}
-				className="bg-slate-900 rounded-xl p-6 border border-slate-800"
+				className="border-b border-slate-800 pb-6"
 			>
-				<MotionH3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-					<HiChartBar className="w-5 h-5 text-cyan-500" />
+				<MotionH3 className="text-3xl font-bold text-white mb-4 flex items-center gap-2">
+					<HiChartBar className="text-cyan-500" />
 					Soft Skills
 				</MotionH3>
 				<div className="space-y-3">
@@ -124,10 +124,10 @@ export default function SkillsSidebar() {
 				initial={{ opacity: 0, x: 30 }}
 				animate={{ opacity: 1, x: 0 }}
 				transition={{ duration: 0.6, delay: 1.0 }}
-				className="bg-slate-900 rounded-xl p-6 border border-slate-800"
+				className=""
 			>
-				<MotionH3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-					<HiShieldCheck className="w-5 h-5 text-fuchsia-500" />
+				<MotionH3 className="text-3xl font-bold text-white mb-4 flex items-center gap-2">
+					<HiShieldCheck className="text-fuchsia-500" />
 					Awards & Recognition
 				</MotionH3>
 				<div className="space-y-4">

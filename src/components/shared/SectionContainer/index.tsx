@@ -17,9 +17,9 @@ export default function SectionContainer({
 	return (
 		<MotionSection
 			id={id}
-			className={`py-20 bg-${background} ${className}`}
+			className={`bg-${background} ${className}`}
 		>
-			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto'>
+			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto border-x border-slate-800'>
 				{children}
 			</div>
 		</MotionSection>

@@ -56,23 +56,26 @@ const experiences = [
 export default function ExperienceSection() {
 	const { setContactFormVisible } = useEntryState();
 	return (
-		<section id='experience' className='py-20 bg-slate-900'>
-			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto'>
+		<section
+			id='experience'
+			className='bg-slate-900 border-y border-slate-800'
+		>
+			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto border-x border-slate-800'>
 				<motion.div
 					initial={{ opacity: 0, y: 50 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className='text-center mb-16'
+					className='pt-8'
 				>
-					<h2 className='text-4xl md:text-5xl font-bold text-white mb-4'>
+					<h2 className='text-4xl md:text-5xl font-bold text-white mb-4 pl-2 md:pl-6'>
 						Recent{' '}
 						<span className='bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent'>
 							Experience
 						</span>
 					</h2>
-					<div className='w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 mx-auto'></div>
-					<p className='text-slate-400 text-lg mt-6 max-w-2xl mx-auto'>
+					<div className='w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 ml-2 md:ml-6'></div>
+					<p className='text-slate-400 text-lg mt-6 border-y border-slate-800 py-4 px-2 md:px-6'>
 						My most recent role showcasing current
 						expertise and achievements. View my complete
 						professional journey for a comprehensive
@@ -86,10 +89,10 @@ export default function ExperienceSection() {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.2 }}
 						viewport={{ once: true }}
-						className='bg-slate-800 rounded-xl p-8 border border-slate-700 hover:border-slate-600 transition-all duration-300 hover:shadow-xl hover:shadow-fuchsia-500/10'
+						className='bg-slate-800'
 					>
 						{/* Header */}
-						<div className='flex flex-col md:flex-row md:items-start justify-between mb-6'>
+						<div className='flex flex-col md:flex-row md:items-start justify-between mb-6 px-2 md:px-6 pt-4 md:pt-8'>
 							<div className='mb-4 md:mb-0'>
 								<h3 className='text-2xl font-bold text-white mb-2'>
 									{experiences[0].title}
@@ -111,12 +114,12 @@ export default function ExperienceSection() {
 						</div>
 
 						{/* Description */}
-						<p className='text-slate-300 text-lg leading-relaxed mb-6'>
+						<p className='text-slate-300 text-lg leading-relaxed mb-6 px-2 md:px-8'>
 							{experiences[0].description}
 						</p>
 
 						{/* Achievements */}
-						<div className='mb-6'>
+						<div className='mb-6 px-2 md:px-8'>
 							<h4 className='text-white font-semibold mb-4 flex items-center gap-2'>
 								<HiStar className='w-5 h-5 text-fuchsia-500' />
 								Key Achievements
@@ -137,7 +140,7 @@ export default function ExperienceSection() {
 						</div>
 
 						{/* Technologies */}
-						<div className='mb-8'>
+						<div className='mb-8 px-2 md:px-8'>
 							<h4 className='text-white font-semibold mb-3'>
 								Technologies & Skills
 							</h4>
@@ -178,7 +181,7 @@ export default function ExperienceSection() {
 								</p>
 								<Link
 									href='/resume'
-									className='inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300'
+									className='inline-flex w-full items-center justify-center gap-2 py-3 bg-gradient-to-r from-fuchsia-500/30 to-cyan-500/30 text-white font-semibold hover:from-fuchsia-500/50 hover:to-cyan-500/50 ease-in-out transition-all duration-300'
 								>
 									View Full Resume
 									<HiArrowRight className='w-4 h-4' />
@@ -194,7 +197,7 @@ export default function ExperienceSection() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.8 }}
 					viewport={{ once: true }}
-					className='text-center mt-16'
+					className='text-center mt-16 hidden'
 				>
 					<div className='bg-slate-800 rounded-xl p-8 border border-slate-700'>
 						<h3 className='text-2xl font-bold text-white mb-4'>

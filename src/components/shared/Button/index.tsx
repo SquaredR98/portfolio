@@ -26,9 +26,9 @@ export default function Button({
 	transition?: Record<string, any>;
 }) {
 	if (variant === 'PRIMARY') {
-		className = `bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300 flex items-center justify-center cursor-pointer ${className}`;
+		className = `bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300 flex items-center justify-center cursor-pointer ${className}`;
 	} else if (variant === 'SECONDARY') {
-		className = `border border-slate-600 text-slate-300 rounded-lg font-medium hover:border-slate-500 hover:text-white transition-colors duration-300 flex items-center justify-center cursor-pointer ${className}`;
+		className = `border border-slate-600 text-slate-300 font-medium hover:border-slate-500 hover:text-white transition-colors duration-300 flex items-center justify-center cursor-pointer ${className}`;
 	} else if (variant === 'LINK') {
 		className = `transition-all duration-300 hover:text-fuchsia-400 cursor-pointer ${className}`;
 	}

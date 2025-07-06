@@ -19,10 +19,10 @@ export default function EducationSection() {
 			initial={{ opacity: 0, y: 30 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6, delay: 0.4 }}
-			className="space-y-8"
+			className="space-y-8 border-x border-slate-800 pb-6 pt-8"
 		>
-			<MotionH3 className="text-2xl font-bold text-white flex items-center gap-3">
-				<HiAcademicCap className="w-6 h-6 text-fuchsia-500" />
+			<MotionH3 className="text-3xl px-6 font-bold text-white flex items-center gap-3">
+				<HiAcademicCap className="text-fuchsia-500" />
 				Education
 			</MotionH3>
 			<div className="space-y-6">
@@ -32,7 +32,7 @@ export default function EducationSection() {
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-						className="bg-slate-900 rounded-xl p-6 border border-slate-800"
+						className="px-6"
 					>
 						<div className="flex flex-col md:flex-row md:items-start justify-between mb-3">
 							<div>

@@ -91,17 +91,17 @@ export default function Footer() {
 
 	return (
 		<footer className='bg-slate-950 border-t border-slate-800'>
-			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto py-12'>
-				<div className='grid md:grid-cols-3 gap-8'>
+			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto border-x border-slate-800'>
+				<div className='grid md:grid-cols-3 w-full'>
 					{/* Column 1: Name and About */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}
-						className='space-y-4'
+						className='space-y-4 w-full px-3 md:pl-6 pt-6'
 					>
-						<h3 className='text-2xl font-bold bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent'>
+						<h3 className='text-2xl font-bold bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent uppercase'>
 							Ravi Ranjan
 						</h3>
 						<p className='text-slate-400 text-sm leading-relaxed'>
@@ -117,15 +117,15 @@ export default function Footer() {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.2 }}
 						viewport={{ once: true }}
-						className='space-y-4'
+						className='space-y-4 md:border-x border-slate-800 px-3 md:px-6 py-6'
 					>
-						<div className='grid grid-cols-2 gap-8'>
+						<div className='space-y-4'>
 							{/* Quick Links */}
-							<div className='space-y-4'>
-								<h4 className='text-white font-semibold'>
-									Quick Links
+							<div className=''>
+								<h4 className='text-white font-semibold mb-2'>
+									Pages
 								</h4>
-								<div className='grid grid-cols-1 gap-2'>
+								<div className='flex gap-x-6 gap-y-1 flex-wrap'>
 									{currentConfig.links.map((link) => (
 										<a
 											key={link.name}
@@ -143,11 +143,11 @@ export default function Footer() {
 							</div>
 							
 							{/* Pages */}
-							<div className='space-y-4'>
-								<h4 className='text-white font-semibold'>
-									Pages
+							<div className=''>
+								<h4 className='text-white font-semibold mb-2'>
+									Quick Links
 								</h4>
-								<div className='grid grid-cols-1 gap-2'>
+								<div className='flex gap-x-6 gap-y-1 flex-wrap'>
 									{currentConfig.pages.map((page) => (
 										<a
 											key={page.name}
@@ -168,22 +168,22 @@ export default function Footer() {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.4 }}
 						viewport={{ once: true }}
-						className='space-y-4'
+						className='px-3 md:px-6 pt-6 pb-6 md:pb-0'
 					>
-						<h4 className='text-white font-semibold'>
+						<h4 className='text-white font-semibold mb-4'>
 							Connect With Me
 						</h4>
-						<div className='space-y-3'>
+						<div className='space-x-3 gap-y-4 flex flex-wrap'>
 							{socialLinks.map((social) => (
 								<a
 									key={social.name}
 									href={social.href}
 									target='_blank'
 									rel='noopener noreferrer'
-									className={`flex items-center gap-3 text-slate-400 ${social.color} transition-colors text-sm`}
+									className={`flex items-center gap-1 px-2 text-slate-400 ${social.color} transition-colors text-sm border`}
 								>
-									<social.icon className='w-5 h-5' />
-									<span>{social.name}</span>
+									<social.icon className='w-8 h-8 border-r pr-2' />
+									<span className='pl-1'>{social.name}</span>
 								</a>
 							))}
 						</div>
@@ -196,7 +196,7 @@ export default function Footer() {
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.6, delay: 0.6 }}
 					viewport={{ once: true }}
-					className='border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center'
+					className='border-t border-slate-800 py-8 flex flex-col md:flex-row justify-between items-center px-6'
 				>
 					<div className='text-slate-400 text-sm mb-4 md:mb-0'>
 						© {currentYear} Ravi Ranjan. All rights

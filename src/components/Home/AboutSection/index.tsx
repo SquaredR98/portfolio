@@ -5,7 +5,6 @@ import SectionHeader from '../../shared/SectionHeader';
 import AnimatedContainer from '../../shared/AnimatedContainer';
 import TechnologyBadge from '../../shared/TechnologyBadge';
 import {
-	MotionH2,
 	MotionH3,
 	MotionH4,
 	MotionUl,
@@ -48,9 +47,10 @@ export default function AboutSection() {
 				title='About'
 				highlightedWord='Me'
 				description=''
+				className='border-b border-slate-800 text-left'
 			/>
 
-			<div className='flex flex-col lg:flex-row gap-12 items-start'>
+			<div className='flex flex-col lg:flex-row items-start'>
 				{/* Left Column - Image and Personal Info */}
 				<AnimatedContainer
 					variants='slideLeft'
@@ -59,32 +59,30 @@ export default function AboutSection() {
 				>
 					<div className='space-y-8'>
 						<div className='relative'>
-							<div className='w-80 h-80 mx-auto lg:mx-0 rounded-full bg-gradient-to-r from-fuchsia-500 to-cyan-500 p-1'>
-								<div className='w-full h-full rounded-full bg-slate-900 flex items-center justify-center'>
+							<div className='w-80 h-80 mx-auto lg:mx-0 p-1 border-b border-slate-800 overflow-hidden'>
 									{/* <HiUser className="w-32 h-32 text-slate-400" /> */}
 									<Image
 										src='/profile.webp'
 										alt='Ravi Ranjan'
 										width={1280}
 										height={1280}
-										className='rounded-full'
+										className='hover:scale-105 transition-all duration-700'
 									/>
-								</div>
 							</div>
-							<div className='absolute -bottom-4 -right-4 w-20 h-20 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-full flex items-center justify-center'>
+							<div className='absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-full flex items-center justify-center'>
 								<HiRocketLaunch className='w-10 h-10 text-white' />
 							</div>
 						</div>
 
-						<div className='space-y-4'>
-							<MotionH3 className='text-2xl font-bold text-white'>
+						<div className='space-y-2'>
+							<MotionH3 className='text-2xl font-bold text-white px-2 md:px-6'>
 								Ravi Ranjan
 							</MotionH3>
-							<p className='text-slate-400 text-lg'>
+							<p className='text-slate-400 text-lg px-2 md:px-6'>
 								Full Stack Developer | React |
 								Next.js | Node.js | PostgreSQL
 							</p>
-							<div className='flex flex-wrap gap-2'>
+							<div className='flex flex-wrap gap-2 px-2 md:px-6'>
 								{skills.map((skill) => (
 									<TechnologyBadge
 										key={skill}
@@ -101,14 +99,11 @@ export default function AboutSection() {
 				<AnimatedContainer
 					variants='slideRight'
 					delay={0.4}
-					className='lg:order-1'
+					className='lg:order-1 md:border-r border-slate-800'
 				>
 					<div className='space-y-6'>
 						<div className='space-y-6'>
-							<MotionH2 className='text-3xl font-bold text-white'>
-								About Me
-							</MotionH2>
-							<div className='space-y-4 text-slate-300'>
+							<div className='space-y-4 text-slate-300 px-2 md:px-6 pt-6'>
 								<p>
 									Full-Stack Developer with
 									over four years of
@@ -156,8 +151,8 @@ export default function AboutSection() {
 						</div>
 
 						{/* Stats */}
-						<div className='grid grid-cols-2 lg:grid-cols-4 gap-4'>
-							<div className='text-center p-6 bg-slate-900 rounded-xl border border-slate-800'>
+						<div className='grid grid-cols-2 lg:grid-cols-4'>
+							<div className='text-center p-6 border-y border-slate-800'>
 								<div className='text-3xl font-bold text-fuchsia-500 mb-2'>
 									4+
 								</div>
@@ -165,7 +160,7 @@ export default function AboutSection() {
 									Years Experience
 								</div>
 							</div>
-							<div className='text-center p-6 bg-slate-900 rounded-xl border border-slate-800'>
+							<div className='text-center p-6 border border-r-0 border-slate-800'>
 								<div className='text-3xl font-bold text-cyan-500 mb-2'>
 									20+
 								</div>
@@ -173,7 +168,7 @@ export default function AboutSection() {
 									Projects Completed
 								</div>
 							</div>
-							<div className='text-center p-6 bg-slate-900 rounded-xl border border-slate-800'>
+							<div className='text-center p-6 border border-r-0 border-slate-800'>
 								<div className='text-3xl font-bold text-fuchsia-500 mb-2'>
 									5+
 								</div>
@@ -181,7 +176,7 @@ export default function AboutSection() {
 									Major Platforms
 								</div>
 							</div>
-							<div className='text-center p-6 bg-slate-900 rounded-xl border border-slate-800'>
+							<div className='text-center p-6 border border-y border-r-0 border-slate-800'>
 								<div className='text-3xl font-bold text-cyan-500 mb-2'>
 									3
 								</div>
@@ -192,7 +187,7 @@ export default function AboutSection() {
 						</div>
 
 						{/* What I Bring */}
-						<div className='space-y-4'>
+						<div className='space-y-4 px-2 md:px-6 pb-8'>
 							<MotionH4 className='text-xl font-semibold text-white'>
 								What I Bring to the Table:
 							</MotionH4>

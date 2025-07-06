@@ -11,9 +11,9 @@ import { usePathname } from 'next/navigation';
 const headerConfigs = {
 	'/': {
 		logo: {
-			title: 'Ravi Ranjan',
+			title: 'RAVI RANJAN',
 			subtitle: null,
-			layout: 'horizontal'
+			layout: 'horizontal',
 		},
 		navItems: [
 			{ name: 'Services', href: '#services' },
@@ -24,14 +24,14 @@ const headerConfigs = {
 			text: 'Resume',
 			href: '/resume',
 			icon: null,
-			action: 'link'
-		}
+			action: 'link',
+		},
 	},
 	'/portfolio': {
 		logo: {
 			title: 'My Portfolio',
 			subtitle: null,
-			layout: 'horizontal'
+			layout: 'horizontal',
 		},
 		navItems: [
 			{ name: 'Home', href: '/' },
@@ -41,14 +41,14 @@ const headerConfigs = {
 			text: 'Resume',
 			href: '/resume',
 			icon: null,
-			action: 'link'
-		}
+			action: 'link',
+		},
 	},
 	'/resume': {
 		logo: {
 			title: 'My Experiences',
 			subtitle: null,
-			layout: 'horizontal'
+			layout: 'horizontal',
 		},
 		navItems: [
 			{ name: 'Home', href: '/' },
@@ -58,9 +58,9 @@ const headerConfigs = {
 			text: 'Resume',
 			href: null,
 			icon: HiArrowDownTray,
-			action: 'download'
-		}
-	}
+			action: 'download',
+		},
+	},
 };
 
 export default function Header() {
@@ -69,15 +69,18 @@ export default function Header() {
 	const [isVisible, setIsVisible] = useState(false);
 	const [isInitialized, setIsInitialized] = useState(false);
 	const pathname = usePathname();
-	
+
 	// Get current page configuration
-	const currentConfig = headerConfigs[pathname as keyof typeof headerConfigs] || headerConfigs['/'];
+	const currentConfig =
+		headerConfigs[pathname as keyof typeof headerConfigs] ||
+		headerConfigs['/'];
 
 	// Check if website should be visible (for home page)
 	useEffect(() => {
 		const checkWebsiteVisibility = () => {
 			if (typeof window !== 'undefined') {
-				const websiteVisible = localStorage.getItem('websiteVisible') === 'true';
+				const websiteVisible =
+					localStorage.getItem('websiteVisible') === 'true';
 				setIsVisible(websiteVisible);
 				setIsInitialized(true);
 			}
@@ -94,16 +97,23 @@ export default function Header() {
 
 		// Also listen for custom events from the same window
 		const handleCustomStorageChange = () => {
-			const websiteVisible = localStorage.getItem('websiteVisible') === 'true';
+			const websiteVisible =
+				localStorage.getItem('websiteVisible') === 'true';
 			setIsVisible(websiteVisible);
 		};
 
 		window.addEventListener('storage', handleStorageChange);
-		window.addEventListener('localStorageChange', handleCustomStorageChange);
-		
+		window.addEventListener(
+			'localStorageChange',
+			handleCustomStorageChange,
+		);
+
 		return () => {
 			window.removeEventListener('storage', handleStorageChange);
-			window.removeEventListener('localStorageChange', handleCustomStorageChange);
+			window.removeEventListener(
+				'localStorageChange',
+				handleCustomStorageChange,
+			);
 		};
 	}, []);
 
@@ -151,85 +161,133 @@ export default function Header() {
 			initial={{ y: -100, opacity: 0 }}
 			animate={{ y: 0, opacity: 1 }}
 			transition={{ duration: 0.6, ease: 'easeOut' }}
-			className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+			className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b border-slate-800 ${
 				isScrolled || isMobileMenuOpen
-					? 'bg-slate-950/80 backdrop-blur-md border-b border-slate-800' 
+					? 'bg-slate-950/80 backdrop-blur-md'
 					: 'bg-transparent'
 			}`}
 		>
-			<div className="max-w-7xl mx-auto w-11/12 lg:w-9/12">
-				<div className="flex items-center justify-between h-16">
+			<div className='max-w-7xl mx-auto w-11/12 lg:w-9/12 border-x px-2 lg:px-6 border-slate-800'>
+				<div className='flex items-center justify-between h-12 md:h-16'>
 					{/* Logo */}
 					<MotionLink
-						href="/"
+						href='/'
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 0.2 }}
-						className="flex items-center"
+						className='flex items-center'
 					>
-						<div className={`flex ${currentConfig.logo.layout === 'vertical' ? 'flex-col' : 'flex-row'} items-center`}>
-							<h1 className="text-4xl font-medium tracking-wide bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent">
+						<div
+							className={`flex ${currentConfig.logo.layout === 'vertical' ? 'flex-col' : 'flex-row'} items-center`}
+						>
+							<h1 className='text-2xl md:text-4xl font-medium tracking-wide bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent'>
 								{currentConfig.logo.title}
 							</h1>
 							{currentConfig.logo.subtitle && (
-								<span className={`text-sm text-slate-400 ${currentConfig.logo.layout === 'vertical' ? 'mt-1' : 'ml-2'}`}>
-									{currentConfig.logo.subtitle}
+								<span
+									className={`text-sm text-slate-400 ${currentConfig.logo.layout === 'vertical' ? 'mt-1' : 'ml-2'}`}
+								>
+									{
+										currentConfig.logo
+											.subtitle
+									}
 								</span>
 							)}
 						</div>
 					</MotionLink>
 
 					{/* Desktop Navigation */}
-					<nav className="hidden md:flex items-center space-x-8">
-						{currentConfig.navItems.map((item, index) => (
-							<motion.button
-								key={item.name}
-								initial={{ opacity: 0, y: -20 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ delay: 0.3 + index * 0.1 }}
-								onClick={() => scrollToSection(item.href)}
-								className={`transition-colors duration-200 cursor-pointer font-medium ${
-									isScrolled 
-										? 'text-slate-300 hover:text-white' 
-										: 'text-white/80 hover:text-white'
-								}`}
-							>
-								{item.name}
-							</motion.button>
-						))}
+					<nav className='hidden md:flex items-center space-x-8'>
+						{currentConfig.navItems.map(
+							(item, index) => (
+								<motion.button
+									key={item.name}
+									initial={{
+										opacity: 0,
+										y: -20,
+									}}
+									animate={{
+										opacity: 1,
+										y: 0,
+									}}
+									transition={{
+										delay:
+											0.3 +
+											index * 0.1,
+									}}
+									onClick={() =>
+										scrollToSection(
+											item.href,
+										)
+									}
+									className={`transition-colors duration-200 cursor-pointer font-normal tracking-wide ${
+										isScrolled
+											? 'text-slate-300 hover:text-white'
+											: 'text-white/80 hover:text-white'
+									}`}
+								>
+									{item.name}
+								</motion.button>
+							),
+						)}
 						<motion.div
 							initial={{ opacity: 0, scale: 0.8 }}
 							animate={{ opacity: 1, scale: 1 }}
 							transition={{ delay: 0.8 }}
-							className="flex gap-2"
+							className='flex gap-2'
 						>
 							<Button
-								type={currentConfig.resumeButton.action === 'download' ? 'BUTTON' : 'LINK'}
-								variant="PRIMARY"
-								href={currentConfig.resumeButton.href || undefined}
-								onClick={currentConfig.resumeButton.action === 'download' ? handleResumeAction : undefined}
-								className="px-4 py-1 text-sm w-28 lg:text-xl font-normal rounded text-white flex items-center justify-center gap-1"
+								type={
+									currentConfig.resumeButton
+										.action ===
+									'download'
+										? 'BUTTON'
+										: 'LINK'
+								}
+								variant='PRIMARY'
+								href={
+									currentConfig.resumeButton
+										.href || undefined
+								}
+								onClick={
+									currentConfig.resumeButton
+										.action ===
+									'download'
+										? handleResumeAction
+										: undefined
+								}
+								className='px-4 py-1 text-sm w-28 lg:text-xl font-normal text-white flex items-center justify-center gap-1'
 							>
-								{currentConfig.resumeButton.icon && <currentConfig.resumeButton.icon className="w-4 h-4" />}
-								{currentConfig.resumeButton.text}
+								{currentConfig.resumeButton
+									.icon && (
+									<currentConfig.resumeButton.icon className='w-4 h-4' />
+								)}
+								{
+									currentConfig.resumeButton
+										.text
+								}
 							</Button>
 						</motion.div>
 					</nav>
 
 					{/* Mobile menu button */}
-					<div className="md:hidden">
+					<div className='md:hidden'>
 						<button
-							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+							onClick={() =>
+								setIsMobileMenuOpen(
+									!isMobileMenuOpen,
+								)
+							}
 							className={`transition-colors ${
-								isScrolled 
-									? 'text-slate-300 hover:text-white' 
+								isScrolled
+									? 'text-slate-300 hover:text-white'
 									: 'text-white/80 hover:text-white'
 							}`}
 						>
 							{isMobileMenuOpen ? (
-								<HiXMark className="w-6 h-6" />
+								<HiXMark className='w-6 h-6' />
 							) : (
-								<HiBars3 className="w-6 h-6" />
+								<HiBars3 className='w-6 h-6' />
 							)}
 						</button>
 					</div>
@@ -244,35 +302,68 @@ export default function Header() {
 						animate={{ opacity: 1, height: '100vh' }}
 						exit={{ opacity: 0, height: 0 }}
 						transition={{ duration: 0.3 }}
-						className="md:hidden w-full bg-slate-900/95 backdrop-blur-md border-t border-slate-800"
+						className='md:hidden w-screen bg-slate-900/95 backdrop-blur-md border-t border-slate-800'
 					>
-						<div className="px-4 py-6 space-y-4">
-							{currentConfig.navItems.map((item) => (
-								<button
-									key={item.name}
-									onClick={() => scrollToSection(item.href)}
-									className="block w-full text-left text-slate-300 hover:text-white transition-colors duration-200 font-medium py-2"
-								>
-									{item.name}
-								</button>
-							))}
-							<div className="pt-4 space-y-2">
+						<div className='px-4 py-6 space-y-4'>
+							{currentConfig.navItems.map(
+								(item) => (
+									<button
+										key={item.name}
+										onClick={() =>
+											scrollToSection(
+												item.href,
+											)
+										}
+										className='block w-full text-left text-slate-300 hover:text-white transition-colors duration-200 font-medium py-2'
+									>
+										{item.name}
+									</button>
+								),
+							)}
+							<div className='pt-4 space-y-2'>
 								<Button
-									type={currentConfig.resumeButton.action === 'download' ? 'BUTTON' : 'LINK'}
-									variant="PRIMARY"
-									href={currentConfig.resumeButton.href || undefined}
-									onClick={currentConfig.resumeButton.action === 'download' ? handleResumeAction : undefined}
-									className="w-full py-3 text-sm font-semibold flex items-center justify-center gap-2"
+									type={
+										currentConfig
+											.resumeButton
+											.action ===
+										'download'
+											? 'BUTTON'
+											: 'LINK'
+									}
+									variant='PRIMARY'
+									href={
+										currentConfig
+											.resumeButton
+											.href ||
+										undefined
+									}
+									onClick={
+										currentConfig
+											.resumeButton
+											.action ===
+										'download'
+											? handleResumeAction
+											: undefined
+									}
+									className='w-full py-3 text-sm font-semibold flex items-center justify-center gap-2'
 								>
-									{currentConfig.resumeButton.icon && <currentConfig.resumeButton.icon className="w-4 h-4" />}
-									{currentConfig.resumeButton.text}
+									{currentConfig
+										.resumeButton
+										.icon && (
+										<currentConfig.resumeButton.icon className='w-4 h-4' />
+									)}
+									{
+										currentConfig
+											.resumeButton
+											.text
+									}
 								</Button>
 								{pathname !== '/portfolio' && (
 									<Button
-										type="LINK"
-										variant="SECONDARY"
+										type='LINK'
+										variant='SECONDARY'
 										href='/portfolio'
-										className="w-full py-3 text-sm font-semibold"
+										className='w-full py-3 text-sm font-semibold'
 									>
 										Portfolio
 									</Button>
@@ -284,4 +375,4 @@ export default function Header() {
 			</AnimatePresence>
 		</motion.header>
 	);
-} 
+}

@@ -8,9 +8,9 @@ export default function ResumeSummary() {
 			initial={{ opacity: 0, y: 30 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.6, delay: 0.1 }}
-			className="bg-slate-900 rounded-xl p-6 border border-slate-800 mb-12"
+			className="p-6 border-t-0 border border-white/10"
 		>
-			<MotionH3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+			<MotionH3 className="text-3xl font-bold text-white mb-4 flex items-center gap-2">
 				<HiLightBulb className="w-5 h-5 text-fuchsia-500" />
 				Professional Summary
 			</MotionH3>
