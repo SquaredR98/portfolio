@@ -3,7 +3,7 @@
 import React from 'react';
 import { HiArrowLeft, HiArrowDownTray } from 'react-icons/hi2';
 import Link from 'next/link';
-import { MotionButton } from '../shared/MotionTags';
+import { MotionButton } from '../../MotionTags';
 
 export default function ResumeHeader() {
 	const handleDownload = () => {

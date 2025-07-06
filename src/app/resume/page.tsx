@@ -5,7 +5,7 @@ import {
 	ProjectsSection,
 	EducationSection,
 	SkillsSidebar
-} from '../../components/Resume';
+} from '../../components/shared/AnimatedContainer/Resume';
 
 export default function ResumePage() {
 	return (

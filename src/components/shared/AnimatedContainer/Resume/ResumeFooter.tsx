@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { HiEnvelope, HiLink, HiArrowUp } from 'react-icons/hi2';
-import { MotionH2, MotionH3, MotionP, MotionButton } from '../shared/MotionTags';
+import { MotionH2, MotionH3, MotionP, MotionButton } from '../../MotionTags';
 import Link from 'next/link';
 
 const socialLinks = [

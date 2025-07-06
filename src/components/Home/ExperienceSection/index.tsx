@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'motion/react';
 import { HiCalendar, HiMapPin, HiStar, HiArrowRight } from 'react-icons/hi2';
 import Link from 'next/link';
 import { useEntryState } from '@/components/EntryPage/EntryStateContext';
+import { MotionDiv, MotionH2, MotionP, MotionH3, MotionH4, MotionLi, MotionSpan } from '@/components/shared/MotionTags';
 
 const experiences = [
 	{
@@ -61,79 +61,149 @@ export default function ExperienceSection() {
 			className='bg-slate-900 border-y border-slate-800'
 		>
 			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto border-x border-slate-800'>
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
+				<MotionDiv
+					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
 					className='pt-8'
 				>
-					<h2 className='text-4xl md:text-5xl font-bold text-white mb-4 pl-2 md:pl-6'>
+					<MotionH2 
+						initial={{ opacity: 0, y: 10, scale: 0.95 }}
+						whileInView={{ opacity: 1, y: 0, scale: 1 }}
+						transition={{ duration: 0.6, delay: 0.1 }}
+						viewport={{ once: true }}
+						className='text-4xl md:text-5xl font-bold text-white mb-4 pl-2 md:pl-6'
+					>
 						Recent{' '}
 						<span className='bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-transparent'>
 							Experience
 						</span>
-					</h2>
-					<div className='w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 ml-2 md:ml-6'></div>
-					<p className='text-slate-400 text-lg mt-6 border-y border-slate-800 py-4 px-2 md:px-6'>
+					</MotionH2>
+					<MotionDiv 
+						initial={{ opacity: 0, scaleX: 0 }}
+						whileInView={{ opacity: 1, scaleX: 1 }}
+						transition={{ duration: 0.6, delay: 0.2 }}
+						viewport={{ once: true }}
+						className='w-24 h-1 bg-gradient-to-r from-fuchsia-500 to-cyan-500 ml-2 md:ml-6 origin-left'
+					></MotionDiv>
+					<MotionP 
+						initial={{ opacity: 0, y: 10 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.6, delay: 0.3 }}
+						viewport={{ once: true }}
+						className='text-slate-400 text-lg mt-6 border-y border-slate-800 py-4 px-2 md:px-6'
+					>
 						My most recent role showcasing current
 						expertise and achievements. View my complete
 						professional journey for a comprehensive
 						overview.
-					</p>
-				</motion.div>
+					</MotionP>
+				</MotionDiv>
 
 				<div className='mx-auto'>
-					<motion.div
-						initial={{ opacity: 0, y: 50 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: 0.2 }}
-						viewport={{ once: true }}
-						className='bg-slate-800'
-					>
+					<div className='bg-slate-800 overflow-hidden'>
 						{/* Header */}
 						<div className='flex flex-col md:flex-row md:items-start justify-between mb-6 px-2 md:px-6 pt-4 md:pt-8'>
-							<div className='mb-4 md:mb-0'>
-								<h3 className='text-2xl font-bold text-white mb-2'>
+							<MotionDiv 
+								initial={{ opacity: 0, scale: 0.95 }}
+								whileInView={{ opacity: 1, scale: 1 }}
+								transition={{ duration: 0.6, delay: 0.1 }}
+								viewport={{ once: true }}
+								className='mb-4 md:mb-0'
+							>
+								<MotionH3 
+									initial={{ opacity: 0, y: 10 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.6, delay: 0.2 }}
+									viewport={{ once: true }}
+									className='text-2xl font-bold text-white mb-2'
+								>
 									{experiences[0].title}
-								</h3>
-								<p className='text-fuchsia-400 font-medium text-lg'>
+								</MotionH3>
+								<MotionP 
+									initial={{ opacity: 0, y: 5 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.6, delay: 0.3 }}
+									viewport={{ once: true }}
+									className='text-fuchsia-400 font-medium text-lg'
+								>
 									{experiences[0].company}
-								</p>
-							</div>
-							<div className='text-left md:text-right'>
-								<div className='flex items-center gap-1 text-slate-400 text-sm mb-1'>
+								</MotionP>
+							</MotionDiv>
+							<MotionDiv 
+								initial={{ opacity: 0, scale: 0.95 }}
+								whileInView={{ opacity: 1, scale: 1 }}
+								transition={{ duration: 0.6, delay: 0.2 }}
+								viewport={{ once: true }}
+								className='text-left md:text-right'
+							>
+								<MotionDiv 
+									initial={{ opacity: 0, y: 5 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.6, delay: 0.3 }}
+									viewport={{ once: true }}
+									className='flex items-center gap-1 text-slate-400 text-sm mb-1'
+								>
 									<HiCalendar className='w-4 h-4' />
 									{experiences[0].period}
-								</div>
-								<div className='flex items-center gap-1 text-slate-400 text-sm'>
+								</MotionDiv>
+								<MotionDiv 
+									initial={{ opacity: 0, y: 5 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.6, delay: 0.4 }}
+									viewport={{ once: true }}
+									className='flex items-center gap-1 text-slate-400 text-sm'
+								>
 									<HiMapPin className='w-4 h-4' />
 									{experiences[0].location}
-								</div>
-							</div>
+								</MotionDiv>
+							</MotionDiv>
 						</div>
 
 						{/* Description */}
-						<p className='text-slate-300 text-lg leading-relaxed mb-6 px-2 md:px-8'>
+						<MotionP 
+							initial={{ opacity: 0, y: 10 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.3 }}
+							viewport={{ once: true }}
+							className='text-slate-300 text-lg leading-relaxed mb-6 px-2 md:px-8'
+						>
 							{experiences[0].description}
-						</p>
+						</MotionP>
 
 						{/* Achievements */}
 						<div className='mb-6 px-2 md:px-8'>
-							<h4 className='text-white font-semibold mb-4 flex items-center gap-2'>
+							<MotionH4 
+								initial={{ opacity: 0, y: 10 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.4 }}
+								viewport={{ once: true }}
+								className='text-white font-semibold mb-4 flex items-center gap-2'
+							>
 								<HiStar className='w-5 h-5 text-fuchsia-500' />
 								Key Achievements
-							</h4>
+							</MotionH4>
 							<ul className='space-y-3'>
 								{experiences[0].achievements.map(
 									(achievement, idx) => (
-										<li
+										<MotionLi
 											key={idx}
-											className='text-slate-300 flex items-start gap-3'
+											initial={{ opacity: 0, scale: 0.95 }}
+											whileInView={{ opacity: 1, scale: 1 }}
+											transition={{ duration: 0.6, delay: 0.5 + idx * 0.05 }}
+											viewport={{ once: true }}
+											className='text-slate-300 flex items-start gap-3 group'
 										>
-											<div className='w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0'></div>
+											<MotionDiv 
+												initial={{ opacity: 0, scale: 0 }}
+												whileInView={{ opacity: 1, scale: 1 }}
+												transition={{ duration: 0.6, delay: 0.6 + idx * 0.05 }}
+												viewport={{ once: true }}
+												className='w-2 h-2 bg-cyan-500 rounded-full mt-2 flex-shrink-0 group-hover:bg-fuchsia-500 transition-colors'
+											></MotionDiv>
 											{achievement}
-										</li>
+										</MotionLi>
 									),
 								)}
 							</ul>
@@ -141,9 +211,15 @@ export default function ExperienceSection() {
 
 						{/* Technologies */}
 						<div className='mb-8 px-2 md:px-8'>
-							<h4 className='text-white font-semibold mb-3'>
+							<MotionH4 
+								initial={{ opacity: 0, y: 10 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6, delay: 0.6 }}
+								viewport={{ once: true }}
+								className='text-white font-semibold mb-3'
+							>
 								Technologies & Skills
-							</h4>
+							</MotionH4>
 							<div className='flex flex-wrap gap-3'>
 								{[
 									'ReactJS',
@@ -155,45 +231,75 @@ export default function ExperienceSection() {
 									'Redux Toolkit',
 									'Sequelize',
 									'PostgreSQL',
-								].map((tech) => (
-									<span
+								].map((tech, idx) => (
+									<MotionSpan
 										key={tech}
-										className='px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm'
+										initial={{ opacity: 0, scale: 0.8 }}
+										whileInView={{ opacity: 1, scale: 1 }}
+										transition={{ duration: 0.6, delay: 0.7 + idx * 0.03 }}
+										viewport={{ once: true }}
+										whileHover={{ scale: 1.05 }}
+										className='px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm hover:bg-slate-600 hover:text-white transition-all cursor-default'
 									>
 										{tech}
-									</span>
+									</MotionSpan>
 								))}
 							</div>
 						</div>
 
 						{/* CTA to Resume */}
-						<div className='border-t border-slate-700 pt-6'>
+						<MotionDiv 
+							initial={{ opacity: 0, y: 10 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.6, delay: 0.8 }}
+							viewport={{ once: true }}
+							className='border-t border-slate-700 pt-6'
+						>
 							<div className='text-center'>
-								<h4 className='text-white font-semibold mb-3'>
+								<MotionH4 
+									initial={{ opacity: 0, y: 5 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.6, delay: 0.9 }}
+									viewport={{ once: true }}
+									className='text-white font-semibold mb-3'
+								>
 									Want to see my complete
 									professional journey?
-								</h4>
-								<p className='text-slate-400 mb-6'>
+								</MotionH4>
+								<MotionP 
+									initial={{ opacity: 0, y: 5 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.6, delay: 1.0 }}
+									viewport={{ once: true }}
+									className='text-slate-400 mb-6'
+								>
 									Explore my full resume
 									with detailed experience,
 									education, and
 									achievements.
-								</p>
-								<Link
-									href='/resume'
-									className='inline-flex w-full items-center justify-center gap-2 py-3 bg-gradient-to-r from-fuchsia-500/30 to-cyan-500/30 text-white font-semibold hover:from-fuchsia-500/50 hover:to-cyan-500/50 ease-in-out transition-all duration-300'
+								</MotionP>
+								<MotionDiv
+									initial={{ opacity: 0, scale: 0.95 }}
+									whileInView={{ opacity: 1, scale: 1 }}
+									transition={{ duration: 0.6, delay: 1.1 }}
+									viewport={{ once: true }}
 								>
-									View Full Resume
-									<HiArrowRight className='w-4 h-4' />
-								</Link>
+									<Link
+										href='/resume'
+										className='inline-flex w-full items-center justify-center gap-2 py-3 bg-gradient-to-r from-fuchsia-500/30 to-cyan-500/30 text-white font-semibold hover:from-fuchsia-500/50 hover:to-cyan-500/50 hover:scale-[1.02] ease-in-out transition-all duration-300 group'
+									>
+										View Full Resume
+										<HiArrowRight className='w-4 h-4 group-hover:translate-x-1 transition-transform' />
+									</Link>
+								</MotionDiv>
 							</div>
-						</div>
-					</motion.div>
+						</MotionDiv>
+					</div>
 				</div>
 
 				{/* Call to Action */}
-				<motion.div
-					initial={{ opacity: 0, y: 30 }}
+				<MotionDiv
+					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.8 }}
 					viewport={{ once: true }}
@@ -218,7 +324,7 @@ export default function ExperienceSection() {
 							Let&apos;s Start a Project
 						</button>
 					</div>
-				</motion.div>
+				</MotionDiv>
 			</div>
 		</section>
 	);

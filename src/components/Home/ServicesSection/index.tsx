@@ -10,7 +10,7 @@ import {
 	HiCloud,
 	HiUserGroup,
 } from 'react-icons/hi2';
-import { MotionButton, MotionDiv } from '@/components/shared/MotionTags';
+import { MotionDiv, MotionLi } from '@/components/shared/MotionTags';
 import { FaHandPointRight } from 'react-icons/fa';
 
 const services = [
@@ -99,9 +99,9 @@ export default function ServicesSection() {
 		<section id='services' className=' bg-slate-950'>
 			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto border-x border-slate-800'>
 				<motion.div
-					initial={{ opacity: 0, y: 50 }}
+					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
+					transition={{ duration: 0.4 }}
 					viewport={{ once: true }}
 					className=' pt-8'
 				>
@@ -177,31 +177,44 @@ export default function ServicesSection() {
 								key={service.title}
 								className={`${getBorderClasses(index)}`}
 							>
-								<motion.div
-									initial={{
-										opacity: 0,
-										scale: 0,
-									}}
-									whileInView={{
-										opacity: 1,
-										scale: 1,
-									}}
-									transition={{
-										duration: 0.6,
-										delay: index * 0.1,
-									}}
-									viewport={{ once: true }}
-									className={`group p-2 py-6 md:p-6 bg-slate-800/50 transition-all duration-300 hover:bg-slate-800/70 h-full`}
-								>
+								<div className={`group p-2 py-6 md:p-6 bg-slate-800/50 transition-all duration-300 hover:bg-slate-800/70 h-full`}>
 									{/* Icon */}
-									<div
+									<MotionDiv
+										initial={{
+											opacity: 0,
+											scale: 0.8,
+										}}
+										whileInView={{
+											opacity: 1,
+											scale: 1,
+										}}
+										transition={{
+											duration: 0.4,
+											delay: index * 0.05,
+										}}
+										viewport={{ once: true }}
 										className={`p-4 bg-gradient-to-r ${service.color} mb-6 w-fit `}
 									>
 										<service.icon className='w-8 h-8 text-white group-hover:scale-150 transition-transform duration-300' />
-									</div>
+									</MotionDiv>
 
 									{/* Content */}
-									<div className='space-y-4'>
+									<MotionDiv
+										initial={{
+											opacity: 0,
+											y: 20,
+										}}
+										whileInView={{
+											opacity: 1,
+											y: 0,
+										}}
+										transition={{
+											duration: 0.4,
+											delay: index * 0.05 + 0.1,
+										}}
+										viewport={{ once: true }}
+										className='space-y-4'
+									>
 										<h3 className='text-xl font-bold text-white group-hover:text-fuchsia-400 transition-colors'>
 											{
 												service.title
@@ -225,10 +238,23 @@ export default function ServicesSection() {
 														feature,
 														idx,
 													) => (
-														<li
+														<MotionLi
 															key={
 																idx
 															}
+															initial={{
+																opacity: 0,
+																x: -10,
+															}}
+															whileInView={{
+																opacity: 1,
+																x: 0,
+															}}
+															transition={{
+																duration: 0.3,
+																delay: index * 0.05 + 0.2 + idx * 0.05,
+															}}
+															viewport={{ once: true }}
 															className='text-slate-300 flex items-start gap-3'
 														>
 															<div className='w-2 h-2 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-full mt-2 flex-shrink-0'></div>
@@ -237,28 +263,34 @@ export default function ServicesSection() {
 																	feature
 																}
 															</span>
-														</li>
+														</MotionLi>
 													),
 												)}
 											</ul>
 										</div>
-									</div>
-								</motion.div>
+									</MotionDiv>
+								</div>
 							</div>
 						);
 					})}
 				</div>
 
 				{/* Call to Action */}
-				<motion.div
-					initial={{ opacity: 0, y: 30 }}
+				<MotionDiv
+					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.8 }}
+					transition={{ duration: 0.4, delay: 0.2 }}
 					viewport={{ once: true }}
 					className='text-center'
 				>
 					<div className='grid grid-cols-1 md:grid-cols-2'>
-						<MotionDiv className='p-8 border-slate-800'>
+						<motion.div 
+							initial={{ opacity: 0, x: -20 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.4, delay: 0.3 }}
+							viewport={{ once: true }}
+							className='p-8 border-slate-800'
+						>
 							<h3 className='text-2xl font-bold text-white mb-4'>
 								Need a Custom Solution?
 							</h3>
@@ -269,13 +301,21 @@ export default function ServicesSection() {
 								your specific business
 								requirements and goals.
 							</p>
-						</MotionDiv>
-						<MotionButton className='px-8 py-3 flex items-center gap-2 justify-center bg-gradient-to-r from-fuchsia-500/30 to-cyan-500/30 text-white text-xl font-semibold cursor-pointer'>
+						</motion.div>
+						<motion.button 
+							initial={{ opacity: 0, x: 20 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.4, delay: 0.4 }}
+							viewport={{ once: true }}
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							className='px-8 py-3 flex items-center gap-2 justify-center bg-gradient-to-r from-fuchsia-500/30 to-cyan-500/30 text-white text-xl font-semibold cursor-pointer hover:from-fuchsia-500/50 hover:to-cyan-500/50 transition-all duration-300'
+						>
 							<FaHandPointRight className='animate-pulse' />
 							Let&apos;s Discuss Your Project
-						</MotionButton>
+						</motion.button>
 					</div>
-				</motion.div>
+				</MotionDiv>
 			</div>
 		</section>
 	);

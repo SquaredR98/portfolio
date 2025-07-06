@@ -1,6 +1,6 @@
 import React from 'react';
 import { HiLightBulb } from 'react-icons/hi2';
-import { MotionDiv, MotionH3, MotionP } from '../shared/MotionTags';
+import { MotionDiv, MotionH3, MotionP } from '../../MotionTags';
 
 export default function ResumeSummary() {
 	return (

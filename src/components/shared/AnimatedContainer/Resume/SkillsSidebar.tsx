@@ -1,6 +1,6 @@
 import React from 'react';
 import { HiCodeBracket, HiChartBar, HiShieldCheck } from 'react-icons/hi2';
-import { MotionSection, MotionH3, MotionH4 } from '../shared/MotionTags';
+import { MotionSection, MotionH3, MotionH4 } from '../../MotionTags';
 
 const skills = {
 	languages: ['JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL', 'C/C++', 'Python'],

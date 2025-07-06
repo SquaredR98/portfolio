@@ -57,9 +57,9 @@ export default function ProjectsSection() {
 		<section id='projects' className='bg-slate-900'>
 			<div className='w-11/12 lg:w-9/12 max-w-7xl mx-auto border-x border-slate-800'>
 				<MotionDiv
-					initial={{ opacity: 0, y: 50 }}
+					initial={{ opacity: 0, y: 30 }}
 					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
+					transition={{ duration: 0.4 }}
 					viewport={{ once: true }}
 					className=''
 				>
@@ -111,22 +111,18 @@ export default function ProjectsSection() {
 						};
 						
 						return (
-							<MotionDiv
+							<div
 								key={project.id}
-								initial={{ opacity: 0, y: 50 }}
-								whileInView={{
-									opacity: 1,
-									y: 0,
-								}}
-								transition={{
-									duration: 0.6,
-									delay: index * 0.1,
-								}}
-								viewport={{ once: true }}
 								className={`group relative bg-slate-900 overflow-hidden hover:border-slate-700 transition-all duration-300 ${getBorderClasses(index)}`}
 							>
 								{/* Project Image */}
-								<div className='relative h-48 bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden'>
+								<MotionDiv
+									initial={{ opacity: 0, scale: 0.9 }}
+									whileInView={{ opacity: 1, scale: 1 }}
+									transition={{ duration: 0.4, delay: index * 0.05 }}
+									viewport={{ once: true }}
+									className='relative h-48 bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden'
+								>
 									<div className='absolute inset-0 bg-gradient-to-br from-fuchsia-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
 									<div className='absolute inset-0 flex items-center justify-center'>
 										<HiGlobeAlt className='w-16 h-16 text-slate-600 group-hover:text-fuchsia-500 transition-colors duration-300' />
@@ -138,10 +134,16 @@ export default function ProjectsSection() {
 											}
 										</span>
 									</div>
-								</div>
+								</MotionDiv>
 
 								{/* Project Content */}
-								<div className='p-2 md:p-6'>
+								<MotionDiv
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.4, delay: index * 0.05 + 0.1 }}
+									viewport={{ once: true }}
+									className='p-2 md:p-6'
+								>
 									<h3 className='text-xl font-bold text-white mb-3 group-hover:text-fuchsia-400 transition-colors duration-300'>
 										{project.title}
 									</h3>
@@ -154,23 +156,32 @@ export default function ProjectsSection() {
 									{/* Technologies */}
 									<div className='flex flex-wrap gap-2 mb-24'>
 										{project.technologies.map(
-											(tech) => (
-												<span
-													key={
-														tech
-													}
+											(tech, techIndex) => (
+												<MotionDiv
+													key={tech}
+													initial={{ opacity: 0, scale: 0.8 }}
+													whileInView={{ opacity: 1, scale: 1 }}
+													transition={{ 
+														duration: 0.3, 
+														delay: index * 0.05 + 0.2 + techIndex * 0.03
+													}}
+													viewport={{ once: true }}
 													className='px-2 py-1 bg-slate-800 text-slate-300 rounded text-xs'
 												>
-													{
-														tech
-													}
-												</span>
+													{tech}
+												</MotionDiv>
 											),
 										)}
 									</div>
 
 									{/* Action Buttons */}
-									<div className='grid grid-cols-2 absolute bottom-8 left-0 w-full border-y border-slate-800'>
+									<MotionDiv
+										initial={{ opacity: 0, y: 10 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										transition={{ duration: 0.4, delay: index * 0.05 + 0.3 }}
+										viewport={{ once: true }}
+										className='grid grid-cols-2 absolute bottom-8 left-0 w-full border-y border-slate-800'
+									>
 										<a
 											href={
 												project.link
@@ -189,22 +200,23 @@ export default function ProjectsSection() {
 											<HiCodeBracket className='' />
 											Code
 										</a>
-									</div>
-								</div>
+									</MotionDiv>
+								</MotionDiv>
 
 								{/* Hover Effect Overlay */}
 								<div className='absolute inset-0 bg-gradient-to-br from-fuchsia-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none'></div>
-							</MotionDiv>
+							</div>
 						);
 					})}
 
 					{/* View All Projects Card */}
 					<MotionLink
 						href='/portfolio'
-						initial={{ opacity: 0, y: 50 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: 0.5 }}
+						initial={{ opacity: 0, scale: 0.9 }}
+						whileInView={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.4, delay: 0.2 }}
 						viewport={{ once: true }}
+						whileHover={{ scale: 1.02 }}
 						className='group relative bg-slate-900 overflow-hidden border-slate-800 md:border-r lg:border-r hover:border-slate-700 transition-all duration-300'
 					>
 						{/* Card Background */}
@@ -234,15 +246,6 @@ export default function ProjectsSection() {
 								to mobile solutions and
 								everything in between.
 							</p>
-
-							{/* CTA Button */}
-							{/* <Link
-								href="/portfolio"
-								className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-fuchsia-500/25 transition-all duration-300 group-hover:scale-105"
-							>
-								Explore Portfolio
-								<HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-							</Link> */}
 						</div>
 
 						{/* Hover Effect Overlay */}

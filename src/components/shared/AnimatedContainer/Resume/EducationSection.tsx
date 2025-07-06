@@ -1,6 +1,6 @@
 import React from 'react';
 import { HiAcademicCap, HiCalendar } from 'react-icons/hi2';
-import { MotionSection, MotionH3, MotionDiv, MotionH4, MotionP } from '../shared/MotionTags';
+import { MotionSection, MotionH3, MotionDiv, MotionH4, MotionP } from '../../MotionTags';
 
 const education = [
 	{

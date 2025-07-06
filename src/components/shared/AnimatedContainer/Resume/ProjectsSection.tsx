@@ -9,7 +9,7 @@ import {
 	MotionH5,
 	MotionUl,
 	MotionLi,
-} from '../shared/MotionTags';
+} from '../../MotionTags';
 
 const projects = [
 	{

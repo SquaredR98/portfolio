@@ -1,5 +1,6 @@
 import React from 'react';
 import { HiRocketLaunch } from 'react-icons/hi2';
+import { motion } from 'motion/react';
 import SectionContainer from '../../shared/SectionContainer';
 import SectionHeader from '../../shared/SectionHeader';
 import AnimatedContainer from '../../shared/AnimatedContainer';
@@ -8,7 +9,6 @@ import {
 	MotionH3,
 	MotionH4,
 	MotionUl,
-	MotionLi,
 } from '../../shared/MotionTags';
 import Image from 'next/image';
 
@@ -40,6 +40,13 @@ const achievements = [
 	},
 ];
 
+const stats = [
+	{ value: '4+', label: 'Years Experience', color: 'text-fuchsia-500' },
+	{ value: '20+', label: 'Projects Completed', color: 'text-cyan-500' },
+	{ value: '5+', label: 'Major Platforms', color: 'text-fuchsia-500' },
+	{ value: '3', label: 'Awards Won', color: 'text-cyan-500' },
+];
+
 export default function AboutSection() {
 	return (
 		<SectionContainer id='about' background='slate-950'>
@@ -54,27 +61,44 @@ export default function AboutSection() {
 				{/* Left Column - Image and Personal Info */}
 				<AnimatedContainer
 					variants='slideLeft'
-					delay={0.2}
+					delay={0.1}
 					className='lg:order-2'
 				>
 					<div className='space-y-8'>
 						<div className='relative'>
-							<div className='w-80 h-80 mx-auto lg:mx-0 p-1 border-b border-slate-800 overflow-hidden'>
-									{/* <HiUser className="w-32 h-32 text-slate-400" /> */}
-									<Image
-										src='/profile.webp'
-										alt='Ravi Ranjan'
-										width={1280}
-										height={1280}
-										className='hover:scale-105 transition-all duration-700'
-									/>
-							</div>
-							<div className='absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-full flex items-center justify-center'>
+							<motion.div 
+								initial={{ opacity: 0, scale: 0.95 }}
+								whileInView={{ opacity: 1, scale: 1 }}
+								transition={{ duration: 0.5, delay: 0.2 }}
+								viewport={{ once: true }}
+								className='w-80 h-80 mx-auto lg:mx-0 p-1 border-b border-slate-800 overflow-hidden'
+							>
+								<Image
+									src='/profile.webp'
+									alt='Ravi Ranjan'
+									width={1280}
+									height={1280}
+									className='hover:scale-105 transition-all duration-700'
+								/>
+							</motion.div>
+							<motion.div 
+								initial={{ opacity: 0, scale: 0, rotate: -180 }}
+								whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+								transition={{ duration: 0.6, delay: 0.4 }}
+								viewport={{ once: true }}
+								className='absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-r from-fuchsia-500 to-cyan-500 rounded-full flex items-center justify-center'
+							>
 								<HiRocketLaunch className='w-10 h-10 text-white' />
-							</div>
+							</motion.div>
 						</div>
 
-						<div className='space-y-2'>
+						<motion.div 
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 0.3 }}
+							viewport={{ once: true }}
+							className='space-y-2'
+						>
 							<MotionH3 className='text-2xl font-bold text-white px-2 md:px-6'>
 								Ravi Ranjan
 							</MotionH3>
@@ -83,28 +107,46 @@ export default function AboutSection() {
 								Next.js | Node.js | PostgreSQL
 							</p>
 							<div className='flex flex-wrap gap-2 px-2 md:px-6'>
-								{skills.map((skill) => (
-									<TechnologyBadge
+								{skills.map((skill, index) => (
+									<motion.div
 										key={skill}
-										technology={skill}
-										size='md'
-									/>
+										initial={{ opacity: 0, scale: 0.8 }}
+										whileInView={{ opacity: 1, scale: 1 }}
+										transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
+										viewport={{ once: true }}
+									>
+										<TechnologyBadge
+											technology={skill}
+											size='md'
+										/>
+									</motion.div>
 								))}
 							</div>
-						</div>
+						</motion.div>
 					</div>
 				</AnimatedContainer>
 
 				{/* Right Column - Description */}
 				<AnimatedContainer
 					variants='slideRight'
-					delay={0.4}
+					delay={0.2}
 					className='lg:order-1 md:border-r border-slate-800'
 				>
 					<div className='space-y-6'>
-						<div className='space-y-6'>
+						<motion.div 
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 0.3 }}
+							viewport={{ once: true }}
+							className='space-y-6'
+						>
 							<div className='space-y-4 text-slate-300 px-2 md:px-6 pt-6'>
-								<p>
+								<motion.p
+									initial={{ opacity: 0, x: -20 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									transition={{ duration: 0.5, delay: 0.4 }}
+									viewport={{ once: true }}
+								>
 									Full-Stack Developer with
 									over four years of
 									experience in designing,
@@ -114,8 +156,13 @@ export default function AboutSection() {
 									in React, Next.js,
 									Node.js, NestJS,
 									PostgreSQL, and MongoDB.
-								</p>
-								<p>
+								</motion.p>
+								<motion.p
+									initial={{ opacity: 0, x: -20 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									transition={{ duration: 0.5, delay: 0.5 }}
+									viewport={{ once: true }}
+								>
 									Currently working as
 									Senior Software Developer
 									at Antino Labs, where
@@ -133,8 +180,13 @@ export default function AboutSection() {
 									optimize performance
 									across frontend and
 									backend.
-								</p>
-								<p>
+								</motion.p>
+								<motion.p
+									initial={{ opacity: 0, x: -20 }}
+									whileInView={{ opacity: 1, x: 0 }}
+									transition={{ duration: 0.5, delay: 0.6 }}
+									viewport={{ once: true }}
+								>
 									Graduated from Indian
 									Institute of Information
 									Technology, Dharwad with a
@@ -146,69 +198,74 @@ export default function AboutSection() {
 									Open to remote full-time
 									roles or technical
 									co-founder opportunities.
-								</p>
+								</motion.p>
 							</div>
-						</div>
+						</motion.div>
 
 						{/* Stats */}
 						<div className='grid grid-cols-2 lg:grid-cols-4'>
-							<div className='text-center p-6 border-y border-slate-800'>
-								<div className='text-3xl font-bold text-fuchsia-500 mb-2'>
-									4+
-								</div>
-								<div className='text-slate-400'>
-									Years Experience
-								</div>
-							</div>
-							<div className='text-center p-6 border border-r-0 border-slate-800'>
-								<div className='text-3xl font-bold text-cyan-500 mb-2'>
-									20+
-								</div>
-								<div className='text-slate-400'>
-									Projects Completed
-								</div>
-							</div>
-							<div className='text-center p-6 border border-r-0 border-slate-800'>
-								<div className='text-3xl font-bold text-fuchsia-500 mb-2'>
-									5+
-								</div>
-								<div className='text-slate-400'>
-									Major Platforms
-								</div>
-							</div>
-							<div className='text-center p-6 border border-y border-r-0 border-slate-800'>
-								<div className='text-3xl font-bold text-cyan-500 mb-2'>
-									3
-								</div>
-								<div className='text-slate-400'>
-									Awards Won
-								</div>
-							</div>
+							{stats.map((stat, index) => (
+								<motion.div
+									key={stat.label}
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+									viewport={{ once: true }}
+									whileHover={{ scale: 1.05 }}
+									className='text-center p-6 border-y border-slate-800 hover:bg-slate-900/50 transition-colors duration-300'
+								>
+									<motion.div 
+										initial={{ scale: 0 }}
+										whileInView={{ scale: 1 }}
+										transition={{ duration: 0.6, delay: 0.7 + index * 0.1 }}
+										viewport={{ once: true }}
+										className={`text-3xl font-bold ${stat.color} mb-2`}
+									>
+										{stat.value}
+									</motion.div>
+									<div className='text-slate-400'>
+										{stat.label}
+									</div>
+								</motion.div>
+							))}
 						</div>
 
 						{/* What I Bring */}
-						<div className='space-y-4 px-2 md:px-6 pb-8'>
+						<motion.div 
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 0.8 }}
+							viewport={{ once: true }}
+							className='space-y-4 px-2 md:px-6 pb-8'
+						>
 							<MotionH4 className='text-xl font-semibold text-white'>
 								What I Bring to the Table:
 							</MotionH4>
 							<MotionUl className='space-y-2'>
 								{achievements.map(
 									(achievement, index) => (
-										<MotionLi
+										<motion.li
 											key={index}
-											className='flex items-center gap-3 text-slate-300'
+											initial={{ opacity: 0, x: -20 }}
+											whileInView={{ opacity: 1, x: 0 }}
+											transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+											viewport={{ once: true }}
+											whileHover={{ x: 5 }}
+											className='flex items-center gap-3 text-slate-300 hover:text-white transition-colors duration-300 cursor-default'
 										>
-											<div
+											<motion.div
+												initial={{ scale: 0 }}
+												whileInView={{ scale: 1 }}
+												transition={{ duration: 0.3, delay: 1.0 + index * 0.1 }}
+												viewport={{ once: true }}
 												className={`w-2 h-2 ${achievement.color} rounded-full`}
-											></div>
-											{
-												achievement.text
-											}
-										</MotionLi>
+											></motion.div>
+											{achievement.text}
+										</motion.li>
 									),
 								)}
 							</MotionUl>
-						</div>
+						</motion.div>
 					</div>
 				</AnimatedContainer>
 			</div>
